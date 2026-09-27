@@ -96,6 +96,13 @@ def test_fixtures_gradcam_alpha_matches_real_autograd(tmp_path):
 
     entry = fixtures[0]
     x = _load_and_preprocess(FIXTURE_IMAGE_DIRS[0]).clone().requires_grad_(False)
+
+    # Cross-check: verify fixture logits match direct model forward pass (catches head-reconstruction drift)
+    with torch.no_grad():
+        full_model_logits = model(x).numpy()
+    np.testing.assert_allclose(entry["logits"], full_model_logits[0], atol=1e-4)
+
+    # Verify manual head reconstruction matches for gradcam computation
     feat = model.forward_features(x)
     pooled = model.global_pool(feat).flatten(1)
     pooled_leaf = pooled.detach().clone().requires_grad_(True)
