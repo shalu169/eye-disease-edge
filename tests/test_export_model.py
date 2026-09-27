@@ -117,3 +117,18 @@ def test_fixtures_gradcam_alpha_matches_real_autograd(tmp_path):
         logits[0, i].backward(retain_graph=True)
         expected_alpha = pooled_leaf.grad[0].numpy()
         np.testing.assert_allclose(entry["gradcam_alpha"][label], expected_alpha, atol=1e-4)
+
+
+from export_model import main as export_main
+
+
+def test_main_writes_all_artifacts_into_mobile_app_dir(tmp_path):
+    mobile_app_dir = tmp_path / "mobile_app"
+    export_main(CHECKPOINT, str(mobile_app_dir), FIXTURE_IMAGE_DIRS)
+
+    assert (mobile_app_dir / "assets" / "model" / "backbone.tflite").exists()
+    assert (mobile_app_dir / "assets" / "model" / "head_weights.json").exists()
+    assert (mobile_app_dir / "assets" / "model" / "preprocess_config.json").exists()
+    assert (mobile_app_dir / "test" / "fixtures" / "model_fixtures.json").exists()
+    for image_path in FIXTURE_IMAGE_DIRS:
+        assert (mobile_app_dir / "test" / "fixtures" / "images" / Path(image_path).name).exists()

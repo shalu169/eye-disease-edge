@@ -7,6 +7,7 @@ docs/superpowers/specs/2026-09-27-fundus-screening-mobile-app-design.md
 sections 3-4 for why the model is split into backbone/head this way.
 """
 
+import argparse
 import json
 import os
 import shutil
@@ -181,3 +182,29 @@ def generate_fixtures(model: torch.nn.Module, image_paths, fixtures_json_out, im
         })
 
     Path(fixtures_json_out).write_text(json.dumps(entries))
+
+
+def main(checkpoint_path: str, mobile_app_dir: str, fixture_images) -> None:
+    mobile_app_dir = Path(mobile_app_dir).resolve()
+    model_dir = mobile_app_dir / "assets" / "model"
+    fixtures_dir = mobile_app_dir / "test" / "fixtures"
+    images_dir = fixtures_dir / "images"
+
+    model = load_checkpoint(checkpoint_path)
+    export_backbone_tflite(model, model_dir)
+    export_head_weights(model, model_dir / "head_weights.json")
+    export_preprocess_config(model_dir / "preprocess_config.json")
+    generate_fixtures(model, fixture_images, fixtures_dir / "model_fixtures.json", images_dir)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--checkpoint", default="results/checkpoints/run002_baseline_tuned_best_epoch15.pt")
+    parser.add_argument("--mobile-app-dir", default="mobile_app")
+    parser.add_argument("--fixture-image", action="append", default=[
+        "data/preprocessed_images/0_left.jpg",
+        "data/preprocessed_images/0_right.jpg",
+        "data/preprocessed_images/1005_right.jpg",
+    ])
+    args = parser.parse_args()
+    main(args.checkpoint, args.mobile_app_dir, args.fixture_image)
