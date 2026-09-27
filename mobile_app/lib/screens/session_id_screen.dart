@@ -39,4 +39,10 @@ class _SessionIdScreenState extends State<SessionIdScreen> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }
