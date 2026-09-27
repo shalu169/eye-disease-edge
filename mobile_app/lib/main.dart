@@ -1,122 +1,197 @@
+import 'dart:convert';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:image/image.dart' as img;
+import 'package:path_provider/path_provider.dart';
+import 'inference/backbone_engine.dart';
+import 'inference/head_weights.dart';
+import 'inference/head_math.dart';
+import 'inference/preprocess_config.dart';
+import 'inference/preprocessing.dart';
+import 'models/session_record.dart';
+import 'screens/capture_screen.dart';
+import 'screens/model_error_screen.dart';
+import 'screens/plugin_camera_source.dart';
+import 'screens/result_screen.dart';
+import 'screens/session_id_screen.dart';
+import 'storage/session_log.dart';
 
-void main() {
-  runApp(const MyApp());
+class ModelBundle {
+  final BackboneEngine engine;
+  final HeadWeights weights;
+  final PreprocessConfig preprocessConfig;
+
+  ModelBundle(this.engine, this.weights, this.preprocessConfig);
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/// Loads the on-device model bundle (TFLite backbone + head weights +
+/// preprocessing config) from the app's asset bundle.
+///
+/// All three assets are loaded through Flutter's real asset-bundle
+/// machinery (`rootBundle`, which `BackboneEngine.load` also uses under the
+/// hood via `Interpreter.fromAsset`), not raw filesystem reads — assets
+/// bundled into an Android APK are not present at these paths on the
+/// device's filesystem, only through the AssetBundle/platform-asset-channel
+/// API. `flutter test` serves the same declared-in-pubspec asset paths
+/// through that same API, so this behaves identically in tests and on a
+/// real device.
+///
+/// Throws a descriptive [Exception] (always mentioning "model") if any
+/// asset is missing or unparseable, so callers can distinguish a startup
+/// model-load failure from any other error.
+Future<ModelBundle> loadModelBundle(
+    {String modelDirOverride = 'assets/model'}) async {
+  try {
+    final engine = BackboneEngine();
+    await engine.load('$modelDirOverride/backbone.tflite');
 
-  // This widget is the root of your application.
+    final headJsonString =
+        await rootBundle.loadString('$modelDirOverride/head_weights.json');
+    final weights =
+        HeadWeights.fromJson(jsonDecode(headJsonString) as Map<String, dynamic>);
+
+    final preprocessJsonString = await rootBundle
+        .loadString('$modelDirOverride/preprocess_config.json');
+    final preprocessConfig = PreprocessConfig.fromJson(
+        jsonDecode(preprocessJsonString) as Map<String, dynamic>);
+
+    return ModelBundle(engine, weights, preprocessConfig);
+  } catch (e) {
+    throw Exception('failed to load on-device model bundle: $e');
+  }
+}
+
+void main() {
+  runApp(const FundusScreenerApp());
+}
+
+class FundusScreenerApp extends StatelessWidget {
+  const FundusScreenerApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      title: 'Fundus Screener',
+      home: FutureBuilder<ModelBundle>(
+        future: loadModelBundle(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
+            return const Scaffold(
+                body: Center(child: CircularProgressIndicator()));
+          }
+          if (snapshot.hasError) {
+            return ModelErrorScreen(message: snapshot.error.toString());
+          }
+          return _SessionFlow(modelBundle: snapshot.data!);
+        },
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+/// Owns the session ID, the capture-screen camera source, and the session
+/// log for one screening session: SessionIdScreen -> repeated
+/// (CaptureScreen -> preprocess/backbone/head -> ResultScreen -> Save)
+/// cycles, all against the same session ID.
+class _SessionFlow extends StatefulWidget {
+  final ModelBundle modelBundle;
+  const _SessionFlow({required this.modelBundle});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<_SessionFlow> createState() => _SessionFlowState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _SessionFlowState extends State<_SessionFlow> {
+  String? _sessionId;
+  SessionLog? _sessionLog;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+  // Memoized so the camera is only opened once per session (a fresh
+  // FutureBuilder.future on every build would reopen the camera controller
+  // on each rebuild), and the resolved source is kept so it can be
+  // disposed when this widget goes away instead of leaking the platform
+  // camera resource.
+  Future<PluginCameraSource>? _cameraSourceFuture;
+  PluginCameraSource? _cameraSource;
+
+  Future<PluginCameraSource> _ensureCameraSource() {
+    return _cameraSourceFuture ??= PluginCameraSource.create().then((source) {
+      _cameraSource = source;
+      return source;
     });
+  }
+
+  Future<void> _ensureSessionLog() async {
+    if (_sessionLog != null) return;
+    final dir = await getApplicationDocumentsDirectory();
+    _sessionLog = SessionLog(dir.path);
+  }
+
+  Future<void> _onCaptured(Uint8List imageBytes, BuildContext context) async {
+    final original = img.decodeImage(imageBytes)!;
+    final input = preprocessImage(original, widget.modelBundle.preprocessConfig);
+    final features = widget.modelBundle.engine.run(input);
+    final forward = headForward(features, widget.modelBundle.weights);
+
+    if (!context.mounted) return;
+    final shouldSave = await Navigator.of(context).push<bool>(MaterialPageRoute(
+      builder: (ctx) => ResultScreen(
+        originalImage: original,
+        features: features,
+        weights: widget.modelBundle.weights,
+        forward: forward,
+        onDiseaseSelected: (_) {},
+        onSave: () => Navigator.of(ctx).pop(true),
+        onRetake: () => Navigator.of(ctx).pop(false),
+      ),
+    ));
+
+    // Only an explicit Save commits anything: a discarded/retaken capture
+    // (shouldSave == false, or the user backing out of the result screen)
+    // must leave no record and no orphan file. Since the image bytes only
+    // exist in memory until this point, "do nothing" already satisfies
+    // that guarantee; SessionLog.commitRecord is the sole write path.
+    if (shouldSave == true) {
+      await _ensureSessionLog();
+      final fileName = 'capture_${DateTime.now().microsecondsSinceEpoch}.jpg';
+      await _sessionLog!.commitRecord(
+        SessionRecord(
+          sessionId: _sessionId!,
+          timestamp: DateTime.now().toUtc(),
+          imageFileName: fileName,
+          predictions: forward.probabilities,
+          mode: 'local',
+          deviceTag: 's25ultra_diyretcam',
+        ),
+        Uint8List.fromList(img.encodeJpg(original)),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _cameraSource?.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+    if (_sessionId == null) {
+      return SessionIdScreen(onSubmit: (id) => setState(() => _sessionId = id));
+    }
+
+    return FutureBuilder<PluginCameraSource>(
+      future: _ensureCameraSource(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Scaffold(
+              body: Center(child: CircularProgressIndicator()));
+        }
+        return CaptureScreen(
+          cameraSource: snapshot.data!,
+          onCaptured: (bytes) => _onCaptured(bytes, context),
+        );
+      },
     );
   }
 }
