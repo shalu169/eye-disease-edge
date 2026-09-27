@@ -57,3 +57,56 @@ def test_backbone_tflite_matches_pytorch_forward_features(tmp_path):
         assert actual_nchw.shape == expected.shape
         max_abs_diff = np.max(np.abs(actual_nchw - expected))
         assert max_abs_diff < 1e-2, f"backbone TFLite diverges from PyTorch by {max_abs_diff} on {img_path}"
+
+
+import json
+from export_model import export_head_weights, export_preprocess_config, generate_fixtures
+
+
+def test_head_weights_match_state_dict_exactly(tmp_path):
+    model = load_checkpoint(CHECKPOINT)
+    out_path = tmp_path / "head_weights.json"
+    export_head_weights(model, out_path)
+
+    data = json.loads(out_path.read_text())
+    sd = model.state_dict()
+    np.testing.assert_allclose(data["conv_head_weight"], sd["conv_head.weight"].squeeze(-1).squeeze(-1).numpy(), atol=1e-6)
+    np.testing.assert_allclose(data["conv_head_bias"], sd["conv_head.bias"].numpy(), atol=1e-6)
+    np.testing.assert_allclose(data["classifier_weight"], sd["classifier.weight"].numpy(), atol=1e-6)
+    np.testing.assert_allclose(data["classifier_bias"], sd["classifier.bias"].numpy(), atol=1e-6)
+
+
+def test_preprocess_config_matches_baseline_val_tfm(tmp_path):
+    out_path = tmp_path / "preprocess_config.json"
+    export_preprocess_config(out_path)
+    data = json.loads(out_path.read_text())
+    assert data["image_size"] == 224
+    assert data["mean"] == [0.485, 0.456, 0.406]
+    assert data["std"] == [0.229, 0.224, 0.225]
+
+
+def test_fixtures_gradcam_alpha_matches_real_autograd(tmp_path):
+    model = load_checkpoint(CHECKPOINT)
+    images_out = tmp_path / "images"
+    fixtures_json = tmp_path / "fixtures.json"
+    generate_fixtures(model, FIXTURE_IMAGE_DIRS, fixtures_json, images_out)
+
+    fixtures = json.loads(fixtures_json.read_text())
+    assert len(fixtures) == len(FIXTURE_IMAGE_DIRS)
+
+    entry = fixtures[0]
+    x = _load_and_preprocess(FIXTURE_IMAGE_DIRS[0]).clone().requires_grad_(False)
+    feat = model.forward_features(x)
+    pooled = model.global_pool(feat).flatten(1)
+    pooled_leaf = pooled.detach().clone().requires_grad_(True)
+    head_out = model.conv_head(pooled_leaf.unsqueeze(-1).unsqueeze(-1))
+    head_out = model.act2(head_out).flatten(1)
+    logits = model.classifier(head_out)
+
+    for i, label in enumerate(LABEL_COLS):
+        model.zero_grad()
+        if pooled_leaf.grad is not None:
+            pooled_leaf.grad.zero_()
+        logits[0, i].backward(retain_graph=True)
+        expected_alpha = pooled_leaf.grad[0].numpy()
+        np.testing.assert_allclose(entry["gradcam_alpha"][label], expected_alpha, atol=1e-4)
