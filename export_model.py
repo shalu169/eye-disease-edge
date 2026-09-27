@@ -42,14 +42,29 @@ class _BackboneWrapper(torch.nn.Module):
 def _ensure_onnx2tf_calibration_cache(cwd: Path) -> None:
     """onnx2tf unconditionally tries to download a small calibration/test
     image array (calibration_image_sample_data_20x128x128x3_float32.npy) from
-    a GitHub release asset for its internal per-op accuracy-check logging.
-    That asset 404s as of this writing, and the resulting error page is fed
-    to np.load(), which raises ValueError ("Cannot load file containing
-    pickled data") and aborts the whole conversion -- this is unrelated to
-    our model. onnx2tf looks for this exact filename in os.getcwd() before
-    attempting the network call, so pre-seeding a syntactically valid file of
-    the expected shape/dtype there (with the subprocess cwd set to `cwd`)
-    short-circuits the broken download without touching model conversion.
+    a GitHub release asset. That asset 404s as of this writing, and the
+    resulting error page is fed to np.load(), which raises ValueError
+    ("Cannot load file containing pickled data") and aborts the whole
+    conversion before it produces any output. onnx2tf looks for this exact
+    filename in os.getcwd() before attempting the network call, so
+    pre-seeding a syntactically valid file of the expected shape/dtype there
+    (with the subprocess cwd set to `cwd`) avoids the crash.
+
+    NOTE: this array is NOT purely informational logging input. onnx2tf feeds
+    it into `test_data_nhwc` / `onnx_tensor_infos_for_validation`
+    (onnx2tf/onnx2tf.py ~L1019-1072), which its default-on "automatic
+    correction of accuracy degradation" logic (`disable_strict_mode` is left
+    at its default False in our subprocess call, i.e. strict mode -- meaning
+    this correction logic runs) can use to choose between candidate axis
+    permutations when writing ops into the exported graph (see e.g.
+    onnx2tf/ops/Conv.py ~L654-807). So this random array can, in principle,
+    influence how onnx2tf shapes the converted graph, not just what it logs.
+    We are not relying on this array being inert: correctness of the
+    resulting backbone.tflite is established independently by
+    test_backbone_tflite_matches_pytorch_forward_features, which compares
+    real-image outputs against PyTorch's forward_features() end-to-end
+    (measured max_abs_diff ~1e-4 against a 1e-2 tolerance) -- not by any
+    property of this seeded calibration data.
     """
     filename = "calibration_image_sample_data_20x128x128x3_float32.npy"
     cache_path = cwd / filename
