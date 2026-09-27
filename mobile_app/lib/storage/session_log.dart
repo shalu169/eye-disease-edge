@@ -34,7 +34,26 @@ class SessionLog {
         .toList();
   }
 
+  Future<void> pruneOrphanImages() async {
+    if (!_imagesDir.existsSync()) return;
+
+    final records = await listRecords();
+    final referencedFileNames = records.map((r) => r.imageFileName).toSet();
+
+    final files = _imagesDir.listSync();
+    for (final entity in files) {
+      if (entity is File) {
+        final fileName = entity.path.split('/').last;
+        if (!referencedFileNames.contains(fileName)) {
+          await entity.delete();
+        }
+      }
+    }
+  }
+
   Future<File> exportZip(String outputPath) async {
+    await pruneOrphanImages();
+
     final records = await listRecords();
     final encoder = ZipFileEncoder();
     encoder.create(outputPath);
