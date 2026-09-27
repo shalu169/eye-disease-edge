@@ -1,0 +1,24 @@
+# Host-side export tooling dependencies (PyTorch -> ONNX -> TFLite).
+#
+# NOTE: these are installed into a DEDICATED venv (.venv-export, Python 3.12),
+# not the project's shared .venv (Python 3.14.6). As of this writing there are
+# no `onnx` wheels at all for cp314 on macOS (only cp314t/free-threaded, which
+# is a different, incompatible ABI tag), and `tensorflow` only ships a 2.22.0rc0
+# release candidate for cp314. Building onnx from source was not attempted
+# (no cmake/protoc available, and it's a C++ project not meant to be built ad
+# hoc). See task-3-report.md for the full investigation.
+#
+# These are the exact versions from the task brief; they resolve cleanly for
+# Python 3.12 macOS arm64 (unlike Python 3.14).
+onnx==1.17.0
+onnx2tf==1.26.3
+tensorflow==2.18.0
+
+# Additional runtime dependencies onnx2tf needs that are not declared as hard
+# pip dependencies of the onnx2tf package itself:
+tf_keras==2.18.0
+psutil
+sng4onnx
+onnx_graphsurgeon
+simple_onnx_processing_tools
+onnxsim
