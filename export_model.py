@@ -13,6 +13,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -80,40 +81,48 @@ def _ensure_onnx2tf_calibration_cache(cwd: Path) -> None:
 def export_backbone_tflite(model: torch.nn.Module, out_dir) -> Path:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    onnx_path = out_dir / "backbone.onnx"
 
-    wrapper = _BackboneWrapper(model).eval()
-    dummy = torch.randn(1, 3, IMG_SIZE, IMG_SIZE)
-    torch.onnx.export(
-        wrapper, dummy, str(onnx_path),
-        input_names=["image"], output_names=["features"],
-        opset_version=17, dynamic_axes=None, dynamo=False,
-    )
+    # Do all intermediate work (ONNX export, onnx2tf conversion) in a temporary
+    # directory; only move the final backbone.tflite to out_dir to avoid
+    # committing ~12MB of intermediate onnx2tf artifacts.
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpdir = Path(tmpdir)
+        onnx_path = tmpdir / "backbone.onnx"
 
-    tf_out_dir = out_dir / "backbone_tf"
-    tf_out_dir.mkdir(parents=True, exist_ok=True)
-    _ensure_onnx2tf_calibration_cache(tf_out_dir)
+        wrapper = _BackboneWrapper(model).eval()
+        dummy = torch.randn(1, 3, IMG_SIZE, IMG_SIZE)
+        torch.onnx.export(
+            wrapper, dummy, str(onnx_path),
+            input_names=["image"], output_names=["features"],
+            opset_version=17, dynamic_axes=None, dynamo=False,
+        )
 
-    # onnx2tf shells out to sibling console scripts (e.g. onnxsim) by bare
-    # name; make sure the venv's bin dir (where sys.executable lives) is on
-    # PATH for the subprocess regardless of whether the venv is "activated".
-    env = os.environ.copy()
-    venv_bin = str(Path(sys.executable).parent)
-    env["PATH"] = venv_bin + os.pathsep + env.get("PATH", "")
+        tf_out_dir = tmpdir / "backbone_tf"
+        tf_out_dir.mkdir(parents=True, exist_ok=True)
+        _ensure_onnx2tf_calibration_cache(tf_out_dir)
 
-    subprocess.run(
-        [sys.executable, "-m", "onnx2tf", "-i", str(onnx_path), "-o", str(tf_out_dir), "-osd"],
-        check=True,
-        cwd=str(tf_out_dir),
-        env=env,
-    )
+        # onnx2tf shells out to sibling console scripts (e.g. onnxsim) by bare
+        # name; make sure the venv's bin dir (where sys.executable lives) is on
+        # PATH for the subprocess regardless of whether the venv is "activated".
+        env = os.environ.copy()
+        venv_bin = str(Path(sys.executable).parent)
+        env["PATH"] = venv_bin + os.pathsep + env.get("PATH", "")
 
-    produced = list(tf_out_dir.glob("*_float32.tflite"))
-    if not produced:
-        raise RuntimeError(f"onnx2tf did not produce a float32 tflite file in {tf_out_dir}")
+        subprocess.run(
+            [sys.executable, "-m", "onnx2tf", "-i", str(onnx_path), "-o", str(tf_out_dir), "-osd"],
+            check=True,
+            cwd=str(tf_out_dir),
+            env=env,
+        )
 
-    final_path = out_dir / "backbone.tflite"
-    produced[0].replace(final_path)
+        produced = list(tf_out_dir.glob("*_float32.tflite"))
+        if not produced:
+            raise RuntimeError(f"onnx2tf did not produce a float32 tflite file in {tf_out_dir}")
+
+        # Only move the final tflite to out_dir; temporary onnx and SavedModel stay in tmpdir
+        final_path = out_dir / "backbone.tflite"
+        shutil.copy(produced[0], final_path)
+
     return final_path
 
 
