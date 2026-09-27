@@ -15,3 +15,7 @@ mobile_app/ios/
 mobile_app/*.iml
 mobile_app/.idea/
 .claude/
+
+# also match these when checked out as symlinks (e.g. in worktrees)
+.venv
+data
