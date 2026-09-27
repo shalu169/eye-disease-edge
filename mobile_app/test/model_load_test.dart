@@ -17,4 +17,18 @@ void main() {
           (e) => e.toString(), 'message', contains('model'))),
     );
   });
+
+  test('loadModelBundle succeeds against the real bundled assets', () async {
+    final bundle = await loadModelBundle();
+
+    // Sanity-check that every piece actually parsed/loaded, not just that
+    // no exception was thrown: a genuinely wired-up bundle should have a
+    // usable interpreter, a positive image size, and at least one disease
+    // label with matching classifier weights.
+    expect(bundle.preprocessConfig.imageSize, greaterThan(0));
+    expect(bundle.weights.labels, isNotEmpty);
+    expect(bundle.weights.classifierBias.length, bundle.weights.labels.length);
+
+    bundle.engine.close();
+  });
 }

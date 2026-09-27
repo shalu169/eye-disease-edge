@@ -5,6 +5,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:image/image.dart' as img;
 import 'package:path_provider/path_provider.dart';
 import 'inference/backbone_engine.dart';
+import 'inference/feature_map.dart';
 import 'inference/head_weights.dart';
 import 'inference/head_math.dart';
 import 'inference/preprocess_config.dart';
@@ -128,10 +129,28 @@ class _SessionFlowState extends State<_SessionFlow> {
   }
 
   Future<void> _onCaptured(Uint8List imageBytes, BuildContext context) async {
-    final original = img.decodeImage(imageBytes)!;
-    final input = preprocessImage(original, widget.modelBundle.preprocessConfig);
-    final features = widget.modelBundle.engine.run(input);
-    final forward = headForward(features, widget.modelBundle.weights);
+    // Never silent: a corrupt JPEG from the camera, a native TFLite runtime
+    // error, or any other failure in this synchronous pipeline must not
+    // leave the user stuck on CaptureScreen with no feedback — surface it
+    // and let them retry the capture instead of losing the exception into
+    // an unawaited Future (CaptureScreen fires onCaptured without awaiting
+    // it).
+    img.Image original;
+    Float32List input;
+    FeatureMap features;
+    HeadForwardResult forward;
+    try {
+      original = img.decodeImage(imageBytes)!;
+      input = preprocessImage(original, widget.modelBundle.preprocessConfig);
+      features = widget.modelBundle.engine.run(input);
+      forward = headForward(features, widget.modelBundle.weights);
+    } catch (e) {
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not process that capture: $e')),
+      );
+      return;
+    }
 
     if (!context.mounted) return;
     final shouldSave = await Navigator.of(context).push<bool>(MaterialPageRoute(
