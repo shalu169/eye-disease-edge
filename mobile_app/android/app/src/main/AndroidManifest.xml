@@ -1,6 +1,20 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <!-- This app is fully offline and only uses the camera; it does not use
+         audio, phone state, or external storage. These permissions are
+         pulled in transitively by the camera plugin's dependencies
+         (media3/camerax) even though enableAudio: false is set in
+         PluginCameraSource, so remove them explicitly via the standard
+         manifest-merger override syntax. INTERNET is correctly absent
+         already and must stay that way; do not add it here. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" tools:node="remove" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="remove" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="remove" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove" />
     <application
         android:label="fundus_screener"
         android:name="${applicationName}"
