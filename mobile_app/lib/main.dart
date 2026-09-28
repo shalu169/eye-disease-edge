@@ -153,6 +153,14 @@ class _SessionFlowState extends State<_SessionFlow> {
     }
 
     if (!context.mounted) return;
+    // CaptureScreen stays mounted underneath this pushed route (Navigator
+    // push, not replace), so its torch would otherwise stay lit -- aimed at
+    // the subject's eye through the DIYretCAM rig -- for the entire result
+    // review / Grad-CAM inspection, not just while framing the shot. Turn
+    // it off before navigating away and back on only once we're about to
+    // show CaptureScreen again for the next capture.
+    await _cameraSource?.setTorch(false);
+    if (!context.mounted) return;
     final shouldSave = await Navigator.of(context).push<bool>(MaterialPageRoute(
       builder: (ctx) => ResultScreen(
         originalImage: original,
@@ -164,6 +172,9 @@ class _SessionFlowState extends State<_SessionFlow> {
         onRetake: () => Navigator.of(ctx).pop(false),
       ),
     ));
+    if (context.mounted) {
+      await _cameraSource?.setTorch(true);
+    }
 
     // Only an explicit Save commits anything: a discarded/retaken capture
     // (shouldSave == false, or the user backing out of the result screen)
@@ -182,7 +193,13 @@ class _SessionFlowState extends State<_SessionFlow> {
           mode: 'local',
           deviceTag: 's25ultra_diyretcam',
         ),
-        Uint8List.fromList(img.encodeJpg(original)),
+        // Save the original camera JPEG bytes, not a re-encode of the
+        // decoded img.Image: re-encoding risks quality loss and drops EXIF
+        // orientation data on the exact artifact an ophthalmologist will
+        // grade. `original` (the decoded img.Image) is still used above for
+        // Grad-CAM overlay rendering/preprocessing -- only the file actually
+        // written to SessionLog should be the untouched original bytes.
+        imageBytes,
       );
     }
   }

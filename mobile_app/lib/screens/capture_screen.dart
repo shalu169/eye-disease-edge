@@ -22,6 +22,8 @@ class CaptureScreen extends StatefulWidget {
 }
 
 class _CaptureScreenState extends State<CaptureScreen> {
+  bool _isCapturing = false;
+
   @override
   void initState() {
     super.initState();
@@ -29,8 +31,22 @@ class _CaptureScreenState extends State<CaptureScreen> {
   }
 
   Future<void> _onShutterPressed() async {
-    final bytes = await widget.cameraSource.takePicture();
-    widget.onCaptured(bytes);
+    // Guard against a double-tap firing two concurrent takePicture() calls
+    // on the platform camera (which can throw or produce two captures for
+    // one shutter press).
+    if (_isCapturing) return;
+    _isCapturing = true;
+    try {
+      final bytes = await widget.cameraSource.takePicture();
+      widget.onCaptured(bytes);
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not capture photo: $e')),
+      );
+    } finally {
+      _isCapturing = false;
+    }
   }
 
   @override

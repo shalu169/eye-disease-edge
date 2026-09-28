@@ -35,7 +35,7 @@ void main() {
     expect(File('${tempDir.path}/images/capture_a.jpg').existsSync(), isTrue);
   });
 
-  test('a retake that is never committed leaves no record and no orphan file', () async {
+  test('pruneOrphanImages removes an untracked file while preserving committed records', () async {
     final log = SessionLog(tempDir.path);
 
     // First, commit one real record
