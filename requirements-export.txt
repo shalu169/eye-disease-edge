@@ -22,3 +22,12 @@ sng4onnx
 onnx_graphsurgeon
 simple_onnx_processing_tools
 onnxsim
+
+# tests/test_export_model.py imports baseline.py (to cross-check
+# export_model.py's LABEL_COLS/IMG_SIZE against baseline.py's real values,
+# so a future retrain that changes either can't silently desync from what
+# gets exported to the app). baseline.py itself needs these at import time
+# for its training-only Dataset/split code, even though the test only reads
+# two module-level constants from it.
+pandas
+scikit-learn

@@ -155,6 +155,33 @@ def _preprocess_for_fixtures(image_path):
     return tfm(img).unsqueeze(0)
 
 
+def export_preprocessed_fixtures(image_paths, fixtures_dir) -> None:
+    """Dumps the Python-computed NHWC preprocessed pixel array for each
+    fixture image, e.g. mobile_app/test/fixtures/preprocessed_0_left.json,
+    which mobile_app/test/inference/preprocessing_test.dart uses as its
+    ground truth for `preprocessImage`.
+
+    Reuses `_preprocess_for_fixtures` (the same Resize/ToTensor/Normalize
+    pipeline used to compute pooled_vector/logits/probs for
+    model_fixtures.json) so both fixture sets are always generated from the
+    exact same preprocessing definition, and can be regenerated together by
+    the normal export flow instead of a one-off script that only exists in
+    a plan document.
+    """
+    fixtures_dir = Path(fixtures_dir)
+    fixtures_dir.mkdir(parents=True, exist_ok=True)
+
+    for image_path in image_paths:
+        image_path = Path(image_path)
+        name = image_path.stem  # e.g. "0_left" from "0_left.jpg"
+
+        x = _preprocess_for_fixtures(image_path)  # [1, 3, IMG_SIZE, IMG_SIZE] NCHW
+        nhwc = x[0].permute(1, 2, 0).detach().tolist()  # [IMG_SIZE][IMG_SIZE][3]
+
+        out_path = fixtures_dir / f"preprocessed_{name}.json"
+        out_path.write_text(json.dumps(nhwc))
+
+
 def generate_fixtures(model: torch.nn.Module, image_paths, fixtures_json_out, images_out_dir) -> None:
     images_out_dir = Path(images_out_dir)
     images_out_dir.mkdir(parents=True, exist_ok=True)
@@ -204,6 +231,7 @@ def main(checkpoint_path: str, mobile_app_dir: str, fixture_images) -> None:
     export_head_weights(model, model_dir / "head_weights.json")
     export_preprocess_config(model_dir / "preprocess_config.json")
     generate_fixtures(model, fixture_images, fixtures_dir / "model_fixtures.json", images_dir)
+    export_preprocessed_fixtures(fixture_images, fixtures_dir)
 
 
 if __name__ == "__main__":
