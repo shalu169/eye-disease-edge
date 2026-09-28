@@ -42,10 +42,15 @@ void main() {
     }
   });
 
-  test('computeHeatmap on a real feature map is not degenerate', () {
-    // Synthetic 7x7x4 feature map with real spatial variation, not a
-    // fixture-only check — guards against a heatmap that's technically
-    // fixture-correct but collapses to a flat map on real inputs.
+  test('computeHeatmap on a synthetic feature map normalizes to [0, 1]', () {
+    // Synthetic 7x7x4 feature map with known, hand-computed spatial
+    // variation — this isolates and pins down computeHeatmap's ReLU +
+    // min-max normalization math (max exactly 1.0, min exactly 0.0) against
+    // known inputs. The separate non-degeneracy check on a REAL backbone
+    // output (real image -> real preprocess -> real BackboneEngine.run ->
+    // real gradCamAlpha -> real computeHeatmap) lives in
+    // backbone_engine_test.dart, since that's where the real FeatureMap is
+    // already in hand from the end-to-end pipeline.
     final data = Float32List(7 * 7 * 4);
     var i = 0;
     for (var y = 0; y < 7; y++) {
