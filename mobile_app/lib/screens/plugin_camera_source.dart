@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:typed_data';
 import 'package:camera/camera.dart';
 import 'package:flutter/widgets.dart';
@@ -30,7 +31,19 @@ class PluginCameraSource implements CameraSource {
   @override
   Future<Uint8List> takePicture() async {
     final file = await controller.takePicture();
-    return file.readAsBytes();
+    try {
+      return await file.readAsBytes();
+    } finally {
+      // The camera plugin writes a real temp JPEG to the platform cache dir
+      // (e.g. Android's cache dir) for every capture, including
+      // retaken/discarded ones. Deleting it here (after the bytes are
+      // safely read into memory) is what makes "image bytes only exist in
+      // memory until an explicit Save" (see main.dart's _onCaptured) and
+      // "retake leaves no trace" actually true on a real device -- without
+      // this, every capture of a patient's retina would leave a stray JPEG
+      // sitting in app cache indefinitely.
+      await File(file.path).delete();
+    }
   }
 
   Future<void> dispose() async {
