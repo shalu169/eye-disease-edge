@@ -54,7 +54,16 @@ class _ResultScreenState extends State<ResultScreen> {
       body: Column(
         children: [
           if (_overlayPngBytes != null)
-            Image.memory(_overlayPngBytes!, key: const Key('gradcam_overlay_image')),
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.4,
+              ),
+              child: Image.memory(
+                _overlayPngBytes!,
+                key: const Key('gradcam_overlay_image'),
+                fit: BoxFit.contain,
+              ),
+            ),
           Expanded(
             child: ListView(
               children: kDiseaseLabels.map((label) {
