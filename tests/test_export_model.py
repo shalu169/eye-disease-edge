@@ -1,7 +1,19 @@
 import torch
 from export_model import load_checkpoint, LABEL_COLS
+from baseline import LABEL_COLS as BASELINE_LABEL_COLS, IMG_SIZE as BASELINE_IMG_SIZE
 
 CHECKPOINT = "results/checkpoints/run002_baseline_tuned_best_epoch15.pt"
+
+
+def test_label_cols_matches_baseline():
+    # export_model.py keeps its own copy of LABEL_COLS (it must be
+    # importable/usable without pulling in baseline.py's heavier training
+    # deps like pandas/sklearn at export time). If a future retrain changes
+    # baseline.py's label set/order and export_model.py's copy isn't updated
+    # to match, on-device predictions would be silently mislabeled (e.g.
+    # displayed under the wrong disease name) even though every other test
+    # stays green. This test is the guard against that drift.
+    assert LABEL_COLS == BASELINE_LABEL_COLS
 
 
 def test_load_checkpoint_returns_eval_model_with_right_output_size():
@@ -83,6 +95,18 @@ def test_preprocess_config_matches_baseline_val_tfm(tmp_path):
     assert data["image_size"] == 224
     assert data["mean"] == [0.485, 0.456, 0.406]
     assert data["std"] == [0.229, 0.224, 0.225]
+
+    # In addition to (not instead of) the hardcoded-literal checks above:
+    # confirm export_model.py's IMG_SIZE actually still matches baseline.py's
+    # real IMG_SIZE, so a future retrain that changes baseline.py's input
+    # resolution can't silently desync from what gets exported to the app
+    # while this test suite stays green. IMAGENET_MEAN/IMAGENET_STD have no
+    # baseline.py equivalent to import against -- they're inline literals in
+    # baseline.py's val_tfm/train_tfm (not module-level names), not
+    # module-level constants there -- so those remain checked only against
+    # the fixed literals above.
+    assert BASELINE_IMG_SIZE == 224
+    assert data["image_size"] == BASELINE_IMG_SIZE
 
 
 def test_fixtures_gradcam_alpha_matches_real_autograd(tmp_path):
