@@ -1,0 +1,53 @@
+{
+  "source_onnx": "edge/artifacts/run007c_eyeD512_fp32.onnx",
+  "source_onnx_md5": "4c71cc3930cb8bbcdf16d69f011c7ede",
+  "img": 512,
+  "manifest": "edge/artifacts/val_manifest_run009.csv",
+  "ref": "edge/artifacts/run007c_eyeD512_torch_cpu_val_probs.npy",
+  "label_cols": [
+    "D_eye",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "tensorflow": "2.18.0",
+  "onnx2tf": "1.26.3",
+  "python": "3.12.14",
+  "variants": {
+    "fp32": {
+      "file": "edge/artifacts/run007c_eyeD512_fp32.tflite",
+      "bytes": 6099836,
+      "n_images": 1270,
+      "input": {
+        "name": "input",
+        "shape": [
+          1,
+          512,
+          512,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "output": {
+        "name": "Identity",
+        "shape": [
+          1,
+          5
+        ],
+        "dtype": "float32"
+      },
+      "mac_val_auc": {
+        "D_eye": 0.8131,
+        "G": 0.909,
+        "C": 0.9364,
+        "A": 0.8493,
+        "H": 0.8245
+      },
+      "mac_mean_auc": 0.8665,
+      "max_abs_prob_diff_vs_torch": 3.0040740966796875e-05,
+      "mean_abs_prob_diff_vs_torch": 1.176905811917095e-06,
+      "md5": "ff69fbe3780cd309c56403bf66dd6413"
+    }
+  }
+}

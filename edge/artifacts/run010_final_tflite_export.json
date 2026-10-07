@@ -1,0 +1,41 @@
+{
+ "tag": "final",
+ "tensorflow": "2.18.0",
+ "onnx2tf": "1.26.3",
+ "files": {
+  "backbone": {
+   "source_onnx": "edge/artifacts/run010_final_backbone_fp32.onnx",
+   "path": "edge/artifacts/run010_final_backbone_fp32.tflite",
+   "md5": "b448d16361063b27e1fda50b4b6387c3",
+   "bytes": 3714780,
+   "input_shape": [
+    1,
+    512,
+    512,
+    3
+   ],
+   "output_shape": [
+    1,
+    16,
+    16,
+    576
+   ]
+  },
+  "full": {
+   "source_onnx": "edge/artifacts/run010_final_full_fp32.onnx",
+   "path": "edge/artifacts/run010_final_full_fp32.tflite",
+   "md5": "aedea11f938de6d1c6075184403c8c1a",
+   "bytes": 6099836,
+   "input_shape": [
+    1,
+    512,
+    512,
+    3
+   ],
+   "output_shape": [
+    1,
+    5
+   ]
+  }
+ }
+}

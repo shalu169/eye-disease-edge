@@ -1,0 +1,41 @@
+{
+ "tag": "dev007c",
+ "tensorflow": "2.18.0",
+ "onnx2tf": "1.26.3",
+ "files": {
+  "backbone": {
+   "source_onnx": "edge/artifacts/run010_dev007c_backbone_fp32.onnx",
+   "path": "edge/artifacts/run010_dev007c_backbone_fp32.tflite",
+   "md5": "f4c7b809cc021024b5c37c18c3c5a0ce",
+   "bytes": 3714780,
+   "input_shape": [
+    1,
+    512,
+    512,
+    3
+   ],
+   "output_shape": [
+    1,
+    16,
+    16,
+    576
+   ]
+  },
+  "full": {
+   "source_onnx": "edge/artifacts/run010_dev007c_full_fp32.onnx",
+   "path": "edge/artifacts/run010_dev007c_full_fp32.tflite",
+   "md5": "5ebc880f23bf1a288c2db4854fcbc668",
+   "bytes": 6099836,
+   "input_shape": [
+    1,
+    512,
+    512,
+    3
+   ],
+   "output_shape": [
+    1,
+    5
+   ]
+  }
+ }
+}

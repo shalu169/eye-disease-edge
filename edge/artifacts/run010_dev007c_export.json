@@ -1,0 +1,41 @@
+{
+ "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt",
+ "checkpoint_info": {
+  "source": "development checkpoint (run 008 final not available yet)",
+  "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt"
+ },
+ "tag": "dev007c",
+ "img": 512,
+ "torch": "2.14.0",
+ "opset": 17,
+ "files": {
+  "backbone": {
+   "path": "edge/artifacts/run010_dev007c_backbone_fp32.onnx",
+   "md5": "9c35888df524a54cda885924537bbd29"
+  },
+  "full": {
+   "path": "edge/artifacts/run010_dev007c_full_fp32.onnx",
+   "md5": "ea9bd052c846200d1645a4f96fe250ed"
+  },
+  "head": {
+   "path": "edge/artifacts/run010_dev007c_head.npz",
+   "md5": "5bc3765e6fd9c2f8f646cd47a830e2f6",
+   "shapes": {
+    "W1": [
+     1024,
+     576
+    ],
+    "b1": [
+     1024
+    ],
+    "W2": [
+     5,
+     1024
+    ],
+    "b2": [
+     5
+    ]
+   }
+  }
+ }
+}

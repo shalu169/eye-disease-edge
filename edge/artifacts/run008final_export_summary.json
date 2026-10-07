@@ -1,0 +1,37 @@
+{
+  "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+  "checkpoint_md5": "c94c9a7b1067e18b8aaeec64b61953d3",
+  "img": 512,
+  "onnx": "edge/artifacts/run008final_fp32.onnx",
+  "onnx_bytes": 6099230,
+  "onnx_md5": "b90fad0a60a162bcd258a63b01284194",
+  "opset": 17,
+  "references": {
+    "test": {
+      "manifest": "edge/artifacts/test_manifest_run008.csv",
+      "n": 1025,
+      "probs": "edge/artifacts/run008final_torch_cpu_test_probs.npy",
+      "label_cols": [
+        "D_eye",
+        "G",
+        "C",
+        "A",
+        "H"
+      ],
+      "torch_cpu_auc": {
+        "D_eye": 0.8093,
+        "G": 0.8916,
+        "C": 0.8973,
+        "A": 0.8616,
+        "H": 0.8126
+      },
+      "torch_cpu_mean_auc": 0.8545,
+      "D_patient": 0.7709
+    }
+  },
+  "torch": "2.14.0",
+  "timm": "1.0.30",
+  "python": "3.14.6",
+  "device": "cpu",
+  "preprocess": "PIL bilinear Resize((512,512)), ToTensor, ImageNet Normalize"
+}
