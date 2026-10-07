@@ -1,0 +1,26 @@
+{
+ "note": "Platt map fitted on FP32 validation probabilities, applied to each variant on the same images; in-sample for FP32, so only the relative degradation is meaningful",
+ "ece_after_fp32_platt": {
+  "fp32_t4": {
+   "D": 0.0252,
+   "G": 0.0247,
+   "C": 0.0138,
+   "A": 0.0093,
+   "H": 0.0117
+  },
+  "drq_t4": {
+   "D": 0.0288,
+   "G": 0.0146,
+   "C": 0.0149,
+   "A": 0.0154,
+   "H": 0.0061
+  },
+  "int8_t4": {
+   "D": 0.0798,
+   "G": 0.0447,
+   "C": 0.0509,
+   "A": 0.0184,
+   "H": 0.0087
+  }
+ }
+}

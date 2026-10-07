@@ -1,0 +1,7 @@
+[2026-10-03 12:59:40] final flag seen
+[2026-10-03 12:59:40] start
+results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt
+[2026-10-03 13:08:12] parity done
+[2026-10-03 13:22:41] sanity done
+[2026-10-03 15:26:48] ALL DONE
+EXIT 0

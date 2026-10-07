@@ -1,0 +1,14 @@
+19:31:43 old_224_fp32_gpu rc=0
+19:32:01 old_224_int8_gpu rc=0
+19:32:20 old_224_int8_gpu_f32 rc=0
+19:32:37 old_224_fp32_gpu_f32 rc=0
+19:33:00 old_512_fp32_gpu rc=0
+19:33:27 old_512_fp32_gpu_f32 rc=0
+19:33:43 new_224_fp32_gpu rc=0
+19:34:02 new_224_int8_gpu rc=0
+19:34:22 new_224_int8_gpu_f32 rc=0
+19:34:39 new_224_fp32_gpu_f32 rc=0
+19:35:00 new_512_fp32_gpu rc=0
+19:35:25 new_512_fp32_gpu_f32 rc=0
+19:35:37 new_224_int8_cpu_check rc=0
+ALL_DONE

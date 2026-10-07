@@ -1,0 +1,28 @@
+{
+  "config": "ov_int8_gpu",
+  "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4",
+  "val_auc": {
+    "D": 0.465,
+    "G": 0.5809,
+    "C": 0.8444,
+    "A": 0.6598,
+    "H": 0.5627
+  },
+  "mean_auc": 0.6226,
+  "max_abs_prob_diff_vs_torch": 0.9987245202064514,
+  "mean_abs_prob_diff_vs_torch": 0.2971995174884796,
+  "latency_ms": {
+    "mean": 3.239,
+    "p50": 3.216,
+    "p95": 3.314,
+    "p99": 3.333,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 4.444,
+  "model_load_s": 4.718,
+  "peak_rss_mb": 656.6,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

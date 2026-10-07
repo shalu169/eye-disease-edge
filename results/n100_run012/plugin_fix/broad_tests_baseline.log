@@ -1,0 +1,196 @@
+Running main() from src/plugins/intel_gpu/tests/unit/gtest_main_gpu.cpp
+WARNING: cl_cache_dir is not set. Test will take longer than expected
+Note: Google Test filter = convolution_int8_fw_gpu.quantized_convolution_u8s8f32_asymmetric_activations_per_channel_dynamic:fusings_gpu/conv_fp32_multi_eltwise_quantization.basic/1:fusings_gpu/pooling_f32_scale.fp16_scale_out/1:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24:quantize_gpu.quantize_levels_255_5d_ranges_vary_along_x
+[==========] Running 13 tests from 6 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from convolution_int8_fw_gpu
+[ RUN      ] convolution_int8_fw_gpu.quantized_convolution_u8s8f32_asymmetric_activations_per_channel_dynamic
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] convolution_int8_fw_gpu.quantized_convolution_u8s8f32_asymmetric_activations_per_channel_dynamic (5 ms)
+[----------] 1 test from convolution_int8_fw_gpu (5 ms total)
+
+[----------] 1 test from quantize_gpu
+[ RUN      ] quantize_gpu.quantize_levels_255_5d_ranges_vary_along_x
+src/plugins/intel_gpu/tests/unit/test_cases/quantize_gpu_test.cpp:684: Failure
+The difference between output_ptr[i] and ref[i] is 0.00078743696212768555, which exceeds 1e-5f, where
+output_ptr[i] evaluates to 0.70078742504119873,
+ref[i] evaluates to 0.69999998807907104, and
+1e-5f evaluates to 9.9999997473787516e-06.
+ i=2
+
+[  FAILED  ] quantize_gpu.quantize_levels_255_5d_ranges_vary_along_x (331 ms)
+[----------] 1 test from quantize_gpu (331 ms total)
+
+[----------] 1 test from fusings_gpu/conv_fp32_multi_eltwise_quantization
+[ RUN      ] fusings_gpu/conv_fp32_multi_eltwise_quantization.basic/1
+src/plugins/intel_gpu/tests/unit/fusions/fusion_test_common.hpp:89: Failure
+The difference between val_ref[i] and val_opt[i] is 14, which exceeds tolerance, where
+val_ref[i] evaluates to 679,
+val_opt[i] evaluates to 693, and
+tolerance evaluates to 10.
+tolerance = 10
+i = 89
+ref[i] = 679
+opt[i] = 693
+Google Test trace:
+src/plugins/intel_gpu/tests/unit/fusions/fusion_test_common.hpp:77: 
+not fused: 
+  weights undef
+  out_lo undef
+  out_hi undef
+  input wait_for_events__f16
+  in_lo undef
+  in_hi undef
+  eltwise_data1 undef
+  bias undef
+  conv_prim convolution_gpu_bfyx_f16__f16
+  quantize quantize_gpu_ref__i8
+  eltwise1 eltwise_blocked_opt__f16
+  eltwise2 eltwise_blocked_opt__f16
+  reorder_bfyx reorder_data_fast_b1__f32
+fused: 
+  weights undef
+  out_lo undef
+  out_hi undef
+  input wait_for_events__f16
+  in_lo undef
+  in_hi undef
+  eltwise_data1 undef
+  bias undef
+  quantize_in_shift undef
+  quantize_in_scale undef
+  quantize_output_shift undef
+  quantize_output_scale undef
+  conv_prim convolution_gpu_bfyx_f16__f16
+  quantize quantize_gpu_scale_shift_opt__i8
+  eltwise1 eltwise_blocked_opt__f16
+  reorder_bfyx reorder_data_fast_b1__f32
+
+
+kernel: convolution_gpu_bfyx_f16__f16
+[  FAILED  ] fusings_gpu/conv_fp32_multi_eltwise_quantization.basic/1, where GetParam() = 888-byte object <01-90 55-D1 00-00 00-00 B0-A8 76-87 6C-55 00-00 30-A9 76-87 6C-55 00-00 30-A9 76-87 6C-55 00-00 01-5F 63-6F 00-00 00-00 F0-54 77-87 6C-55 00-00 70-55 77-87 6C-55 00-00 70-55 77-87 6C-55 00-00 ... 2F-32 34-3A 71-75 61-6E 74-69 7A-65 5F-67 70-75 2E-71 75-61 6E-74 69-7A 65-5F 6C-65 76-65 6C-73 00-32 35-35 5F-35 64-5F 04-00 00-00 00-00 00-00 04-00 00-00 00-00 00-00 05-00 00-00 00-00 00-00> (855 ms)
+[----------] 1 test from fusings_gpu/conv_fp32_multi_eltwise_quantization (855 ms total)
+
+[----------] 1 test from fusings_gpu/pooling_f32_scale
+[ RUN      ] fusings_gpu/pooling_f32_scale.fp16_scale_out/1
+src/plugins/intel_gpu/tests/unit/fusions/fusion_test_common.hpp:89: Failure
+The difference between val_ref[i] and val_opt[i] is 1.52587890625e-05, which exceeds tolerance, where
+val_ref[i] evaluates to 0.0169677734375,
+val_opt[i] evaluates to 0.0169830322265625, and
+tolerance evaluates to 9.9999997473787516e-06.
+tolerance = 9.9999997473787516e-06
+i = 3
+ref[i] = 0.0169677734375
+opt[i] = 0.0169830322265625
+Google Test trace:
+src/plugins/intel_gpu/tests/unit/fusions/fusion_test_common.hpp:77: 
+not fused: 
+  scale_data undef
+  input wait_for_events__f32
+  pooling pooling_gpu_ref__f32
+  scale generic_eltwise_ref__f32
+  output_reorder reorder_data_fast_b1__f32
+fused: 
+  scale_data undef
+  input wait_for_events__f32
+  pooling pooling_gpu_ref__f32
+  output_reorder reorder_data_fast_b1__f32
+
+
+[  FAILED  ] fusings_gpu/pooling_f32_scale.fp16_scale_out/1, where GetParam() = 680-byte object <E0-AF DB-87 6C-55 00-00 09-00 00-00 00-00 00-00 E0-AF DB-87 6C-55 00-00 01-00 00-00 00-00 00-00 E8-AF DB-87 6C-55 00-00 01-00 00-00 00-00 00-00 F0-AF DB-87 6C-55 00-00 06-00 00-00 00-00 00-00 ... 02-00 00-00 00-00 00-00 02-00 00-00 00-00 00-00 03-00 00-00 00-00 00-00 01-00 00-00 6C-55 00-00 28-B2 DB-87 6C-55 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 06-00 00-00 00-00 00-00> (10 ms)
+[----------] 1 test from fusings_gpu/pooling_f32_scale (10 ms total)
+
+[----------] 2 tests from smoke/conv_dyn_test
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23, where GetParam() = 152-byte object <E0-0C EE-88 6C-55 00-00 F8-0C EE-88 6C-55 00-00 F8-0C EE-88 6C-55 00-00 C0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 60-BD E8-88 6C-55 00-00 68-BD E8-88 6C-55 00-00 ... B8-26 EB-88 6C-55 00-00 30-56 EB-88 6C-55 00-00 38-56 EB-88 6C-55 00-00 38-56 EB-88 6C-55 00-00 F0-6D EB-88 6C-55 00-00 F8-6D EB-88 6C-55 00-00 F8-6D EB-88 6C-55 00-00 20-00 00-00 00-00 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24, where GetParam() = 152-byte object <C0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 C0-E7 CB-88 6C-55 00-00 E8-E7 CB-88 6C-55 00-00 E8-E7 CB-88 6C-55 00-00 20-5C EB-88 6C-55 00-00 30-5C EB-88 6C-55 00-00 ... 90-30 EE-88 6C-55 00-00 E0-46 CA-88 6C-55 00-00 F0-46 CA-88 6C-55 00-00 F0-46 CA-88 6C-55 00-00 A0-5C DF-88 6C-55 00-00 B0-5C DF-88 6C-55 00-00 B0-5C DF-88 6C-55 00-00 40-00 00-00 00-00 00-00> (2 ms)
+[----------] 2 tests from smoke/conv_dyn_test (4 ms total)
+
+[----------] 7 tests from smoke/conv_dyn_3d_test
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0, where GetParam() = 152-byte object <10-B6 C0-88 6C-55 00-00 38-B6 C0-88 6C-55 00-00 38-B6 C0-88 6C-55 00-00 D0-74 E1-88 6C-55 00-00 F8-74 E1-88 6C-55 00-00 F8-74 E1-88 6C-55 00-00 A0-5C DF-88 6C-55 00-00 B8-5C DF-88 6C-55 00-00 ... F8-46 CA-88 6C-55 00-00 80-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 B0-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 01-00 00-00 00-00 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1, where GetParam() = 152-byte object <A0-92 E1-88 6C-55 00-00 C8-92 E1-88 6C-55 00-00 C8-92 E1-88 6C-55 00-00 90-8C E1-88 6C-55 00-00 B8-8C E1-88 6C-55 00-00 B8-8C E1-88 6C-55 00-00 B0-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 ... 58-2B ED-88 6C-55 00-00 60-44 EB-88 6C-55 00-00 78-44 EB-88 6C-55 00-00 78-44 EB-88 6C-55 00-00 60-BD E8-88 6C-55 00-00 78-BD E8-88 6C-55 00-00 78-BD E8-88 6C-55 00-00 01-00 00-00 01-00 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2, where GetParam() = 152-byte object <C0-0F EA-88 6C-55 00-00 E8-0F EA-88 6C-55 00-00 E8-0F EA-88 6C-55 00-00 60-1F ED-88 6C-55 00-00 88-1F ED-88 6C-55 00-00 88-1F ED-88 6C-55 00-00 90-1F ED-88 6C-55 00-00 A8-1F ED-88 6C-55 00-00 ... 48-4E EE-88 6C-55 00-00 E0-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 B0-26 EB-88 6C-55 00-00 C8-26 EB-88 6C-55 00-00 C8-26 EB-88 6C-55 00-00 01-00 00-00 00-00 00-00> (22 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3, where GetParam() = 152-byte object <70-25 ED-88 6C-55 00-00 98-25 ED-88 6C-55 00-00 98-25 ED-88 6C-55 00-00 C0-07 ED-88 6C-55 00-00 E8-07 ED-88 6C-55 00-00 E8-07 ED-88 6C-55 00-00 30-D2 EC-88 6C-55 00-00 48-D2 EC-88 6C-55 00-00 ... 78-44 EB-88 6C-55 00-00 40-2B ED-88 6C-55 00-00 58-2B ED-88 6C-55 00-00 58-2B ED-88 6C-55 00-00 A0-5C DF-88 6C-55 00-00 B8-5C DF-88 6C-55 00-00 B8-5C DF-88 6C-55 00-00 01-00 00-00 01-00 00-00> (20 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4, where GetParam() = 152-byte object <A0-30 EE-88 6C-55 00-00 C8-30 EE-88 6C-55 00-00 C8-30 EE-88 6C-55 00-00 30-C5 E5-88 6C-55 00-00 58-C5 E5-88 6C-55 00-00 58-C5 E5-88 6C-55 00-00 F0-FB EC-88 6C-55 00-00 08-FC EC-88 6C-55 00-00 ... B8-19 ED-88 6C-55 00-00 20-EA EC-88 6C-55 00-00 38-EA EC-88 6C-55 00-00 38-EA EC-88 6C-55 00-00 E0-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 01-00 00-00 00-00 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5, where GetParam() = 152-byte object <E0-59 CB-88 6C-55 00-00 08-5A CB-88 6C-55 00-00 08-5A CB-88 6C-55 00-00 50-B9 E5-88 6C-55 00-00 78-B9 E5-88 6C-55 00-00 78-B9 E5-88 6C-55 00-00 20-5C EB-88 6C-55 00-00 38-5C EB-88 6C-55 00-00 ... 48-D2 EC-88 6C-55 00-00 00-E4 EC-88 6C-55 00-00 18-E4 EC-88 6C-55 00-00 18-E4 EC-88 6C-55 00-00 80-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 01-00 00-00 00-00 00-00> (1 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6, where GetParam() = 152-byte object <F0-DF CA-88 6C-55 00-00 18-E0 CA-88 6C-55 00-00 18-E0 CA-88 6C-55 00-00 70-F4 EE-88 6C-55 00-00 A0-F4 EE-88 6C-55 00-00 A0-F4 EE-88 6C-55 00-00 60-44 EB-88 6C-55 00-00 78-44 EB-88 6C-55 00-00 ... 48-4E EE-88 6C-55 00-00 F0-FB EC-88 6C-55 00-00 08-FC EC-88 6C-55 00-00 08-FC EC-88 6C-55 00-00 B0-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 10-00 00-00 00-00 00-00> (2 ms)
+[----------] 7 tests from smoke/conv_dyn_3d_test (53 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 6 test suites ran. (1261 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 13 tests, listed below:
+[  FAILED  ] convolution_int8_fw_gpu.quantized_convolution_u8s8f32_asymmetric_activations_per_channel_dynamic
+[  FAILED  ] quantize_gpu.quantize_levels_255_5d_ranges_vary_along_x
+[  FAILED  ] fusings_gpu/conv_fp32_multi_eltwise_quantization.basic/1, where GetParam() = 888-byte object <01-90 55-D1 00-00 00-00 B0-A8 76-87 6C-55 00-00 30-A9 76-87 6C-55 00-00 30-A9 76-87 6C-55 00-00 01-5F 63-6F 00-00 00-00 F0-54 77-87 6C-55 00-00 70-55 77-87 6C-55 00-00 70-55 77-87 6C-55 00-00 ... 2F-32 34-3A 71-75 61-6E 74-69 7A-65 5F-67 70-75 2E-71 75-61 6E-74 69-7A 65-5F 6C-65 76-65 6C-73 00-32 35-35 5F-35 64-5F 04-00 00-00 00-00 00-00 04-00 00-00 00-00 00-00 05-00 00-00 00-00 00-00>
+[  FAILED  ] fusings_gpu/pooling_f32_scale.fp16_scale_out/1, where GetParam() = 680-byte object <E0-AF DB-87 6C-55 00-00 09-00 00-00 00-00 00-00 E0-AF DB-87 6C-55 00-00 01-00 00-00 00-00 00-00 E8-AF DB-87 6C-55 00-00 01-00 00-00 00-00 00-00 F0-AF DB-87 6C-55 00-00 06-00 00-00 00-00 00-00 ... 02-00 00-00 00-00 00-00 02-00 00-00 00-00 00-00 03-00 00-00 00-00 00-00 01-00 00-00 6C-55 00-00 28-B2 DB-87 6C-55 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 06-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23, where GetParam() = 152-byte object <E0-0C EE-88 6C-55 00-00 F8-0C EE-88 6C-55 00-00 F8-0C EE-88 6C-55 00-00 C0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 60-BD E8-88 6C-55 00-00 68-BD E8-88 6C-55 00-00 ... B8-26 EB-88 6C-55 00-00 30-56 EB-88 6C-55 00-00 38-56 EB-88 6C-55 00-00 38-56 EB-88 6C-55 00-00 F0-6D EB-88 6C-55 00-00 F8-6D EB-88 6C-55 00-00 F8-6D EB-88 6C-55 00-00 20-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24, where GetParam() = 152-byte object <C0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 E0-8B EB-88 6C-55 00-00 C0-E7 CB-88 6C-55 00-00 E8-E7 CB-88 6C-55 00-00 E8-E7 CB-88 6C-55 00-00 20-5C EB-88 6C-55 00-00 30-5C EB-88 6C-55 00-00 ... 90-30 EE-88 6C-55 00-00 E0-46 CA-88 6C-55 00-00 F0-46 CA-88 6C-55 00-00 F0-46 CA-88 6C-55 00-00 A0-5C DF-88 6C-55 00-00 B0-5C DF-88 6C-55 00-00 B0-5C DF-88 6C-55 00-00 40-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0, where GetParam() = 152-byte object <10-B6 C0-88 6C-55 00-00 38-B6 C0-88 6C-55 00-00 38-B6 C0-88 6C-55 00-00 D0-74 E1-88 6C-55 00-00 F8-74 E1-88 6C-55 00-00 F8-74 E1-88 6C-55 00-00 A0-5C DF-88 6C-55 00-00 B8-5C DF-88 6C-55 00-00 ... F8-46 CA-88 6C-55 00-00 80-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 B0-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 01-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1, where GetParam() = 152-byte object <A0-92 E1-88 6C-55 00-00 C8-92 E1-88 6C-55 00-00 C8-92 E1-88 6C-55 00-00 90-8C E1-88 6C-55 00-00 B8-8C E1-88 6C-55 00-00 B8-8C E1-88 6C-55 00-00 B0-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 ... 58-2B ED-88 6C-55 00-00 60-44 EB-88 6C-55 00-00 78-44 EB-88 6C-55 00-00 78-44 EB-88 6C-55 00-00 60-BD E8-88 6C-55 00-00 78-BD E8-88 6C-55 00-00 78-BD E8-88 6C-55 00-00 01-00 00-00 01-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2, where GetParam() = 152-byte object <C0-0F EA-88 6C-55 00-00 E8-0F EA-88 6C-55 00-00 E8-0F EA-88 6C-55 00-00 60-1F ED-88 6C-55 00-00 88-1F ED-88 6C-55 00-00 88-1F ED-88 6C-55 00-00 90-1F ED-88 6C-55 00-00 A8-1F ED-88 6C-55 00-00 ... 48-4E EE-88 6C-55 00-00 E0-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 B0-26 EB-88 6C-55 00-00 C8-26 EB-88 6C-55 00-00 C8-26 EB-88 6C-55 00-00 01-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3, where GetParam() = 152-byte object <70-25 ED-88 6C-55 00-00 98-25 ED-88 6C-55 00-00 98-25 ED-88 6C-55 00-00 C0-07 ED-88 6C-55 00-00 E8-07 ED-88 6C-55 00-00 E8-07 ED-88 6C-55 00-00 30-D2 EC-88 6C-55 00-00 48-D2 EC-88 6C-55 00-00 ... 78-44 EB-88 6C-55 00-00 40-2B ED-88 6C-55 00-00 58-2B ED-88 6C-55 00-00 58-2B ED-88 6C-55 00-00 A0-5C DF-88 6C-55 00-00 B8-5C DF-88 6C-55 00-00 B8-5C DF-88 6C-55 00-00 01-00 00-00 01-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4, where GetParam() = 152-byte object <A0-30 EE-88 6C-55 00-00 C8-30 EE-88 6C-55 00-00 C8-30 EE-88 6C-55 00-00 30-C5 E5-88 6C-55 00-00 58-C5 E5-88 6C-55 00-00 58-C5 E5-88 6C-55 00-00 F0-FB EC-88 6C-55 00-00 08-FC EC-88 6C-55 00-00 ... B8-19 ED-88 6C-55 00-00 20-EA EC-88 6C-55 00-00 38-EA EC-88 6C-55 00-00 38-EA EC-88 6C-55 00-00 E0-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 F8-46 CA-88 6C-55 00-00 01-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5, where GetParam() = 152-byte object <E0-59 CB-88 6C-55 00-00 08-5A CB-88 6C-55 00-00 08-5A CB-88 6C-55 00-00 50-B9 E5-88 6C-55 00-00 78-B9 E5-88 6C-55 00-00 78-B9 E5-88 6C-55 00-00 20-5C EB-88 6C-55 00-00 38-5C EB-88 6C-55 00-00 ... 48-D2 EC-88 6C-55 00-00 00-E4 EC-88 6C-55 00-00 18-E4 EC-88 6C-55 00-00 18-E4 EC-88 6C-55 00-00 80-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 98-30 EE-88 6C-55 00-00 01-00 00-00 00-00 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6, where GetParam() = 152-byte object <F0-DF CA-88 6C-55 00-00 18-E0 CA-88 6C-55 00-00 18-E0 CA-88 6C-55 00-00 70-F4 EE-88 6C-55 00-00 A0-F4 EE-88 6C-55 00-00 A0-F4 EE-88 6C-55 00-00 60-44 EB-88 6C-55 00-00 78-44 EB-88 6C-55 00-00 ... 48-4E EE-88 6C-55 00-00 F0-FB EC-88 6C-55 00-00 08-FC EC-88 6C-55 00-00 08-FC EC-88 6C-55 00-00 B0-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 C8-0A CC-88 6C-55 00-00 10-00 00-00 00-00 00-00>
+
+13 FAILED TESTS
+rc=1
+BROAD_DONE

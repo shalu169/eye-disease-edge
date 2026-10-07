@@ -1,0 +1,21 @@
+suite start 2026-10-03T01:51:02+02:00 | temp=42.9'C throttled=0x50005 frequency(48)=600000000
+undervoltage dmesg lines at start: 1560
+=== tfl_fp32_t4 start 2026-10-03T01:51:02+02:00 | temp=42.9'C throttled=0x50005 frequency(48)=600000000
+               total        used        free      shared  buff/cache   available
+Mem:             870          93          62           4         714         708
+Swap:             99          99           0
+=== tfl_fp32_t4 exit 0 2026-10-03T01:56:40+02:00 | temp=52.6'C throttled=0x50005 frequency(48)=600000000
+               total        used        free      shared  buff/cache   available
+Mem:             870          92          81           4         696         709
+Swap:             99          99           0
+=== tfl_fp32_t1 start 2026-10-03T01:57:40+02:00 | temp=45.6'C throttled=0x50000 frequency(48)=600002000
+               total        used        free      shared  buff/cache   available
+Mem:             870          94          79           4         696         707
+Swap:             99          99           0
+=== tfl_fp32_t1 exit 0 2026-10-03T02:06:13+02:00 | temp=47.2'C throttled=0x50005 frequency(48)=600000000
+               total        used        free      shared  buff/cache   available
+Mem:             870          92          81           4         696         710
+Swap:             99          99           0
+undervoltage dmesg lines at end: 1560
+suite end 2026-10-03T02:07:13+02:00 | temp=44.0'C throttled=0x50000 frequency(48)=1200000000
+SUITE_DONE

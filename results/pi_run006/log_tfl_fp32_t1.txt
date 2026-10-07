@@ -1,0 +1,68 @@
+{
+  "config": "tfl_fp32_t1",
+  "runtime": "tflite_runtime 2.13.0",
+  "model_file": "run002_mnv3s_fp32.tflite",
+  "num_threads": 1,
+  "val_auc": {
+    "D": 0.6947,
+    "G": 0.8722,
+    "C": 0.9376,
+    "A": 0.8575,
+    "H": 0.7452
+  },
+  "mean_auc": 0.8214,
+  "max_abs_prob_diff_vs_torch": 1.7344951629638672e-05,
+  "mean_abs_prob_diff_vs_torch": 7.436044597852742e-07,
+  "latency_ms": {
+    "mean": 172.579,
+    "p50": 174.815,
+    "p95": 175.85,
+    "p99": 181.885,
+    "warmup": 20,
+    "timed": 200,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 90.226,
+  "accuracy_pass_s": 330.6,
+  "model_load_s": 0.053,
+  "peak_rss_mb": 43.6,
+  "mem_available_mb_before": 696.1,
+  "vcgencmd_before": {
+    "temp": "temp=51.5'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "vcgencmd_after": {
+    "temp": "temp=53.2'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "host": "raspberrypi",
+  "machine": "armv7l",
+  "python": "3.9.2",
+  "numpy": "1.26.4",
+  "pillow": "11.2.1"
+}
+	Command being timed: ".venv/bin/python bench_pi.py tfl_fp32_t1"
+	User time (seconds): 356.87
+	System time (seconds): 14.15
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:10.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 44612
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1604904
+	Voluntary context switches: 92
+	Involuntary context switches: 3553
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

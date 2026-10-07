@@ -1,0 +1,40 @@
+{
+  "config": "ov_int8_cpu",
+  "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4",
+  "onnx": "artifacts/run002_mnv3s_fp32.onnx",
+  "img": 224,
+  "manifest": "artifacts/val_manifest.csv",
+  "n_images": 1270,
+  "label_cols": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "val_auc": {
+    "D": 0.6673,
+    "G": 0.8422,
+    "C": 0.9137,
+    "A": 0.8583,
+    "H": 0.7436
+  },
+  "mean_auc": 0.805,
+  "max_abs_prob_diff_vs_torch": 0.9237104058265686,
+  "mean_abs_prob_diff_vs_torch": 0.12064209580421448,
+  "latency_ms": {
+    "mean": 1.941,
+    "p50": 1.941,
+    "p95": 1.957,
+    "p99": 1.969,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 4.923,
+  "preprocess_ms_p50": 4.935,
+  "model_load_s": 0.484,
+  "peak_rss_mb": 242.6,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

@@ -1,0 +1,11 @@
+[2026-10-03 13:41:41] start tag=final runtimes=tflite warmup=10 iters=100 threads=4 host=raspberrypi
+[2026-10-03 13:41:41] before tflite_plain throttled=throttled=0x50005 clock=frequency(48)=600000000 temp=temp=44.0'C
+[2026-10-03 13:42:45] end tflite_plain rc=0
+[2026-10-03 13:42:45] after tflite_plain throttled=throttled=0x50005 clock=frequency(48)=600000000 temp=temp=51.5'C
+[2026-10-03 13:43:15] before tflite_head throttled=throttled=0x50000 clock=frequency(48)=600000000 temp=temp=46.2'C
+[2026-10-03 13:44:26] end tflite_head rc=0
+[2026-10-03 13:44:26] after tflite_head throttled=throttled=0x50005 clock=frequency(48)=600000000 temp=temp=54.8'C
+[2026-10-03 13:44:56] before tflite_gradcam1 throttled=throttled=0x50000 clock=frequency(48)=600000000 temp=temp=47.8'C
+[2026-10-03 13:46:11] end tflite_gradcam1 rc=139
+[2026-10-03 13:46:11] after tflite_gradcam1 throttled=throttled=0x50005 clock=frequency(48)=600000000 temp=temp=54.8'C
+[2026-10-03 13:46:41] before tflite_gradcam5 throttled=throttled=0x50000 clock=frequency(48)=600000000 temp=temp=48.9'C

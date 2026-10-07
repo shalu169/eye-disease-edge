@@ -1,0 +1,950 @@
+Running main() from src/plugins/intel_gpu/tests/unit/gtest_main_gpu.cpp
+WARNING: cl_cache_dir is not set. Test will take longer than expected
+Note: Google Test filter = dynamic_deconv_quantize_kernel.no_ocl_ref_on_onednn_5d:dynamic_quantization_gpu_tests.dynamic_quantization_f4e2m1:dynamic_quantization_gpu_tests.dynamic_quantization_f8e4m3:dynamic_quantization_gpu_tests.dynamic_quantization_f8e5m2:dynamic_quantization_gpu_tests.dynamic_quantization_mxf4e2m1:dynamic_quantization_gpu_tests.dynamic_quantization_mxf8e4m3:dynamic_quantization_gpu_tests.dynamic_quantization_mxf8e5m2:dynamic_quantization_gpu_tests.simple_quantizing_asym_act:dynamic_quantization_gpu_tests.simple_quantizing_invalid:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_interleaved:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_planar:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_planar_i8_zp:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_interleaved:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_planar:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_planar_i8_zp:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_interleaved:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_planar:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_planar_i8_zp:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_inner_most_dim_zero_values_asym:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_interleaved:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_planar:dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_planar_i8_zp:dynamic_quantization_gpu_tests.simple_quantizing_large_size:dynamic_quantization_gpu_tests.simple_quantizing_large_size_dynamic:dynamic_quantization_gpu_tests.simple_quantizing_ref_only:dynamic_quantization_gpu_tests.simple_quantizing_ref_only_dynamic:dynamic_quantization_gpu_tests.simple_quantizing_single_batch:dynamic_quantization_gpu_tests.simple_quantizing_single_batch_grouped:dynamic_quantization_gpu_tests.simple_quantizing_small_size:dynamic_quantization_gpu_tests.simple_quantizing_small_size_grouped:dynamic_quantization_gpu_tests.simple_quantizing_small_size_gs128:dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128:dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128_cache:dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128_small_values:dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs32:dynamic_quantization_gpu_tests.simple_quantizing_unaligned:dynamic_quantization_gpu_tests.simple_quantizing_unaligned_dynamic:dynamic_quantization_gpu_tests.static_quantizing_large_size_non_uniform_workgroup:fusings_gpu/eltwise_i8_quantize_abs.basic/0:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/0:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/1:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/10:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/11:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/12:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/13:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/14:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/15:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/16:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/17:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/2:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/3:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/4:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/5:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/6:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/7:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/8:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/9:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/0:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/1:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/10:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/11:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/12:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/13:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/14:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/15:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/16:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/17:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/2:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/3:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/4:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/5:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/6:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/7:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/8:fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/9:fusings_gpu/scatter_elements_update_quantize.basic/0:fusings_gpu/scatter_elements_update_quantize.basic/1:fusings_gpu/scatter_elements_update_quantize.basic/2:fusings_gpu/scatter_elements_update_quantize.basic/3:fusings_gpu/scatter_elements_update_quantize.basic/4:fusings_gpu/scatter_elements_update_quantize.basic/5:fusings_gpu/scatter_elements_update_quantize.basic/6:fusings_gpu/scatter_elements_update_quantize.basic/7:fusings_gpu/scatter_elements_update_quantize.basic/8:fusings_gpu/scatter_elements_update_quantize.basic/9:fusings_gpu/scatter_nd_update_quantize.basic/0:fusings_gpu/scatter_nd_update_quantize.basic/1:fusings_gpu/scatter_nd_update_quantize.basic/10:fusings_gpu/scatter_nd_update_quantize.basic/11:fusings_gpu/scatter_nd_update_quantize.basic/12:fusings_gpu/scatter_nd_update_quantize.basic/13:fusings_gpu/scatter_nd_update_quantize.basic/14:fusings_gpu/scatter_nd_update_quantize.basic/15:fusings_gpu/scatter_nd_update_quantize.basic/16:fusings_gpu/scatter_nd_update_quantize.basic/17:fusings_gpu/scatter_nd_update_quantize.basic/18:fusings_gpu/scatter_nd_update_quantize.basic/19:fusings_gpu/scatter_nd_update_quantize.basic/2:fusings_gpu/scatter_nd_update_quantize.basic/20:fusings_gpu/scatter_nd_update_quantize.basic/21:fusings_gpu/scatter_nd_update_quantize.basic/22:fusings_gpu/scatter_nd_update_quantize.basic/23:fusings_gpu/scatter_nd_update_quantize.basic/24:fusings_gpu/scatter_nd_update_quantize.basic/25:fusings_gpu/scatter_nd_update_quantize.basic/26:fusings_gpu/scatter_nd_update_quantize.basic/27:fusings_gpu/scatter_nd_update_quantize.basic/28:fusings_gpu/scatter_nd_update_quantize.basic/29:fusings_gpu/scatter_nd_update_quantize.basic/3:fusings_gpu/scatter_nd_update_quantize.basic/30:fusings_gpu/scatter_nd_update_quantize.basic/31:fusings_gpu/scatter_nd_update_quantize.basic/32:fusings_gpu/scatter_nd_update_quantize.basic/33:fusings_gpu/scatter_nd_update_quantize.basic/34:fusings_gpu/scatter_nd_update_quantize.basic/35:fusings_gpu/scatter_nd_update_quantize.basic/36:fusings_gpu/scatter_nd_update_quantize.basic/37:fusings_gpu/scatter_nd_update_quantize.basic/38:fusings_gpu/scatter_nd_update_quantize.basic/39:fusings_gpu/scatter_nd_update_quantize.basic/4:fusings_gpu/scatter_nd_update_quantize.basic/40:fusings_gpu/scatter_nd_update_quantize.basic/41:fusings_gpu/scatter_nd_update_quantize.basic/42:fusings_gpu/scatter_nd_update_quantize.basic/43:fusings_gpu/scatter_nd_update_quantize.basic/44:fusings_gpu/scatter_nd_update_quantize.basic/45:fusings_gpu/scatter_nd_update_quantize.basic/46:fusings_gpu/scatter_nd_update_quantize.basic/47:fusings_gpu/scatter_nd_update_quantize.basic/48:fusings_gpu/scatter_nd_update_quantize.basic/49:fusings_gpu/scatter_nd_update_quantize.basic/5:fusings_gpu/scatter_nd_update_quantize.basic/50:fusings_gpu/scatter_nd_update_quantize.basic/51:fusings_gpu/scatter_nd_update_quantize.basic/52:fusings_gpu/scatter_nd_update_quantize.basic/53:fusings_gpu/scatter_nd_update_quantize.basic/54:fusings_gpu/scatter_nd_update_quantize.basic/55:fusings_gpu/scatter_nd_update_quantize.basic/56:fusings_gpu/scatter_nd_update_quantize.basic/57:fusings_gpu/scatter_nd_update_quantize.basic/58:fusings_gpu/scatter_nd_update_quantize.basic/59:fusings_gpu/scatter_nd_update_quantize.basic/6:fusings_gpu/scatter_nd_update_quantize.basic/60:fusings_gpu/scatter_nd_update_quantize.basic/61:fusings_gpu/scatter_nd_update_quantize.basic/62:fusings_gpu/scatter_nd_update_quantize.basic/63:fusings_gpu/scatter_nd_update_quantize.basic/64:fusings_gpu/scatter_nd_update_quantize.basic/65:fusings_gpu/scatter_nd_update_quantize.basic/66:fusings_gpu/scatter_nd_update_quantize.basic/67:fusings_gpu/scatter_nd_update_quantize.basic/68:fusings_gpu/scatter_nd_update_quantize.basic/69:fusings_gpu/scatter_nd_update_quantize.basic/7:fusings_gpu/scatter_nd_update_quantize.basic/70:fusings_gpu/scatter_nd_update_quantize.basic/71:fusings_gpu/scatter_nd_update_quantize.basic/72:fusings_gpu/scatter_nd_update_quantize.basic/73:fusings_gpu/scatter_nd_update_quantize.basic/74:fusings_gpu/scatter_nd_update_quantize.basic/75:fusings_gpu/scatter_nd_update_quantize.basic/76:fusings_gpu/scatter_nd_update_quantize.basic/77:fusings_gpu/scatter_nd_update_quantize.basic/8:fusings_gpu/scatter_nd_update_quantize.basic/9:fusings_gpu/scatter_nd_update_quantize_reversed_output_range.pre_shift/0:fusings_gpu/scatter_update_quantize.basic/0:fusings_gpu/scatter_update_quantize.basic/1:fusings_gpu/scatter_update_quantize.basic/10:fusings_gpu/scatter_update_quantize.basic/11:fusings_gpu/scatter_update_quantize.basic/12:fusings_gpu/scatter_update_quantize.basic/13:fusings_gpu/scatter_update_quantize.basic/14:fusings_gpu/scatter_update_quantize.basic/15:fusings_gpu/scatter_update_quantize.basic/16:fusings_gpu/scatter_update_quantize.basic/17:fusings_gpu/scatter_update_quantize.basic/18:fusings_gpu/scatter_update_quantize.basic/19:fusings_gpu/scatter_update_quantize.basic/2:fusings_gpu/scatter_update_quantize.basic/3:fusings_gpu/scatter_update_quantize.basic/4:fusings_gpu/scatter_update_quantize.basic/5:fusings_gpu/scatter_update_quantize.basic/6:fusings_gpu/scatter_update_quantize.basic/7:fusings_gpu/scatter_update_quantize.basic/8:fusings_gpu/scatter_update_quantize.basic/9:fusings_gpu/softmax_quantize.basic/0:fusings_gpu/softmax_quantize.basic/1:fusings_gpu/softmax_quantize.basic/2:fusings_gpu/softmax_quantize.basic/3:fusings_gpu/softmax_quantize.basic/4:fusings_gpu/softmax_quantize.basic/5:fusings_gpu/softmax_quantize.basic/6:fusings_gpu/softmax_quantize.basic/7:fusings_gpu/softmax_quantize.basic/8:fusings_gpu/softmax_quantize_fusing_through.chain/0:fusings_gpu/softmax_quantize_fusing_through.chain/1:fusings_gpu/softmax_quantize_fusing_through.chain/2:fusings_gpu/softmax_quantize_fusing_through.reorder/0:fusings_gpu/softmax_quantize_fusing_through.reorder/1:fusings_gpu/softmax_quantize_fusing_through.reorder/2:fusings_gpu/softmax_quantize_fusing_through.reshape/0:fusings_gpu/softmax_quantize_fusing_through.reshape/1:fusings_gpu/softmax_quantize_fusing_through.reshape/2:fusings_gpu/space_to_batch_quantize_i8.basic/0:fusings_gpu/space_to_batch_quantize_i8.basic/1:fusings_gpu/space_to_batch_quantize_i8.basic/2:fusings_gpu/space_to_batch_quantize_i8.basic/3:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/0:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/1:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/2:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/3:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/4:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/5:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/6:fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/7:fusings_gpu/space_to_depth_quantize_i8.basic/0:fusings_gpu/space_to_depth_quantize_i8.basic/1:fusings_gpu/space_to_depth_quantize_i8.basic/2:fusings_gpu/space_to_depth_quantize_i8.basic/3:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/0:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/1:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/2:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/3:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/4:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/5:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/6:fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/7:quantize_smoke/quantize_random_test.random/0:quantize_smoke/quantize_random_test.random/1:quantize_smoke/quantize_random_test.random/10:quantize_smoke/quantize_random_test.random/11:quantize_smoke/quantize_random_test.random/12:quantize_smoke/quantize_random_test.random/13:quantize_smoke/quantize_random_test.random/14:quantize_smoke/quantize_random_test.random/15:quantize_smoke/quantize_random_test.random/16:quantize_smoke/quantize_random_test.random/17:quantize_smoke/quantize_random_test.random/18:quantize_smoke/quantize_random_test.random/19:quantize_smoke/quantize_random_test.random/2:quantize_smoke/quantize_random_test.random/20:quantize_smoke/quantize_random_test.random/21:quantize_smoke/quantize_random_test.random/22:quantize_smoke/quantize_random_test.random/23:quantize_smoke/quantize_random_test.random/24:quantize_smoke/quantize_random_test.random/25:quantize_smoke/quantize_random_test.random/26:quantize_smoke/quantize_random_test.random/27:quantize_smoke/quantize_random_test.random/28:quantize_smoke/quantize_random_test.random/29:quantize_smoke/quantize_random_test.random/3:quantize_smoke/quantize_random_test.random/30:quantize_smoke/quantize_random_test.random/31:quantize_smoke/quantize_random_test.random/32:quantize_smoke/quantize_random_test.random/33:quantize_smoke/quantize_random_test.random/34:quantize_smoke/quantize_random_test.random/35:quantize_smoke/quantize_random_test.random/36:quantize_smoke/quantize_random_test.random/37:quantize_smoke/quantize_random_test.random/38:quantize_smoke/quantize_random_test.random/39:quantize_smoke/quantize_random_test.random/4:quantize_smoke/quantize_random_test.random/40:quantize_smoke/quantize_random_test.random/41:quantize_smoke/quantize_random_test.random/42:quantize_smoke/quantize_random_test.random/43:quantize_smoke/quantize_random_test.random/44:quantize_smoke/quantize_random_test.random/45:quantize_smoke/quantize_random_test.random/46:quantize_smoke/quantize_random_test.random/47:quantize_smoke/quantize_random_test.random/48:quantize_smoke/quantize_random_test.random/5:quantize_smoke/quantize_random_test.random/6:quantize_smoke/quantize_random_test.random/7:quantize_smoke/quantize_random_test.random/8:quantize_smoke/quantize_random_test.random/9:quantize_smoke/quantize_random_test.random_cached/0:quantize_smoke/quantize_random_test.random_cached/1:quantize_smoke/quantize_random_test.random_cached/10:quantize_smoke/quantize_random_test.random_cached/11:quantize_smoke/quantize_random_test.random_cached/12:quantize_smoke/quantize_random_test.random_cached/13:quantize_smoke/quantize_random_test.random_cached/14:quantize_smoke/quantize_random_test.random_cached/15:quantize_smoke/quantize_random_test.random_cached/16:quantize_smoke/quantize_random_test.random_cached/17:quantize_smoke/quantize_random_test.random_cached/18:quantize_smoke/quantize_random_test.random_cached/19:quantize_smoke/quantize_random_test.random_cached/2:quantize_smoke/quantize_random_test.random_cached/20:quantize_smoke/quantize_random_test.random_cached/21:quantize_smoke/quantize_random_test.random_cached/22:quantize_smoke/quantize_random_test.random_cached/23:quantize_smoke/quantize_random_test.random_cached/24:quantize_smoke/quantize_random_test.random_cached/25:quantize_smoke/quantize_random_test.random_cached/26:quantize_smoke/quantize_random_test.random_cached/27:quantize_smoke/quantize_random_test.random_cached/28:quantize_smoke/quantize_random_test.random_cached/29:quantize_smoke/quantize_random_test.random_cached/3:quantize_smoke/quantize_random_test.random_cached/30:quantize_smoke/quantize_random_test.random_cached/31:quantize_smoke/quantize_random_test.random_cached/32:quantize_smoke/quantize_random_test.random_cached/33:quantize_smoke/quantize_random_test.random_cached/34:quantize_smoke/quantize_random_test.random_cached/35:quantize_smoke/quantize_random_test.random_cached/36:quantize_smoke/quantize_random_test.random_cached/37:quantize_smoke/quantize_random_test.random_cached/38:quantize_smoke/quantize_random_test.random_cached/39:quantize_smoke/quantize_random_test.random_cached/4:quantize_smoke/quantize_random_test.random_cached/40:quantize_smoke/quantize_random_test.random_cached/41:quantize_smoke/quantize_random_test.random_cached/42:quantize_smoke/quantize_random_test.random_cached/43:quantize_smoke/quantize_random_test.random_cached/44:quantize_smoke/quantize_random_test.random_cached/45:quantize_smoke/quantize_random_test.random_cached/46:quantize_smoke/quantize_random_test.random_cached/47:quantize_smoke/quantize_random_test.random_cached/48:quantize_smoke/quantize_random_test.random_cached/5:quantize_smoke/quantize_random_test.random_cached/6:quantize_smoke/quantize_random_test.random_cached/7:quantize_smoke/quantize_random_test.random_cached/8:quantize_smoke/quantize_random_test.random_cached/9:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5:smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/0:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/1:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/10:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/11:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/12:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/13:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/14:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/15:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/16:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/17:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/18:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/19:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/2:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/20:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/21:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/22:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/3:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/4:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/5:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/6:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/7:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/8:smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/9:smoke/quantize_test.shape_infer/0:smoke/quantize_test.shape_infer/1:smoke/quantize_test.shape_infer/2:smoke/quantize_test.shape_infer/3
+[==========] Running 364 tests from 18 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from dynamic_deconv_quantize_kernel
+[ RUN      ] dynamic_deconv_quantize_kernel.no_ocl_ref_on_onednn_5d
+src/plugins/intel_gpu/tests/unit/dynamic_execution/deconv_quantize_kernel_test.cpp:45: Skipped
+oneDNN not supported on this device; skipping ocl:ref regression test
+
+[  SKIPPED ] dynamic_deconv_quantize_kernel.no_ocl_ref_on_onednn_5d (0 ms)
+[----------] 1 test from dynamic_deconv_quantize_kernel (0 ms total)
+
+[----------] 41 tests from dynamic_quantization_gpu_tests
+[ RUN      ] dynamic_quantization_gpu_tests.static_quantizing_large_size_non_uniform_workgroup
+[       OK ] dynamic_quantization_gpu_tests.static_quantizing_large_size_non_uniform_workgroup (1167 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_large_size
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_large_size (1082 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_large_size_dynamic
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_large_size_dynamic (1075 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size (830 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_single_batch
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_single_batch (15 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs32
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs32 (778 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128 (901 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128_cache
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128_cache (918 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128_small_values
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_precompute_gs128_small_values (18 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_asym_act
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_asym_act (850 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_grouped
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_grouped (766 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_gs128
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_small_size_gs128 (879 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_single_batch_grouped
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_single_batch_grouped (757 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_ref_only
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_ref_only (383 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_ref_only_dynamic
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_ref_only_dynamic (385 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_invalid
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_invalid (370 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_unaligned
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_unaligned (758 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_unaligned_dynamic
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_unaligned_dynamic (766 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache (838 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched (800 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered (822 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered (790 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_planar
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_planar (848 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_planar
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_planar (820 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_planar
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_planar (842 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_planar
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_planar (805 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_interleaved
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_interleaved (851 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_interleaved
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_interleaved (814 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_interleaved
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_interleaved (840 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_interleaved
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_interleaved (807 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_planar_i8_zp
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_asym_planar_i8_zp (803 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_planar_i8_zp
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_asym_planar_i8_zp (837 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_planar_i8_zp
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_reordered_asym_planar_i8_zp (857 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_planar_i8_zp
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_batched_reordered_asym_planar_i8_zp (823 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_inner_most_dim_zero_values_asym
+[       OK ] dynamic_quantization_gpu_tests.simple_quantizing_kv_cache_inner_most_dim_zero_values_asym (887 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.dynamic_quantization_mxf8e4m3
+[       OK ] dynamic_quantization_gpu_tests.dynamic_quantization_mxf8e4m3 (968 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.dynamic_quantization_mxf8e5m2
+[       OK ] dynamic_quantization_gpu_tests.dynamic_quantization_mxf8e5m2 (992 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.dynamic_quantization_f8e4m3
+[       OK ] dynamic_quantization_gpu_tests.dynamic_quantization_f8e4m3 (1010 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.dynamic_quantization_f8e5m2
+[       OK ] dynamic_quantization_gpu_tests.dynamic_quantization_f8e5m2 (1056 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.dynamic_quantization_mxf4e2m1
+[       OK ] dynamic_quantization_gpu_tests.dynamic_quantization_mxf4e2m1 (1118 ms)
+[ RUN      ] dynamic_quantization_gpu_tests.dynamic_quantization_f4e2m1
+[       OK ] dynamic_quantization_gpu_tests.dynamic_quantization_f4e2m1 (1146 ms)
+[----------] 41 tests from dynamic_quantization_gpu_tests (33094 ms total)
+
+[----------] 1 test from fusings_gpu/eltwise_i8_quantize_abs
+[ RUN      ] fusings_gpu/eltwise_i8_quantize_abs.basic/0
+src/plugins/intel_gpu/tests/unit/fusions/eltwise_fusion_test.cpp:804: Skipped
+
+
+[  SKIPPED ] fusings_gpu/eltwise_i8_quantize_abs.basic/0 (0 ms)
+[----------] 1 test from fusings_gpu/eltwise_i8_quantize_abs (0 ms total)
+
+[----------] 36 tests from fusings_gpu/resample_bicubic_pillow_axes_quantize
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/0
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/0 (790 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/1
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/1 (776 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/2
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/2 (735 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/3
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/3 (728 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/4
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/4 (715 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/5
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/5 (709 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/6
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/6 (793 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/7
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/7 (780 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/8
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/8 (735 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/9
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/9 (729 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/10
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/10 (716 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/11
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/11 (705 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/12
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/12 (794 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/13
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/13 (773 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/14
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/14 (732 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/15
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/15 (723 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/16
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/16 (713 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/17
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_i8/17 (706 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/0
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/0 (778 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/1
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/1 (770 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/2
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/2 (726 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/3
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/3 (718 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/4
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/4 (706 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/5
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/5 (703 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/6
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/6 (781 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/7
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/7 (767 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/8
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/8 (724 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/9
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/9 (716 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/10
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/10 (706 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/11
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/11 (697 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/12
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/12 (779 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/13
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/13 (766 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/14
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/14 (723 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/15
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/15 (714 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/16
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/16 (703 ms)
+[ RUN      ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/17
+[       OK ] fusings_gpu/resample_bicubic_pillow_axes_quantize.basic_u8/17 (700 ms)
+[----------] 36 tests from fusings_gpu/resample_bicubic_pillow_axes_quantize (26547 ms total)
+
+[----------] 10 tests from fusings_gpu/scatter_elements_update_quantize
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/0
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/0 (676 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/1
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/1 (676 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/2
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/2 (678 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/3
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/3 (678 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/4
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/4 (678 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/5
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/5 (684 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/6
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/6 (682 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/7
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/7 (682 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/8
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/8 (684 ms)
+[ RUN      ] fusings_gpu/scatter_elements_update_quantize.basic/9
+[       OK ] fusings_gpu/scatter_elements_update_quantize.basic/9 (688 ms)
+[----------] 10 tests from fusings_gpu/scatter_elements_update_quantize (6810 ms total)
+
+[----------] 78 tests from fusings_gpu/scatter_nd_update_quantize
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/0
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/0 (654 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/1
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/1 (658 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/2
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/2 (678 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/3
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/3 (334 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/4
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/4 (635 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/5
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/5 (580 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/6
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/6 (668 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/7
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/7 (622 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/8
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/8 (622 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/9
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/9 (588 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/10
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/10 (574 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/11
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/11 (627 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/12
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/12 (631 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/13
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/13 (717 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/14
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/14 (658 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/15
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/15 (666 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/16
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/16 (679 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/17
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/17 (668 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/18
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/18 (574 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/19
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/19 (626 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/20
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/20 (637 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/21
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/21 (677 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/22
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/22 (666 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/23
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/23 (625 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/24
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/24 (577 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/25
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/25 (646 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/26
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/26 (671 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/27
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/27 (616 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/28
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/28 (584 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/29
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/29 (571 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/30
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/30 (698 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/31
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/31 (646 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/32
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/32 (660 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/33
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/33 (667 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/34
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/34 (656 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/35
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/35 (574 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/36
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/36 (659 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/37
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/37 (662 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/38
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/38 (688 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/39
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/39 (343 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/40
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/40 (635 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/41
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/41 (658 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/42
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/42 (676 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/43
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/43 (637 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/44
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/44 (646 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/45
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/45 (593 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/46
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/46 (581 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/47
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/47 (635 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/48
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/48 (637 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/49
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/49 (602 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/50
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/50 (639 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/51
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/51 (630 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/52
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/52 (639 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/53
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/53 (676 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/54
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/54 (341 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/55
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/55 (632 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/56
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/56 (582 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/57
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/57 (652 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/58
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/58 (634 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/59
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/59 (641 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/60
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/60 (595 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/61
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/61 (577 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/62
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/62 (630 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/63
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/63 (631 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/64
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/64 (599 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/65
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/65 (632 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/66
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/66 (657 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/67
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/67 (664 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/68
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/68 (687 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/69
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/69 (340 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/70
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/70 (644 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/71
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/71 (589 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/72
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/72 (633 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/73
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/73 (642 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/74
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/74 (680 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/75
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/75 (343 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/76
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/76 (643 ms)
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize.basic/77
+[       OK ] fusings_gpu/scatter_nd_update_quantize.basic/77 (587 ms)
+[----------] 78 tests from fusings_gpu/scatter_nd_update_quantize (48162 ms total)
+
+[----------] 1 test from fusings_gpu/scatter_nd_update_quantize_reversed_output_range
+[ RUN      ] fusings_gpu/scatter_nd_update_quantize_reversed_output_range.pre_shift/0
+[       OK ] fusings_gpu/scatter_nd_update_quantize_reversed_output_range.pre_shift/0 (331 ms)
+[----------] 1 test from fusings_gpu/scatter_nd_update_quantize_reversed_output_range (331 ms total)
+
+[----------] 20 tests from fusings_gpu/scatter_update_quantize
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/0
+[       OK ] fusings_gpu/scatter_update_quantize.basic/0 (663 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/1
+[       OK ] fusings_gpu/scatter_update_quantize.basic/1 (672 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/2
+[       OK ] fusings_gpu/scatter_update_quantize.basic/2 (665 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/3
+[       OK ] fusings_gpu/scatter_update_quantize.basic/3 (683 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/4
+[       OK ] fusings_gpu/scatter_update_quantize.basic/4 (663 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/5
+[       OK ] fusings_gpu/scatter_update_quantize.basic/5 (682 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/6
+[       OK ] fusings_gpu/scatter_update_quantize.basic/6 (683 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/7
+[       OK ] fusings_gpu/scatter_update_quantize.basic/7 (684 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/8
+[       OK ] fusings_gpu/scatter_update_quantize.basic/8 (680 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/9
+[       OK ] fusings_gpu/scatter_update_quantize.basic/9 (677 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/10
+[       OK ] fusings_gpu/scatter_update_quantize.basic/10 (669 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/11
+[       OK ] fusings_gpu/scatter_update_quantize.basic/11 (682 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/12
+[       OK ] fusings_gpu/scatter_update_quantize.basic/12 (685 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/13
+[       OK ] fusings_gpu/scatter_update_quantize.basic/13 (682 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/14
+[       OK ] fusings_gpu/scatter_update_quantize.basic/14 (678 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/15
+[       OK ] fusings_gpu/scatter_update_quantize.basic/15 (680 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/16
+[       OK ] fusings_gpu/scatter_update_quantize.basic/16 (687 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/17
+[       OK ] fusings_gpu/scatter_update_quantize.basic/17 (691 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/18
+[       OK ] fusings_gpu/scatter_update_quantize.basic/18 (671 ms)
+[ RUN      ] fusings_gpu/scatter_update_quantize.basic/19
+[       OK ] fusings_gpu/scatter_update_quantize.basic/19 (680 ms)
+[----------] 20 tests from fusings_gpu/scatter_update_quantize (13568 ms total)
+
+[----------] 9 tests from fusings_gpu/softmax_quantize
+[ RUN      ] fusings_gpu/softmax_quantize.basic/0
+[       OK ] fusings_gpu/softmax_quantize.basic/0 (694 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/1
+[       OK ] fusings_gpu/softmax_quantize.basic/1 (774 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/2
+[       OK ] fusings_gpu/softmax_quantize.basic/2 (728 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/3
+[       OK ] fusings_gpu/softmax_quantize.basic/3 (701 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/4
+[       OK ] fusings_gpu/softmax_quantize.basic/4 (777 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/5
+[       OK ] fusings_gpu/softmax_quantize.basic/5 (730 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/6
+[       OK ] fusings_gpu/softmax_quantize.basic/6 (709 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/7
+[       OK ] fusings_gpu/softmax_quantize.basic/7 (776 ms)
+[ RUN      ] fusings_gpu/softmax_quantize.basic/8
+[       OK ] fusings_gpu/softmax_quantize.basic/8 (732 ms)
+[----------] 9 tests from fusings_gpu/softmax_quantize (6625 ms total)
+
+[----------] 9 tests from fusings_gpu/softmax_quantize_fusing_through
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.reshape/0
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.reshape/0 (702 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.reshape/1
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.reshape/1 (709 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.reshape/2
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.reshape/2 (716 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.reorder/0
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.reorder/0 (352 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.reorder/1
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.reorder/1 (355 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.reorder/2
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.reorder/2 (357 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.chain/0
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.chain/0 (360 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.chain/1
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.chain/1 (363 ms)
+[ RUN      ] fusings_gpu/softmax_quantize_fusing_through.chain/2
+[       OK ] fusings_gpu/softmax_quantize_fusing_through.chain/2 (362 ms)
+[----------] 9 tests from fusings_gpu/softmax_quantize_fusing_through (4280 ms total)
+
+[----------] 4 tests from fusings_gpu/space_to_batch_quantize_i8
+[ RUN      ] fusings_gpu/space_to_batch_quantize_i8.basic/0
+[       OK ] fusings_gpu/space_to_batch_quantize_i8.basic/0 (658 ms)
+[ RUN      ] fusings_gpu/space_to_batch_quantize_i8.basic/1
+[       OK ] fusings_gpu/space_to_batch_quantize_i8.basic/1 (682 ms)
+[ RUN      ] fusings_gpu/space_to_batch_quantize_i8.basic/2
+[       OK ] fusings_gpu/space_to_batch_quantize_i8.basic/2 (651 ms)
+[ RUN      ] fusings_gpu/space_to_batch_quantize_i8.basic/3
+[       OK ] fusings_gpu/space_to_batch_quantize_i8.basic/3 (676 ms)
+[----------] 4 tests from fusings_gpu/space_to_batch_quantize_i8 (2669 ms total)
+
+[----------] 8 tests from fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/0
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/0 (681 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/1
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/1 (712 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/2
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/2 (673 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/3
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/3 (707 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/4
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/4 (683 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/5
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/5 (709 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/6
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/6 (680 ms)
+[ RUN      ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/7
+[       OK ] fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8.basic/7 (713 ms)
+[----------] 8 tests from fusings_gpu/space_to_batch_scale_act_eltwise_quantize_u8 (5562 ms total)
+
+[----------] 4 tests from fusings_gpu/space_to_depth_quantize_i8
+[ RUN      ] fusings_gpu/space_to_depth_quantize_i8.basic/0
+[       OK ] fusings_gpu/space_to_depth_quantize_i8.basic/0 (659 ms)
+[ RUN      ] fusings_gpu/space_to_depth_quantize_i8.basic/1
+[       OK ] fusings_gpu/space_to_depth_quantize_i8.basic/1 (669 ms)
+[ RUN      ] fusings_gpu/space_to_depth_quantize_i8.basic/2
+[       OK ] fusings_gpu/space_to_depth_quantize_i8.basic/2 (657 ms)
+[ RUN      ] fusings_gpu/space_to_depth_quantize_i8.basic/3
+[       OK ] fusings_gpu/space_to_depth_quantize_i8.basic/3 (658 ms)
+[----------] 4 tests from fusings_gpu/space_to_depth_quantize_i8 (2645 ms total)
+
+[----------] 8 tests from fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/0
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/0 (682 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/1
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/1 (690 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/2
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/2 (672 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/3
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/3 (690 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/4
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/4 (681 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/5
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/5 (690 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/6
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/6 (671 ms)
+[ RUN      ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/7
+[       OK ] fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8.basic/7 (691 ms)
+[----------] 8 tests from fusings_gpu/space_to_depth_scale_act_eltwise_quantize_u8 (5470 ms total)
+
+[----------] 4 tests from smoke/quantize_test
+[ RUN      ] smoke/quantize_test.shape_infer/0
+[       OK ] smoke/quantize_test.shape_infer/0 (1 ms)
+[ RUN      ] smoke/quantize_test.shape_infer/1
+[       OK ] smoke/quantize_test.shape_infer/1 (1 ms)
+[ RUN      ] smoke/quantize_test.shape_infer/2
+[       OK ] smoke/quantize_test.shape_infer/2 (1 ms)
+[ RUN      ] smoke/quantize_test.shape_infer/3
+[       OK ] smoke/quantize_test.shape_infer/3 (1 ms)
+[----------] 4 tests from smoke/quantize_test (4 ms total)
+
+[----------] 25 tests from smoke/conv_dyn_test
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/0
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/0 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/1
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/1 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/2
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/2 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/3
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/3 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/4
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/4 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/5
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/5 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/6
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/6 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/7
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/7 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/8
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/8 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/9
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/9 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/10
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/10 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/11
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/11 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/12
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/12 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/13
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12140: Skipped
+The test is skipped (is_valid_output: true, is_valid_strid: true, is_valid_padding: false, is_valid_ranks: true
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/13 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/14
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/14 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/15
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/15 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/16
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/16 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/17
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12140: Skipped
+The test is skipped (is_valid_output: true, is_valid_strid: true, is_valid_padding: false, is_valid_ranks: true
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/17 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/18
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/18 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/19
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/19 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/20
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/20 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/21
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/21 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/22
+src/plugins/intel_gpu/tests/unit/test_cases/convolution_gpu_test.cpp:12132: Skipped
+The test is skipped (convolution is not depthwise).
+
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/22 (0 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23, where GetParam() = 152-byte object <70-06 97-74 4C-56 00-00 88-06 97-74 4C-56 00-00 88-06 97-74 4C-56 00-00 50-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 F0-B6 91-74 4C-56 00-00 F8-B6 91-74 4C-56 00-00 ... 48-20 94-74 4C-56 00-00 C0-4F 94-74 4C-56 00-00 C8-4F 94-74 4C-56 00-00 C8-4F 94-74 4C-56 00-00 80-67 94-74 4C-56 00-00 88-67 94-74 4C-56 00-00 88-67 94-74 4C-56 00-00 20-00 00-00 5F-74 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24, where GetParam() = 152-byte object <50-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 30-E2 74-74 4C-56 00-00 58-E2 74-74 4C-56 00-00 58-E2 74-74 4C-56 00-00 B0-55 94-74 4C-56 00-00 C0-55 94-74 4C-56 00-00 ... 20-2A 97-74 4C-56 00-00 90-40 73-74 4C-56 00-00 A0-40 73-74 4C-56 00-00 A0-40 73-74 4C-56 00-00 10-57 88-74 4C-56 00-00 20-57 88-74 4C-56 00-00 20-57 88-74 4C-56 00-00 40-00 00-00 5F-74 00-00> (2 ms)
+[----------] 25 tests from smoke/conv_dyn_test (4 ms total)
+
+[----------] 7 tests from smoke/conv_dyn_3d_test
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0, where GetParam() = 152-byte object <C0-71 46-74 4C-56 00-00 E8-71 46-74 4C-56 00-00 E8-71 46-74 4C-56 00-00 60-6E 8A-74 4C-56 00-00 88-6E 8A-74 4C-56 00-00 88-6E 8A-74 4C-56 00-00 10-57 88-74 4C-56 00-00 28-57 88-74 4C-56 00-00 ... A8-40 73-74 4C-56 00-00 10-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 20-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 01-00 00-00 00-74 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1, where GetParam() = 152-byte object <30-8C 8A-74 4C-56 00-00 58-8C 8A-74 4C-56 00-00 58-8C 8A-74 4C-56 00-00 20-86 8A-74 4C-56 00-00 48-86 8A-74 4C-56 00-00 48-86 8A-74 4C-56 00-00 20-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 ... E8-24 96-74 4C-56 00-00 F0-3D 94-74 4C-56 00-00 08-3E 94-74 4C-56 00-00 08-3E 94-74 4C-56 00-00 F0-B6 91-74 4C-56 00-00 08-B7 91-74 4C-56 00-00 08-B7 91-74 4C-56 00-00 01-00 00-00 01-74 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2, where GetParam() = 152-byte object <50-09 93-74 4C-56 00-00 78-09 93-74 4C-56 00-00 78-09 93-74 4C-56 00-00 F0-18 96-74 4C-56 00-00 18-19 96-74 4C-56 00-00 18-19 96-74 4C-56 00-00 20-19 96-74 4C-56 00-00 38-19 96-74 4C-56 00-00 ... D8-47 97-74 4C-56 00-00 90-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 40-20 94-74 4C-56 00-00 58-20 94-74 4C-56 00-00 58-20 94-74 4C-56 00-00 01-00 00-00 00-74 00-00> (21 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3, where GetParam() = 152-byte object <00-1F 96-74 4C-56 00-00 28-1F 96-74 4C-56 00-00 28-1F 96-74 4C-56 00-00 50-01 96-74 4C-56 00-00 78-01 96-74 4C-56 00-00 78-01 96-74 4C-56 00-00 C0-CB 95-74 4C-56 00-00 D8-CB 95-74 4C-56 00-00 ... 08-3E 94-74 4C-56 00-00 D0-24 96-74 4C-56 00-00 E8-24 96-74 4C-56 00-00 E8-24 96-74 4C-56 00-00 10-57 88-74 4C-56 00-00 28-57 88-74 4C-56 00-00 28-57 88-74 4C-56 00-00 01-00 00-00 01-74 00-00> (20 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4, where GetParam() = 152-byte object <30-2A 97-74 4C-56 00-00 58-2A 97-74 4C-56 00-00 58-2A 97-74 4C-56 00-00 C0-BE 8E-74 4C-56 00-00 E8-BE 8E-74 4C-56 00-00 E8-BE 8E-74 4C-56 00-00 80-F5 95-74 4C-56 00-00 98-F5 95-74 4C-56 00-00 ... 48-13 96-74 4C-56 00-00 B0-E3 95-74 4C-56 00-00 C8-E3 95-74 4C-56 00-00 C8-E3 95-74 4C-56 00-00 90-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 01-00 00-00 00-74 00-00> (2 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5, where GetParam() = 152-byte object <50-54 74-74 4C-56 00-00 78-54 74-74 4C-56 00-00 78-54 74-74 4C-56 00-00 E0-B2 8E-74 4C-56 00-00 08-B3 8E-74 4C-56 00-00 08-B3 8E-74 4C-56 00-00 B0-55 94-74 4C-56 00-00 C8-55 94-74 4C-56 00-00 ... D8-CB 95-74 4C-56 00-00 90-DD 95-74 4C-56 00-00 A8-DD 95-74 4C-56 00-00 A8-DD 95-74 4C-56 00-00 10-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 01-00 00-00 00-74 00-00> (1 ms)
+[ RUN      ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6
+unknown file: Failure
+C++ exception with description "Check '!is_dynamic() || has_upper_bound()' failed at plugins/intel_gpu/src/runtime/layout.cpp:295:
+[GPU] get_tensor() is called for dynamic shape without upper bound
+" thrown in the test body.
+
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6, where GetParam() = 152-byte object <60-DA 73-74 4C-56 00-00 88-DA 73-74 4C-56 00-00 88-DA 73-74 4C-56 00-00 00-EE 97-74 4C-56 00-00 30-EE 97-74 4C-56 00-00 30-EE 97-74 4C-56 00-00 F0-3D 94-74 4C-56 00-00 08-3E 94-74 4C-56 00-00 ... D8-47 97-74 4C-56 00-00 80-F5 95-74 4C-56 00-00 98-F5 95-74 4C-56 00-00 98-F5 95-74 4C-56 00-00 20-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 10-00 00-00 00-74 00-00> (2 ms)
+[----------] 7 tests from smoke/conv_dyn_3d_test (52 ms total)
+
+[----------] 98 tests from quantize_smoke/quantize_random_test
+[ RUN      ] quantize_smoke/quantize_random_test.random/0
+[       OK ] quantize_smoke/quantize_random_test.random/0 (649 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/1
+[       OK ] quantize_smoke/quantize_random_test.random/1 (657 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/2
+[       OK ] quantize_smoke/quantize_random_test.random/2 (1476 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/3
+[       OK ] quantize_smoke/quantize_random_test.random/3 (656 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/4
+[       OK ] quantize_smoke/quantize_random_test.random/4 (767 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/5
+[       OK ] quantize_smoke/quantize_random_test.random/5 (1410 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/6
+[       OK ] quantize_smoke/quantize_random_test.random/6 (651 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/7
+[       OK ] quantize_smoke/quantize_random_test.random/7 (642 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/8
+[       OK ] quantize_smoke/quantize_random_test.random/8 (645 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/9
+[       OK ] quantize_smoke/quantize_random_test.random/9 (1585 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/10
+[       OK ] quantize_smoke/quantize_random_test.random/10 (644 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/11
+[       OK ] quantize_smoke/quantize_random_test.random/11 (748 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/12
+[       OK ] quantize_smoke/quantize_random_test.random/12 (999 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/13
+[       OK ] quantize_smoke/quantize_random_test.random/13 (641 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/14
+[       OK ] quantize_smoke/quantize_random_test.random/14 (637 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/15
+[       OK ] quantize_smoke/quantize_random_test.random/15 (639 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/16
+[       OK ] quantize_smoke/quantize_random_test.random/16 (1343 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/17
+[       OK ] quantize_smoke/quantize_random_test.random/17 (644 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/18
+[       OK ] quantize_smoke/quantize_random_test.random/18 (733 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/19
+[       OK ] quantize_smoke/quantize_random_test.random/19 (927 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/20
+[       OK ] quantize_smoke/quantize_random_test.random/20 (640 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/21
+[       OK ] quantize_smoke/quantize_random_test.random/21 (647 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/22
+[       OK ] quantize_smoke/quantize_random_test.random/22 (656 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/23
+[       OK ] quantize_smoke/quantize_random_test.random/23 (1640 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/24
+[       OK ] quantize_smoke/quantize_random_test.random/24 (656 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/25
+[       OK ] quantize_smoke/quantize_random_test.random/25 (765 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/26
+[       OK ] quantize_smoke/quantize_random_test.random/26 (1155 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/27
+[       OK ] quantize_smoke/quantize_random_test.random/27 (651 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/28
+[       OK ] quantize_smoke/quantize_random_test.random/28 (650 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/29
+[       OK ] quantize_smoke/quantize_random_test.random/29 (656 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/30
+[       OK ] quantize_smoke/quantize_random_test.random/30 (1626 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/31
+[       OK ] quantize_smoke/quantize_random_test.random/31 (654 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/32
+[       OK ] quantize_smoke/quantize_random_test.random/32 (763 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/33
+[       OK ] quantize_smoke/quantize_random_test.random/33 (1156 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/34
+[       OK ] quantize_smoke/quantize_random_test.random/34 (651 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/35
+[       OK ] quantize_smoke/quantize_random_test.random/35 (655 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/36
+[       OK ] quantize_smoke/quantize_random_test.random/36 (667 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/37
+[       OK ] quantize_smoke/quantize_random_test.random/37 (1322 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/38
+[       OK ] quantize_smoke/quantize_random_test.random/38 (666 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/39
+[       OK ] quantize_smoke/quantize_random_test.random/39 (752 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/40
+[       OK ] quantize_smoke/quantize_random_test.random/40 (944 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/41
+[       OK ] quantize_smoke/quantize_random_test.random/41 (658 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/42
+[       OK ] quantize_smoke/quantize_random_test.random/42 (659 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/43
+[       OK ] quantize_smoke/quantize_random_test.random/43 (665 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/44
+[       OK ] quantize_smoke/quantize_random_test.random/44 (1585 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/45
+[       OK ] quantize_smoke/quantize_random_test.random/45 (664 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/46
+[       OK ] quantize_smoke/quantize_random_test.random/46 (934 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/47
+[       OK ] quantize_smoke/quantize_random_test.random/47 (1023 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random/48
+[       OK ] quantize_smoke/quantize_random_test.random/48 (654 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/0
+[       OK ] quantize_smoke/quantize_random_test.random_cached/0 (19 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/1
+[       OK ] quantize_smoke/quantize_random_test.random_cached/1 (26 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/2
+[       OK ] quantize_smoke/quantize_random_test.random_cached/2 (831 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/3
+[       OK ] quantize_smoke/quantize_random_test.random_cached/3 (26 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/4
+[       OK ] quantize_smoke/quantize_random_test.random_cached/4 (134 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/5
+[       OK ] quantize_smoke/quantize_random_test.random_cached/5 (779 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/6
+[       OK ] quantize_smoke/quantize_random_test.random_cached/6 (22 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/7
+[       OK ] quantize_smoke/quantize_random_test.random_cached/7 (16 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/8
+[       OK ] quantize_smoke/quantize_random_test.random_cached/8 (22 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/9
+[       OK ] quantize_smoke/quantize_random_test.random_cached/9 (802 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/10
+[       OK ] quantize_smoke/quantize_random_test.random_cached/10 (24 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/11
+[       OK ] quantize_smoke/quantize_random_test.random_cached/11 (131 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/12
+[       OK ] quantize_smoke/quantize_random_test.random_cached/12 (363 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/13
+[       OK ] quantize_smoke/quantize_random_test.random_cached/13 (18 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/14
+[       OK ] quantize_smoke/quantize_random_test.random_cached/14 (16 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/15
+[       OK ] quantize_smoke/quantize_random_test.random_cached/15 (21 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/16
+[       OK ] quantize_smoke/quantize_random_test.random_cached/16 (718 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/17
+[       OK ] quantize_smoke/quantize_random_test.random_cached/17 (22 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/18
+[       OK ] quantize_smoke/quantize_random_test.random_cached/18 (111 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/19
+[       OK ] quantize_smoke/quantize_random_test.random_cached/19 (304 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/20
+[       OK ] quantize_smoke/quantize_random_test.random_cached/20 (17 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/21
+[       OK ] quantize_smoke/quantize_random_test.random_cached/21 (17 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/22
+[       OK ] quantize_smoke/quantize_random_test.random_cached/22 (25 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/23
+[       OK ] quantize_smoke/quantize_random_test.random_cached/23 (832 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/24
+[       OK ] quantize_smoke/quantize_random_test.random_cached/24 (25 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/25
+[       OK ] quantize_smoke/quantize_random_test.random_cached/25 (132 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/26
+[       OK ] quantize_smoke/quantize_random_test.random_cached/26 (505 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/27
+[       OK ] quantize_smoke/quantize_random_test.random_cached/27 (20 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/28
+[       OK ] quantize_smoke/quantize_random_test.random_cached/28 (17 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/29
+[       OK ] quantize_smoke/quantize_random_test.random_cached/29 (24 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/30
+[       OK ] quantize_smoke/quantize_random_test.random_cached/30 (838 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/31
+[       OK ] quantize_smoke/quantize_random_test.random_cached/31 (26 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/32
+[       OK ] quantize_smoke/quantize_random_test.random_cached/32 (136 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/33
+[       OK ] quantize_smoke/quantize_random_test.random_cached/33 (508 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/34
+[       OK ] quantize_smoke/quantize_random_test.random_cached/34 (21 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/35
+[       OK ] quantize_smoke/quantize_random_test.random_cached/35 (16 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/36
+[       OK ] quantize_smoke/quantize_random_test.random_cached/36 (21 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/37
+[       OK ] quantize_smoke/quantize_random_test.random_cached/37 (679 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/38
+[       OK ] quantize_smoke/quantize_random_test.random_cached/38 (22 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/39
+[       OK ] quantize_smoke/quantize_random_test.random_cached/39 (112 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/40
+[       OK ] quantize_smoke/quantize_random_test.random_cached/40 (301 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/41
+[       OK ] quantize_smoke/quantize_random_test.random_cached/41 (18 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/42
+[       OK ] quantize_smoke/quantize_random_test.random_cached/42 (17 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/43
+[       OK ] quantize_smoke/quantize_random_test.random_cached/43 (23 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/44
+[       OK ] quantize_smoke/quantize_random_test.random_cached/44 (804 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/45
+[       OK ] quantize_smoke/quantize_random_test.random_cached/45 (24 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/46
+[       OK ] quantize_smoke/quantize_random_test.random_cached/46 (130 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/47
+[       OK ] quantize_smoke/quantize_random_test.random_cached/47 (364 ms)
+[ RUN      ] quantize_smoke/quantize_random_test.random_cached/48
+[       OK ] quantize_smoke/quantize_random_test.random_cached/48 (19 ms)
+[----------] 98 tests from quantize_smoke/quantize_random_test (52059 ms total)
+
+[----------] Global test environment tear-down
+[==========] 364 tests from 18 test suites ran. (207893 ms total)
+[  PASSED  ] 330 tests.
+[  SKIPPED ] 25 tests, listed below:
+[  SKIPPED ] dynamic_deconv_quantize_kernel.no_ocl_ref_on_onednn_5d
+[  SKIPPED ] fusings_gpu/eltwise_i8_quantize_abs.basic/0
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/0
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/1
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/2
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/3
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/4
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/5
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/6
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/7
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/8
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/9
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/10
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/11
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/12
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/13
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/14
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/15
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/16
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/17
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/18
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/19
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/20
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/21
+[  SKIPPED ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/22
+[  FAILED  ] 9 tests, listed below:
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/23, where GetParam() = 152-byte object <70-06 97-74 4C-56 00-00 88-06 97-74 4C-56 00-00 88-06 97-74 4C-56 00-00 50-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 F0-B6 91-74 4C-56 00-00 F8-B6 91-74 4C-56 00-00 ... 48-20 94-74 4C-56 00-00 C0-4F 94-74 4C-56 00-00 C8-4F 94-74 4C-56 00-00 C8-4F 94-74 4C-56 00-00 80-67 94-74 4C-56 00-00 88-67 94-74 4C-56 00-00 88-67 94-74 4C-56 00-00 20-00 00-00 5F-74 00-00>
+[  FAILED  ] smoke/conv_dyn_test.convolution_gpu_fsv16_depthwise_quantized/24, where GetParam() = 152-byte object <50-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 70-85 94-74 4C-56 00-00 30-E2 74-74 4C-56 00-00 58-E2 74-74 4C-56 00-00 58-E2 74-74 4C-56 00-00 B0-55 94-74 4C-56 00-00 C0-55 94-74 4C-56 00-00 ... 20-2A 97-74 4C-56 00-00 90-40 73-74 4C-56 00-00 A0-40 73-74 4C-56 00-00 A0-40 73-74 4C-56 00-00 10-57 88-74 4C-56 00-00 20-57 88-74 4C-56 00-00 20-57 88-74 4C-56 00-00 40-00 00-00 5F-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/0, where GetParam() = 152-byte object <C0-71 46-74 4C-56 00-00 E8-71 46-74 4C-56 00-00 E8-71 46-74 4C-56 00-00 60-6E 8A-74 4C-56 00-00 88-6E 8A-74 4C-56 00-00 88-6E 8A-74 4C-56 00-00 10-57 88-74 4C-56 00-00 28-57 88-74 4C-56 00-00 ... A8-40 73-74 4C-56 00-00 10-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 20-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 01-00 00-00 00-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/1, where GetParam() = 152-byte object <30-8C 8A-74 4C-56 00-00 58-8C 8A-74 4C-56 00-00 58-8C 8A-74 4C-56 00-00 20-86 8A-74 4C-56 00-00 48-86 8A-74 4C-56 00-00 48-86 8A-74 4C-56 00-00 20-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 ... E8-24 96-74 4C-56 00-00 F0-3D 94-74 4C-56 00-00 08-3E 94-74 4C-56 00-00 08-3E 94-74 4C-56 00-00 F0-B6 91-74 4C-56 00-00 08-B7 91-74 4C-56 00-00 08-B7 91-74 4C-56 00-00 01-00 00-00 01-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/2, where GetParam() = 152-byte object <50-09 93-74 4C-56 00-00 78-09 93-74 4C-56 00-00 78-09 93-74 4C-56 00-00 F0-18 96-74 4C-56 00-00 18-19 96-74 4C-56 00-00 18-19 96-74 4C-56 00-00 20-19 96-74 4C-56 00-00 38-19 96-74 4C-56 00-00 ... D8-47 97-74 4C-56 00-00 90-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 40-20 94-74 4C-56 00-00 58-20 94-74 4C-56 00-00 58-20 94-74 4C-56 00-00 01-00 00-00 00-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/3, where GetParam() = 152-byte object <00-1F 96-74 4C-56 00-00 28-1F 96-74 4C-56 00-00 28-1F 96-74 4C-56 00-00 50-01 96-74 4C-56 00-00 78-01 96-74 4C-56 00-00 78-01 96-74 4C-56 00-00 C0-CB 95-74 4C-56 00-00 D8-CB 95-74 4C-56 00-00 ... 08-3E 94-74 4C-56 00-00 D0-24 96-74 4C-56 00-00 E8-24 96-74 4C-56 00-00 E8-24 96-74 4C-56 00-00 10-57 88-74 4C-56 00-00 28-57 88-74 4C-56 00-00 28-57 88-74 4C-56 00-00 01-00 00-00 01-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/4, where GetParam() = 152-byte object <30-2A 97-74 4C-56 00-00 58-2A 97-74 4C-56 00-00 58-2A 97-74 4C-56 00-00 C0-BE 8E-74 4C-56 00-00 E8-BE 8E-74 4C-56 00-00 E8-BE 8E-74 4C-56 00-00 80-F5 95-74 4C-56 00-00 98-F5 95-74 4C-56 00-00 ... 48-13 96-74 4C-56 00-00 B0-E3 95-74 4C-56 00-00 C8-E3 95-74 4C-56 00-00 C8-E3 95-74 4C-56 00-00 90-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 A8-40 73-74 4C-56 00-00 01-00 00-00 00-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/5, where GetParam() = 152-byte object <50-54 74-74 4C-56 00-00 78-54 74-74 4C-56 00-00 78-54 74-74 4C-56 00-00 E0-B2 8E-74 4C-56 00-00 08-B3 8E-74 4C-56 00-00 08-B3 8E-74 4C-56 00-00 B0-55 94-74 4C-56 00-00 C8-55 94-74 4C-56 00-00 ... D8-CB 95-74 4C-56 00-00 90-DD 95-74 4C-56 00-00 A8-DD 95-74 4C-56 00-00 A8-DD 95-74 4C-56 00-00 10-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 28-2A 97-74 4C-56 00-00 01-00 00-00 00-74 00-00>
+[  FAILED  ] smoke/conv_dyn_3d_test.convolution_gpu_b_fs_zyx_fsv16_imad_quantized/6, where GetParam() = 152-byte object <60-DA 73-74 4C-56 00-00 88-DA 73-74 4C-56 00-00 88-DA 73-74 4C-56 00-00 00-EE 97-74 4C-56 00-00 30-EE 97-74 4C-56 00-00 30-EE 97-74 4C-56 00-00 F0-3D 94-74 4C-56 00-00 08-3E 94-74 4C-56 00-00 ... D8-47 97-74 4C-56 00-00 80-F5 95-74 4C-56 00-00 98-F5 95-74 4C-56 00-00 98-F5 95-74 4C-56 00-00 20-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 38-05 75-74 4C-56 00-00 10-00 00-00 00-74 00-00>
+
+ 9 FAILED TESTS
+rc=1
+BROAD_DONE

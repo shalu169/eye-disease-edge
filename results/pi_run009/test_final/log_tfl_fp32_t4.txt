@@ -1,0 +1,81 @@
+{
+  "config": "tfl_fp32_t4",
+  "runtime": "tflite_runtime 2.13.0",
+  "model_file": "artifacts/run008final_fp32.tflite",
+  "img": 512,
+  "manifest": "artifacts/test_manifest_run008.csv",
+  "n_images": 1025,
+  "label_cols": [
+    "D_eye",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "num_threads": 4,
+  "val_auc": {
+    "D_eye": 0.8093,
+    "G": 0.8916,
+    "C": 0.8973,
+    "A": 0.8616,
+    "H": 0.8126
+  },
+  "mean_auc": 0.8545,
+  "D_patient_auc": 0.7709,
+  "max_abs_prob_diff_vs_torch": 0.00013124942779541016,
+  "mean_abs_prob_diff_vs_torch": 5.8261102822143584e-06,
+  "latency_ms": {
+    "mean": 512.834,
+    "p50": 510.965,
+    "p95": 538.961,
+    "p99": 545.387,
+    "warmup": 20,
+    "timed": 200,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 226.399,
+  "preprocess_ms_p50": 225.789,
+  "accuracy_pass_s": 760.8,
+  "model_load_s": 0.063,
+  "peak_rss_mb": 65.4,
+  "mem_available_mb_before": 696.2,
+  "mem_available_mb_after": 674.3,
+  "vcgencmd_before": {
+    "temp": "temp=43.5'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "vcgencmd_after": {
+    "temp": "temp=56.4'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "host": "raspberrypi",
+  "machine": "armv7l",
+  "python": "3.9.2",
+  "numpy": "1.26.4",
+  "pillow": "11.2.1"
+}
+	Command being timed: ".venv/bin/python bench_pi.py tfl_fp32_t4 --model artifacts/run008final_fp32.tflite --img 512 --manifest artifacts/test_manifest_run008.csv --ref artifacts/run008final_torch_cpu_test_probs.npy --label-cols D_eye,G,C,A,H --out-dir run009/test_final"
+	User time (seconds): 1636.35
+	System time (seconds): 80.67
+	Percent of CPU this job got: 195%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:36.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 66984
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 7017840
+	Voluntary context switches: 153565
+	Involuntary context switches: 58894
+	Swaps: 0
+	File system inputs: 288
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

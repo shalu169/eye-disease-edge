@@ -1,0 +1,15 @@
+suite start 2026-10-03T05:18:25+05:30 | load 0.00 0.02 0.00 | governor performance | pkg temp 40 C
+               total        used        free      shared  buff/cache   available
+Mem:           15601         494       13549          11        1867       15107
+Swap:          12300           0       12300
+=== ort_fp32_cpu start 2026-10-03T05:18:25+05:30
+=== ort_fp32_cpu exit 0 2026-10-03T05:18:51+05:30
+=== ov_fp32_cpu start 2026-10-03T05:19:11+05:30
+=== ov_fp32_cpu exit 0 2026-10-03T05:19:38+05:30
+=== ov_fp32_gpu start 2026-10-03T05:19:58+05:30
+=== ov_fp32_gpu exit 0 2026-10-03T05:20:24+05:30
+               total        used        free      shared  buff/cache   available
+Mem:           15601         520       13522          11        1867       15080
+Swap:          12300           0       12300
+suite end 2026-10-03T05:20:44+05:30 | load 0.83 0.50 0.19
+SUITE_DONE

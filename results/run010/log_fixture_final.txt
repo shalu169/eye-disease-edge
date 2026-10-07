@@ -1,0 +1,1 @@
+bundle edge/artifacts/run010_bundle_final ['gradcam_bench.py', 'gradcam_numpy.py', 'run010_device.sh', 'run010_final_backbone_fp32.onnx', 'run010_final_backbone_fp32.tflite', 'run010_final_fixture.npz', 'run010_final_full_fp32.onnx', 'run010_final_full_fp32.tflite', 'run010_final_head.npz']

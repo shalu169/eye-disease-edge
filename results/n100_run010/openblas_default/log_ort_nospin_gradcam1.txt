@@ -1,0 +1,40 @@
+{
+ "runtime": "ort_nospin",
+ "runtime_version": "onnxruntime 1.30.0",
+ "mode": "gradcam1",
+ "tag": "final",
+ "threads": 0,
+ "labels": [
+  0
+ ],
+ "warmup": 50,
+ "iters": 500,
+ "latency_ms": {
+  "mean": 15.608286036731442,
+  "p50": 15.653709502657875,
+  "p95": 16.755210061819525,
+  "p99": 17.39222484859056,
+  "std": 0.8431263923297441,
+  "n": 500
+ },
+ "numpy_part_ms": {
+  "mean": 1.5319040079484694,
+  "p50": 1.5266035043168813,
+  "p95": 1.5599195401591714,
+  "p99": 1.5666493235039525,
+  "std": 0.014066579423599982,
+  "n": 500
+ },
+ "load_s": 0.05388111399952322,
+ "peak_rss_mb": 123.3515625,
+ "rss_before_load_mb": 38.00390625,
+ "parity_vs_mac_torch": {
+  "prob_max_abs_diff": 9.243396307534457e-06,
+  "map_max_abs_diff": 0.00024455785751342773
+ },
+ "numpy": "2.4.6",
+ "python": "3.13.5",
+ "machine": "x86_64",
+ "node": "extraeye",
+ "note_maps_fixture": "reference maps stored as float16 (quantisation ~5e-4)"
+}

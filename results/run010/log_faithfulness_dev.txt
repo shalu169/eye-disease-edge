@@ -1,0 +1,141 @@
+/Users/piuaggawal/Documents/my_workspace/eye-disease-edge-ai/results/run010_faithfulness.py:63: RuntimeWarning: overflow encountered in exp
+  out[kind].append(1 / (1 + np.exp(-lg.astype(np.float64))))
+0/448 images, 1 pairs, 5s
+25/448 images, 29 pairs, 133s
+50/448 images, 63 pairs, 242s
+75/448 images, 92 pairs, 357s
+100/448 images, 120 pairs, 521s
+125/448 images, 148 pairs, 628s
+150/448 images, 174 pairs, 795s
+175/448 images, 199 pairs, 948s
+200/448 images, 224 pairs, 1042s
+225/448 images, 251 pairs, 1161s
+250/448 images, 277 pairs, 1258s
+275/448 images, 302 pairs, 1349s
+300/448 images, 327 pairs, 1435s
+325/448 images, 353 pairs, 1497s
+350/448 images, 379 pairs, 1559s
+375/448 images, 404 pairs, 1623s
+400/448 images, 430 pairs, 1698s
+425/448 images, 462 pairs, 1816s
+{
+ "n": 485,
+ "mean_p_orig": 0.8304331723408601,
+ "n_gradcam_all_zero": 0,
+ "gradcam_blur_del_auc_mean": 0.360154685457172,
+ "gradcam_blur_del_auc_ci95": [
+  0.338789354793993,
+  0.3832768355121494
+ ],
+ "random_blur_del_auc_mean": 0.48157914822639475,
+ "random_blur_del_auc_ci95": [
+  0.4614433513450756,
+  0.5018657481137886
+ ],
+ "centre_blur_del_auc_mean": 0.41377256944179025,
+ "centre_blur_del_auc_ci95": [
+  0.3902284721582091,
+  0.4373598753825459
+ ],
+ "gradcam_minus_random_blur_del_mean": -0.12142446276922278,
+ "gradcam_minus_random_blur_del_ci95": [
+  -0.13676468774411948,
+  -0.10677034055841768
+ ],
+ "gradcam_better_than_random_blur_del_frac": 0.7608247422680412,
+ "wilcoxon_p_vs_random_blur_del": 1.4860554520635402e-38,
+ "gradcam_minus_centre_blur_del_mean": -0.053617883984618156,
+ "gradcam_minus_centre_blur_del_ci95": [
+  -0.06999281770080795,
+  -0.03641250107542943
+ ],
+ "gradcam_better_than_centre_blur_del_frac": 0.6618556701030928,
+ "wilcoxon_p_vs_centre_blur_del": 2.443259573943178e-11,
+ "gradcam_blur_ins_auc_mean": 0.5905953737383424,
+ "gradcam_blur_ins_auc_ci95": [
+  0.5703741406331182,
+  0.6109650767725615
+ ],
+ "random_blur_ins_auc_mean": 0.48522269435026516,
+ "random_blur_ins_auc_ci95": [
+  0.46611690163870456,
+  0.5047018764108399
+ ],
+ "centre_blur_ins_auc_mean": 0.5998110869987864,
+ "centre_blur_ins_auc_ci95": [
+  0.5824599275502308,
+  0.6178966510533855
+ ],
+ "gradcam_minus_random_blur_ins_mean": 0.10537267938807714,
+ "gradcam_minus_random_blur_ins_ci95": [
+  0.0918015677051176,
+  0.12020791971363895
+ ],
+ "gradcam_better_than_random_blur_ins_frac": 0.7752577319587629,
+ "wilcoxon_p_vs_random_blur_ins": 3.2351668720813113e-37,
+ "gradcam_minus_centre_blur_ins_mean": -0.009215713260444213,
+ "gradcam_minus_centre_blur_ins_ci95": [
+  -0.023635146513056707,
+  0.005667045491015649
+ ],
+ "gradcam_better_than_centre_blur_ins_frac": 0.465979381443299,
+ "wilcoxon_p_vs_centre_blur_ins": 0.2280376536803711,
+ "gradcam_mean_del_auc_mean": 0.1767556992298484,
+ "gradcam_mean_del_auc_ci95": [
+  0.16686022960543762,
+  0.18667249613785955
+ ],
+ "random_mean_del_auc_mean": 0.22848929012343167,
+ "random_mean_del_auc_ci95": [
+  0.21366464829289913,
+  0.24347288895046226
+ ],
+ "centre_mean_del_auc_mean": 0.29298777366127454,
+ "centre_mean_del_auc_ci95": [
+  0.27241024335797515,
+  0.315292139226271
+ ],
+ "gradcam_minus_random_mean_del_mean": -0.05173359089358324,
+ "gradcam_minus_random_mean_del_ci95": [
+  -0.06188785459763524,
+  -0.0412483125610267
+ ],
+ "gradcam_better_than_random_mean_del_frac": 0.6762886597938145,
+ "wilcoxon_p_vs_random_mean_del": 1.7123975771412278e-19,
+ "gradcam_minus_centre_mean_del_mean": -0.11623207443142612,
+ "gradcam_minus_centre_mean_del_ci95": [
+  -0.13925772782004933,
+  -0.09357258243180627
+ ],
+ "gradcam_better_than_centre_mean_del_frac": 0.6371134020618556,
+ "wilcoxon_p_vs_centre_mean_del": 9.149574247627568e-16,
+ "gradcam_mean_ins_auc_mean": 0.4647775937776525,
+ "gradcam_mean_ins_auc_ci95": [
+  0.44336166026119656,
+  0.4865964985732086
+ ],
+ "random_mean_ins_auc_mean": 0.22478269712804985,
+ "random_mean_ins_auc_ci95": [
+  0.20987232109384402,
+  0.2394315798523556
+ ],
+ "centre_mean_ins_auc_mean": 0.48598459325329463,
+ "centre_mean_ins_auc_ci95": [
+  0.46495588374753793,
+  0.506240856525863
+ ],
+ "gradcam_minus_random_mean_ins_mean": 0.23999489664960266,
+ "gradcam_minus_random_mean_ins_ci95": [
+  0.22240812330355259,
+  0.2574041733369944
+ ],
+ "gradcam_better_than_random_mean_ins_frac": 0.9381443298969072,
+ "wilcoxon_p_vs_random_mean_ins": 8.623520627376794e-75,
+ "gradcam_minus_centre_mean_ins_mean": -0.021206999475642096,
+ "gradcam_minus_centre_mean_ins_ci95": [
+  -0.040337670026534315,
+  -0.002172919396902647
+ ],
+ "gradcam_better_than_centre_mean_ins_frac": 0.5278350515463918,
+ "wilcoxon_p_vs_centre_mean_ins": 0.7130966181336604
+}

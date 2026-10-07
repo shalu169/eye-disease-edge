@@ -1,0 +1,151 @@
+{
+ "gpu": "Intel(R) UHD Graphics (iGPU)",
+ "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "nncf": "3.4.0",
+ "variants": {
+  "base": {
+   "nncf_kwargs": {
+    "preset": "mixed",
+    "target_device": "ANY"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.6673,
+     "G": 0.8422,
+     "C": 0.9137,
+     "A": 0.8583,
+     "H": 0.7436
+    },
+    "mean_auc": 0.805,
+    "max_abs_prob_diff_vs_torch": 0.9237104058265686,
+    "mean_abs_prob_diff_vs_torch": 0.12064209580421448,
+    "latency_ms_mean": 1.936,
+    "latency_ms_p95": 1.941,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.465,
+     "G": 0.5809,
+     "C": 0.8444,
+     "A": 0.6598,
+     "H": 0.5627
+    },
+    "mean_auc": 0.6226,
+    "max_abs_prob_diff_vs_torch": 0.9987245202064514,
+    "mean_abs_prob_diff_vs_torch": 0.2971995174884796,
+    "latency_ms_mean": 2.993,
+    "latency_ms_p95": 3.028,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  },
+  "gpu": {
+   "nncf_kwargs": {
+    "preset": "mixed",
+    "target_device": "GPU"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.6673,
+     "G": 0.8422,
+     "C": 0.9137,
+     "A": 0.8583,
+     "H": 0.7436
+    },
+    "mean_auc": 0.805,
+    "max_abs_prob_diff_vs_torch": 0.9237104058265686,
+    "mean_abs_prob_diff_vs_torch": 0.12064209580421448,
+    "latency_ms_mean": 1.933,
+    "latency_ms_p95": 1.949,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.465,
+     "G": 0.5809,
+     "C": 0.8444,
+     "A": 0.6598,
+     "H": 0.5627
+    },
+    "mean_auc": 0.6226,
+    "max_abs_prob_diff_vs_torch": 0.9987245202064514,
+    "mean_abs_prob_diff_vs_torch": 0.2971995174884796,
+    "latency_ms_mean": 3.005,
+    "latency_ms_p95": 3.036,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  },
+  "perf": {
+   "nncf_kwargs": {
+    "preset": "performance",
+    "target_device": "ANY"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.6372,
+     "G": 0.8327,
+     "C": 0.912,
+     "A": 0.8352,
+     "H": 0.6984
+    },
+    "mean_auc": 0.7831,
+    "max_abs_prob_diff_vs_torch": 0.9460168480873108,
+    "mean_abs_prob_diff_vs_torch": 0.13323959708213806,
+    "latency_ms_mean": 1.924,
+    "latency_ms_p95": 1.941,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.4599,
+     "G": 0.5733,
+     "C": 0.8112,
+     "A": 0.6683,
+     "H": 0.5264
+    },
+    "mean_auc": 0.6078,
+    "max_abs_prob_diff_vs_torch": 0.9973372220993042,
+    "mean_abs_prob_diff_vs_torch": 0.2752118706703186,
+    "latency_ms_mean": 2.927,
+    "latency_ms_p95": 2.961,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  },
+  "perf_gpu": {
+   "nncf_kwargs": {
+    "preset": "performance",
+    "target_device": "GPU"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.6372,
+     "G": 0.8327,
+     "C": 0.912,
+     "A": 0.8352,
+     "H": 0.6984
+    },
+    "mean_auc": 0.7831,
+    "max_abs_prob_diff_vs_torch": 0.9460168480873108,
+    "mean_abs_prob_diff_vs_torch": 0.13323959708213806,
+    "latency_ms_mean": 1.926,
+    "latency_ms_p95": 1.941,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.4599,
+     "G": 0.5733,
+     "C": 0.8112,
+     "A": 0.6683,
+     "H": 0.5264
+    },
+    "mean_auc": 0.6078,
+    "max_abs_prob_diff_vs_torch": 0.9973372220993042,
+    "mean_abs_prob_diff_vs_torch": 0.2752118706703186,
+    "latency_ms_mean": 2.883,
+    "latency_ms_p95": 2.917,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  }
+ }
+}

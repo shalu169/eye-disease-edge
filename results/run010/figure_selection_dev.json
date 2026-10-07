@@ -1,0 +1,133 @@
+{
+ "thresholds_val_sens90": {
+  "D": 0.18527667224407196,
+  "G": 0.020808394998311996,
+  "C": 0.0699734091758728,
+  "A": 0.007073554210364819,
+  "H": 0.003093696665018797
+ },
+ "seed": 2026,
+ "rule": "uniform random draw within each category",
+ "selected": {
+  "TP_D": {
+   "file": "4354_left.jpg",
+   "label": "D",
+   "p": 0.8369165658950806,
+   "thr": 0.18527667224407196,
+   "n_candidates": 276,
+   "dr_grade_eye": 2,
+   "true_labels": {
+    "D": 1,
+    "G": 0,
+    "C": 0,
+    "A": 0,
+    "H": 0
+   }
+  },
+  "TP_G": {
+   "file": "1301_right.jpg",
+   "label": "G",
+   "p": 0.9440977573394775,
+   "thr": 0.020808394998311996,
+   "n_candidates": 62,
+   "dr_grade_eye": 0,
+   "true_labels": {
+    "D": 0,
+    "G": 1,
+    "C": 0,
+    "A": 0,
+    "H": 0
+   }
+  },
+  "TP_C": {
+   "file": "448_right.jpg",
+   "label": "C",
+   "p": 0.954593300819397,
+   "thr": 0.0699734091758728,
+   "n_candidates": 62,
+   "dr_grade_eye": 2,
+   "true_labels": {
+    "D": 1,
+    "G": 0,
+    "C": 1,
+    "A": 0,
+    "H": 0
+   }
+  },
+  "TP_A": {
+   "file": "662_left.jpg",
+   "label": "A",
+   "p": 0.8404955863952637,
+   "thr": 0.007073554210364819,
+   "n_candidates": 42,
+   "dr_grade_eye": 0,
+   "true_labels": {
+    "D": 0,
+    "G": 0,
+    "C": 0,
+    "A": 1,
+    "H": 0
+   }
+  },
+  "TP_H": {
+   "file": "4214_right.jpg",
+   "label": "H",
+   "p": 0.900337278842926,
+   "thr": 0.003093696665018797,
+   "n_candidates": 34,
+   "dr_grade_eye": 0,
+   "true_labels": {
+    "D": 0,
+    "G": 0,
+    "C": 0,
+    "A": 0,
+    "H": 1
+   }
+  },
+  "FP_D": {
+   "file": "3348_right.jpg",
+   "label": "D",
+   "p": 0.21868796646595,
+   "thr": 0.18527667224407196,
+   "n_candidates": 324,
+   "dr_grade_eye": 0,
+   "true_labels": {
+    "D": 0,
+    "G": 0,
+    "C": 0,
+    "A": 0,
+    "H": 0
+   }
+  },
+  "FP_other": {
+   "file": "3332_right.jpg",
+   "label": "G",
+   "p": 0.1440490186214447,
+   "thr": 0.020808394998311996,
+   "n_candidates": 1351,
+   "dr_grade_eye": 0,
+   "true_labels": {
+    "D": 0,
+    "G": 0,
+    "C": 0,
+    "A": 0,
+    "H": 0
+   }
+  },
+  "FN_mildDR": {
+   "file": "4496_right.jpg",
+   "label": "D",
+   "p": 0.1033497080206871,
+   "thr": 0.18527667224407196,
+   "n_candidates": 7,
+   "dr_grade_eye": 1,
+   "true_labels": {
+    "D": 1,
+    "G": 0,
+    "C": 0,
+    "A": 0,
+    "H": 0
+   }
+  }
+ }
+}

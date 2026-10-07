@@ -1,0 +1,41 @@
+{
+  "config": "ort_fp32_cpu",
+  "runtime": "onnxruntime 1.30.0",
+  "onnx": "artifacts/run007b_eyeD384_fp32.onnx",
+  "img": 384,
+  "manifest": "artifacts/val_manifest_run009.csv",
+  "n_images": 1270,
+  "label_cols": [
+    "D_eye",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "val_auc": {
+    "D_eye": 0.7626,
+    "G": 0.8964,
+    "C": 0.9389,
+    "A": 0.8491,
+    "H": 0.7973
+  },
+  "mean_auc": 0.8489,
+  "D_patient_auc": 0.7339,
+  "max_abs_prob_diff_vs_torch": 1.1622905731201172e-05,
+  "mean_abs_prob_diff_vs_torch": 5.183423468224646e-07,
+  "latency_ms": {
+    "mean": 4.687,
+    "p50": 4.684,
+    "p95": 4.709,
+    "p99": 4.725,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 7.856,
+  "preprocess_ms_p50": 7.83,
+  "model_load_s": 0.064,
+  "peak_rss_mb": 209.5,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

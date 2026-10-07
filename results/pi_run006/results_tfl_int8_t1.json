@@ -1,0 +1,45 @@
+{
+  "config": "tfl_int8_t1",
+  "runtime": "tflite_runtime 2.13.0",
+  "model_file": "run002_mnv3s_int8.tflite",
+  "num_threads": 1,
+  "val_auc": {
+    "D": 0.4963,
+    "G": 0.6144,
+    "C": 0.7137,
+    "A": 0.5281,
+    "H": 0.5778
+  },
+  "mean_auc": 0.5861,
+  "max_abs_prob_diff_vs_torch": 0.9770817756652832,
+  "mean_abs_prob_diff_vs_torch": 0.18929879367351532,
+  "latency_ms": {
+    "mean": 151.128,
+    "p50": 162.272,
+    "p95": 162.452,
+    "p99": 162.642,
+    "warmup": 20,
+    "timed": 200,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 88.079,
+  "accuracy_pass_s": 309.0,
+  "model_load_s": 0.059,
+  "peak_rss_mb": 38.4,
+  "mem_available_mb_before": 696.9,
+  "vcgencmd_before": {
+    "temp": "temp=52.1'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "vcgencmd_after": {
+    "temp": "temp=53.7'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "host": "raspberrypi",
+  "machine": "armv7l",
+  "python": "3.9.2",
+  "numpy": "1.26.4",
+  "pillow": "11.2.1"
+}

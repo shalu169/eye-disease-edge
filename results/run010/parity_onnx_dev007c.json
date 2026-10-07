@@ -1,0 +1,31 @@
+{
+ "runtime": "onnx",
+ "runtime_version": "1.30.0",
+ "tag": "dev007c",
+ "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt",
+ "checkpoint_info": {
+  "source": "command line",
+  "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt"
+ },
+ "n_images": 300,
+ "n_maps": 1500,
+ "images": "seeded random draw from results/run008_splits/test.csv (random_state=10)",
+ "host": "macOS-26.3-arm64-arm-64bit",
+ "numpy": "1.26.4",
+ "feature_map_max_abs_diff": 0.0020551681518554688,
+ "feature_map_max_abs_diff_rel_to_feature_max": 2.5104014639509842e-05,
+ "prob_max_abs_diff_edge_gradcam_path": 1.455248577120205e-05,
+ "prob_max_abs_diff_numpy_head_on_torch_features": 4.776352027224817e-07,
+ "prob_max_abs_diff_full_model_plain_inference": 1.414192132020986e-05,
+ "heatmap_max_abs_diff_edge": 0.0001055002212524414,
+ "heatmap_mean_of_per_map_max_abs_diff_edge": 8.08319600764662e-06,
+ "heatmap_p99_of_per_map_max_abs_diff_edge": 3.887735307216643e-05,
+ "heatmap_max_abs_diff_numpy_head_on_torch_features": 2.9206275939941406e-06,
+ "lowres_cam_max_abs_diff_rel_to_map_max_edge": 0.0001246655301656574,
+ "heatmap_spearman_edge_vs_ref_min": 0.9999999915441801,
+ "heatmap_spearman_edge_vs_ref_median": 0.9999999986940491,
+ "heatmap_argmax_identical_fraction": 1.0,
+ "n_all_zero_reference_maps": 0,
+ "heatmap_scale": "maps normalised to per-map max (range [0,1]); diffs are in those units",
+ "seconds": 521.7
+}

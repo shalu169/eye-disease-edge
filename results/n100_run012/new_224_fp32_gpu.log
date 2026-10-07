@@ -1,0 +1,40 @@
+{
+  "config": "ov_fp32_gpu",
+  "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4 | GPU Intel(R) UHD Graphics (iGPU) | precision <Type: 'float16'> | OpenCL driver /home/test/neo/root/usr/lib/x86_64-linux-gnu/intel-opencl/libigdrcl.so",
+  "onnx": "artifacts/run002_mnv3s_fp32.onnx",
+  "img": 224,
+  "manifest": "artifacts/val_manifest.csv",
+  "n_images": 1270,
+  "label_cols": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "val_auc": {
+    "D": 0.6944,
+    "G": 0.8729,
+    "C": 0.9375,
+    "A": 0.8578,
+    "H": 0.745
+  },
+  "mean_auc": 0.8215,
+  "max_abs_prob_diff_vs_torch": 0.05856364965438843,
+  "mean_abs_prob_diff_vs_torch": 0.0036738328635692596,
+  "latency_ms": {
+    "mean": 2.754,
+    "p50": 2.75,
+    "p95": 2.798,
+    "p99": 2.825,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 4.514,
+  "preprocess_ms_p50": 4.492,
+  "model_load_s": 3.011,
+  "peak_rss_mb": 677.8,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

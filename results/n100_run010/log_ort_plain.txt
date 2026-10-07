@@ -1,0 +1,31 @@
+{
+ "runtime": "ort",
+ "runtime_version": "onnxruntime 1.30.0",
+ "mode": "plain",
+ "tag": "final",
+ "threads": 0,
+ "labels": null,
+ "warmup": 50,
+ "iters": 500,
+ "latency_ms": {
+  "mean": 7.457963148131967,
+  "p50": 7.451864497852512,
+  "p95": 7.482490400434472,
+  "p99": 7.666616478236392,
+  "std": 0.039340796007661494,
+  "n": 500
+ },
+ "numpy_part_ms": null,
+ "load_s": 0.0808086510078283,
+ "peak_rss_mb": 108.36328125,
+ "rss_before_load_mb": 38.0234375,
+ "parity_vs_mac_torch": {
+  "prob_max_abs_diff": 9.096762844662543e-06,
+  "map_max_abs_diff": null
+ },
+ "numpy": "2.4.6",
+ "python": "3.13.5",
+ "machine": "x86_64",
+ "node": "extraeye",
+ "note_maps_fixture": "reference maps stored as float16 (quantisation ~5e-4)"
+}

@@ -1,0 +1,70 @@
+{
+ "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+ "checkpoint_info": {
+  "source": "results/run008_FINAL_CHECKPOINT.json",
+  "model": "run008 A (final): MobileNetV3-small (timm mobilenetv3_small_100), joint 5-label",
+  "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+  "seed": 2,
+  "best_epoch": 21,
+  "input_size": 512,
+  "preprocessing": "PIL RGB -> Resize((512,512)) bilinear -> ToTensor -> Normalize(ImageNet mean/std)",
+  "output": "5 logits, sigmoid per label, order [D, G, C, A, H]",
+  "label_config": {
+   "labels": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+   ],
+   "D": "per-eye DR label from that eye's diagnostic keywords (results/run007_dr_per_eye_label_mapping.md)",
+   "G_C_A_H": "ODIR patient-level labels"
+  },
+  "test_manifest": "results/run008_splits/test.csv",
+  "val_manifest": "results/run008_splits/val.csv",
+  "train_manifest": "results/run008_splits/train.csv",
+  "val_sel_mean_auc": 0.8573695340988641,
+  "selection_rule": "seed with the median VALIDATION selection mean AUC (5 labels, D scored on per-eye labels) among seeds [0, 1, 2]; test set not used for this choice",
+  "all_seeds": [
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s0_best_epoch12.pt",
+    "seed": 0,
+    "best_epoch": 12,
+    "val_sel_mean_auc": 0.8596530178251758
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s1_best_epoch8.pt",
+    "seed": 1,
+    "best_epoch": 8,
+    "val_sel_mean_auc": 0.8516721957673109
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+    "seed": 2,
+    "best_epoch": 21,
+    "val_sel_mean_auc": 0.8573695340988641
+   }
+  ],
+  "note": "Edge INT8 calibration must use images from train.csv only; the old edge/artifacts/calib_manifest.csv has 55 images that are now in test.csv.",
+  "updated_after_all_seeds": true
+ },
+ "n_images": 64,
+ "n_maps": 320,
+ "pytorch_grad_cam_version": "1.5.7 (pip)",
+ "target_layer": "model.blocks[-1] (ConvBnAct 96->576, output of forward_features)",
+ "max_abs_prob_diff_gradcam_forward_vs_plain_forward": 1.1622905731201172e-06,
+ "lowres_minmax_max_abs_diff_ours_vs_lib": 1.4603137969970703e-06,
+ "final512_max_abs_diff_ours_libstyle_vs_lib": 1.4454126358032227e-06,
+ "final512_max_abs_diff_ours_display_vs_lib": 1.475214958190918e-06,
+ "final512_mean_of_maxabs_ours_display_vs_lib": 4.226341729918204e-07,
+ "final512_spearman_ours_display_vs_lib_min": 0.9999999998747577,
+ "final512_spearman_ours_display_vs_lib_median": 0.9999999999657425,
+ "seconds": 105.5,
+ "labels": [
+  "D",
+  "G",
+  "C",
+  "A",
+  "H"
+ ]
+}

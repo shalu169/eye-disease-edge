@@ -1,0 +1,41 @@
+{
+  "config": "ort_fp32_cpu",
+  "runtime": "onnxruntime 1.30.0",
+  "onnx": "edge/artifacts/run008final_fp32.onnx",
+  "img": 512,
+  "manifest": "edge/artifacts/test_manifest_run008.csv",
+  "n_images": 1025,
+  "label_cols": [
+    "D_eye",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "val_auc": {
+    "D_eye": 0.8093,
+    "G": 0.8916,
+    "C": 0.8973,
+    "A": 0.8616,
+    "H": 0.8126
+  },
+  "mean_auc": 0.8545,
+  "D_patient_auc": 0.7709,
+  "max_abs_prob_diff_vs_torch": 2.1576881408691406e-05,
+  "mean_abs_prob_diff_vs_torch": 6.447025953093544e-07,
+  "latency_ms": {
+    "mean": 17.188,
+    "p50": 11.655,
+    "p95": 40.278,
+    "p99": 100.74,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 7.475,
+  "preprocess_ms_p50": 6.786,
+  "model_load_s": 0.092,
+  "peak_rss_mb": 219136.0,
+  "host": "Mac.fritz.box",
+  "python": "3.13.15"
+}

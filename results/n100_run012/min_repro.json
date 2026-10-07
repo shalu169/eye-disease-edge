@@ -1,0 +1,66 @@
+{
+ "weight_fq_range_shape": [
+  16,
+  1,
+  1,
+  1,
+  3
+ ],
+ "act_fq_range_shape": [
+  1,
+  16,
+  1,
+  1
+ ],
+ "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "gpu": "Intel(R) UHD Graphics (iGPU)",
+ "variants": {
+  "orig": {
+   "gpu_nan_channels": [
+    14,
+    15
+   ],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.04678045213222504
+  },
+  "perchannel": {
+   "gpu_nan_channels": [],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.0
+  },
+  "pertensor": {
+   "gpu_nan_channels": [],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.0
+  },
+  "noweightfq": {
+   "gpu_nan_channels": [],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.0
+  },
+  "noactfq": {
+   "gpu_nan_channels": [
+    14,
+    15
+   ],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.04678094759583473
+  },
+  "stride1": {
+   "gpu_nan_channels": [
+    14,
+    15
+   ],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.04673194885253906
+  },
+  "c32": {
+   "gpu_nan_channels": [
+    30,
+    31
+   ],
+   "cpu_all_finite": true,
+   "rel_err_on_finite": 0.04358316585421562
+  }
+ }
+}

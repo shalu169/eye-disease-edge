@@ -1,0 +1,6 @@
+ov_fp32_cpu model rep 0: 11.486 W pkg, 89.3 inf/s, 128.58 mJ/inf, pkg temp 60.0->76.0 C, sys busy 0.9628
+ov_fp32_cpu model rep 1: 11.494 W pkg, 89.5 inf/s, 128.45 mJ/inf, pkg temp 61.0->76.0 C, sys busy 0.9627
+ov_fp32_cpu model rep 2: 11.511 W pkg, 89.4 inf/s, 128.74 mJ/inf, pkg temp 62.0->79.0 C, sys busy 0.9629
+ov_fp32_cpu e2e rep 0: 11.099 W pkg, 54.5 inf/s, 203.57 mJ/inf, pkg temp 61.0->80.0 C, sys busy 0.6197
+ov_fp32_cpu e2e rep 1: 11.088 W pkg, 53.9 inf/s, 205.68 mJ/inf, pkg temp 63.0->82.0 C, sys busy 0.6176
+ov_fp32_cpu e2e rep 2: 11.078 W pkg, 53.6 inf/s, 206.69 mJ/inf, pkg temp 63.0->83.0 C, sys busy 0.6147

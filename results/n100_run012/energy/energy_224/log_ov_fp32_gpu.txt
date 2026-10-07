@@ -1,0 +1,6 @@
+ov_fp32_gpu model rep 0: 8.585 W pkg, 369.8 inf/s, 23.21 mJ/inf, pkg temp 63.0->70.0 C, sys busy 0.2518
+ov_fp32_gpu model rep 1: 8.532 W pkg, 370.3 inf/s, 23.04 mJ/inf, pkg temp 64.0->69.0 C, sys busy 0.2518
+ov_fp32_gpu model rep 2: 8.510 W pkg, 370.6 inf/s, 22.97 mJ/inf, pkg temp 62.0->69.0 C, sys busy 0.2519
+ov_fp32_gpu e2e rep 0: 8.505 W pkg, 118.6 inf/s, 71.70 mJ/inf, pkg temp 62.0->72.0 C, sys busy 0.2512
+ov_fp32_gpu e2e rep 1: 8.511 W pkg, 119.2 inf/s, 71.42 mJ/inf, pkg temp 62.0->72.0 C, sys busy 0.2512
+ov_fp32_gpu e2e rep 2: 8.489 W pkg, 119.3 inf/s, 71.18 mJ/inf, pkg temp 62.0->69.0 C, sys busy 0.2511

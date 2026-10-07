@@ -1,0 +1,12 @@
+Statistics collection ━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 300/300 • 0:00:04 • 0:00:00
+base CPU 0.805 1.936
+base GPU 0.6226 2.993
+Statistics collection ━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 300/300 • 0:00:04 • 0:00:00
+gpu CPU 0.805 1.933
+gpu GPU 0.6226 3.005
+Statistics collection ━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 300/300 • 0:00:04 • 0:00:00
+perf CPU 0.7831 1.924
+perf GPU 0.6078 2.927
+Statistics collection ━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 300/300 • 0:00:04 • 0:00:00
+perf_gpu CPU 0.7831 1.926
+perf_gpu GPU 0.6078 2.883

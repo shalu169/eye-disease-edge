@@ -1,0 +1,75 @@
+{
+ "runtime": "onnx",
+ "runtime_version": "1.30.0",
+ "tag": "final",
+ "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+ "checkpoint_info": {
+  "source": "results/run008_FINAL_CHECKPOINT.json",
+  "model": "run008 A (final): MobileNetV3-small (timm mobilenetv3_small_100), joint 5-label",
+  "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+  "seed": 2,
+  "best_epoch": 21,
+  "input_size": 512,
+  "preprocessing": "PIL RGB -> Resize((512,512)) bilinear -> ToTensor -> Normalize(ImageNet mean/std)",
+  "output": "5 logits, sigmoid per label, order [D, G, C, A, H]",
+  "label_config": {
+   "labels": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+   ],
+   "D": "per-eye DR label from that eye's diagnostic keywords (results/run007_dr_per_eye_label_mapping.md)",
+   "G_C_A_H": "ODIR patient-level labels"
+  },
+  "test_manifest": "results/run008_splits/test.csv",
+  "val_manifest": "results/run008_splits/val.csv",
+  "train_manifest": "results/run008_splits/train.csv",
+  "val_sel_mean_auc": 0.8573695340988641,
+  "selection_rule": "seed with the median VALIDATION selection mean AUC (5 labels, D scored on per-eye labels) among seeds [0, 1, 2]; test set not used for this choice",
+  "all_seeds": [
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s0_best_epoch12.pt",
+    "seed": 0,
+    "best_epoch": 12,
+    "val_sel_mean_auc": 0.8596530178251758
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s1_best_epoch8.pt",
+    "seed": 1,
+    "best_epoch": 8,
+    "val_sel_mean_auc": 0.8516721957673109
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+    "seed": 2,
+    "best_epoch": 21,
+    "val_sel_mean_auc": 0.8573695340988641
+   }
+  ],
+  "note": "Edge INT8 calibration must use images from train.csv only; the old edge/artifacts/calib_manifest.csv has 55 images that are now in test.csv.",
+  "updated_after_all_seeds": true
+ },
+ "n_images": 300,
+ "n_maps": 1500,
+ "images": "seeded random draw from results/run008_splits/test.csv (random_state=10)",
+ "host": "macOS-26.3-arm64-arm-64bit",
+ "numpy": "1.26.4",
+ "feature_map_max_abs_diff": 0.001369476318359375,
+ "feature_map_max_abs_diff_rel_to_feature_max": 1.7915630451170728e-05,
+ "prob_max_abs_diff_edge_gradcam_path": 1.1411402552563565e-05,
+ "prob_max_abs_diff_numpy_head_on_torch_features": 3.9177973842896563e-07,
+ "prob_max_abs_diff_full_model_plain_inference": 1.0736833813029811e-05,
+ "heatmap_max_abs_diff_edge": 0.00022543221712112427,
+ "heatmap_mean_of_per_map_max_abs_diff_edge": 8.36581239127554e-06,
+ "heatmap_p99_of_per_map_max_abs_diff_edge": 4.113078117370605e-05,
+ "heatmap_max_abs_diff_numpy_head_on_torch_features": 1.3500452041625977e-05,
+ "lowres_cam_max_abs_diff_rel_to_map_max_edge": 0.0002333508018637076,
+ "heatmap_spearman_edge_vs_ref_min": 0.9999999685110005,
+ "heatmap_spearman_edge_vs_ref_median": 0.9999999987381003,
+ "heatmap_argmax_identical_fraction": 0.9993333333333333,
+ "n_all_zero_reference_maps": 0,
+ "heatmap_scale": "maps normalised to per-map max (range [0,1]); diffs are in those units",
+ "seconds": 291.3
+}

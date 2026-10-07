@@ -1,0 +1,28 @@
+{
+  "config": "ov_fp32_gpu",
+  "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4",
+  "val_auc": {
+    "D": 0.6944,
+    "G": 0.8729,
+    "C": 0.9375,
+    "A": 0.8578,
+    "H": 0.745
+  },
+  "mean_auc": 0.8215,
+  "max_abs_prob_diff_vs_torch": 0.05856364965438843,
+  "mean_abs_prob_diff_vs_torch": 0.0036738328635692596,
+  "latency_ms": {
+    "mean": 3.029,
+    "p50": 3.027,
+    "p95": 3.077,
+    "p99": 3.098,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 4.357,
+  "model_load_s": 3.505,
+  "peak_rss_mb": 613.2,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

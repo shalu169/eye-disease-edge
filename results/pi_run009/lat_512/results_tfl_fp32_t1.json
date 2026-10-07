@@ -1,0 +1,58 @@
+{
+  "config": "tfl_fp32_t1",
+  "runtime": "tflite_runtime 2.13.0",
+  "model_file": "artifacts/run007c_eyeD512_fp32.tflite",
+  "img": 512,
+  "manifest": "artifacts/val_manifest_run009.csv",
+  "n_images": 300,
+  "label_cols": [
+    "D_eye",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "num_threads": 1,
+  "val_auc": {
+    "D_eye": 0.8424,
+    "G": 0.9081,
+    "C": 0.9114,
+    "A": 0.8178,
+    "H": 0.8018
+  },
+  "mean_auc": 0.8563,
+  "D_patient_auc": 0.7967,
+  "max_abs_prob_diff_vs_torch": 8.746981620788574e-05,
+  "mean_abs_prob_diff_vs_torch": 6.063608907425078e-06,
+  "latency_ms": {
+    "mean": 856.614,
+    "p50": 870.726,
+    "p95": 879.895,
+    "p99": 896.116,
+    "warmup": 20,
+    "timed": 200,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 221.871,
+  "preprocess_ms_p50": 226.225,
+  "accuracy_pass_s": 321.7,
+  "model_load_s": 0.062,
+  "peak_rss_mb": 64.5,
+  "mem_available_mb_before": 697.7,
+  "mem_available_mb_after": 673.0,
+  "vcgencmd_before": {
+    "temp": "temp=46.2'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "vcgencmd_after": {
+    "temp": "temp=47.2'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "host": "raspberrypi",
+  "machine": "armv7l",
+  "python": "3.9.2",
+  "numpy": "1.26.4",
+  "pillow": "11.2.1"
+}

@@ -1,0 +1,38 @@
+{
+ "runtime": "ov",
+ "runtime_version": "openvino 2026.4.1-22982-e213a147257-releases/2026/4",
+ "mode": "head",
+ "tag": "final",
+ "threads": 0,
+ "labels": null,
+ "warmup": 50,
+ "iters": 500,
+ "latency_ms": {
+  "mean": 9.010592923586955,
+  "p50": 8.998366502055433,
+  "p95": 9.038206406694371,
+  "p99": 9.060242509003729,
+  "std": 0.15022779832518093,
+  "n": 500
+ },
+ "numpy_part_ms": {
+  "mean": 0.772978031745879,
+  "p50": 0.7716800027992576,
+  "p95": 0.7849750028981362,
+  "p99": 0.7891421786916908,
+  "std": 0.005416769756549191,
+  "n": 500
+ },
+ "load_s": 0.24828775100468192,
+ "peak_rss_mb": 151.4140625,
+ "rss_before_load_mb": 38.18359375,
+ "parity_vs_mac_torch": {
+  "prob_max_abs_diff": 1.8646474195804785e-06,
+  "map_max_abs_diff": null
+ },
+ "numpy": "2.4.6",
+ "python": "3.13.5",
+ "machine": "x86_64",
+ "node": "extraeye",
+ "note_maps_fixture": "reference maps stored as float16 (quantisation ~5e-4)"
+}

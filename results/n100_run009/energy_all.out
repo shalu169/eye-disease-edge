@@ -1,0 +1,10 @@
+RAPL readable 2026-10-03T05:23:08+05:30
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+test        4247  0.5  0.0  22188 12208 ?        Ss   05:22   0:00 /usr/lib/systemd/systemd --user
+root        4186  0.0  0.0      0     0 ?        I    05:22   0:00 [kworker/3:3-mm_percpu_wq]
+root        3597  0.0  0.0      0     0 ?        I    04:53   0:00 [kworker/0:2-cgroup_free]
+root        3600  0.0  0.0      0     0 ?        I    05:02   0:00 [kworker/3:0-cgroup_free]
+ 05:23:08 up  7:34,  1 user,  load average: 0.49, 0.58, 0.27
+512 done rc=0 2026-10-03T05:59:25+05:30
+224 done rc=0 2026-10-03T06:35:38+05:30
+ENERGY_ALL_DONE

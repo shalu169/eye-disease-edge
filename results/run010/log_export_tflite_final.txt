@@ -1,0 +1,62 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791025304.269203 109240333 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791025304.269795 109240333 single_machine.cc:361] Starting new session
+W0000 00:00:1791025304.420576 109240333 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1791025304.420606 109240333 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1791025304.613160 109240333 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1791025304.613260 109240333 single_machine.cc:361] Starting new session
+W0000 00:00:1791025304.732159 109240333 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1791025304.732188 109240333 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791025309.838329 109240724 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791025309.838929 109240724 single_machine.cc:361] Starting new session
+W0000 00:00:1791025309.967162 109240724 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1791025309.967195 109240724 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1791025310.079093 109240724 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1791025310.079256 109240724 single_machine.cc:361] Starting new session
+W0000 00:00:1791025310.188431 109240724 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1791025310.188484 109240724 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+{
+ "tag": "final",
+ "tensorflow": "2.18.0",
+ "onnx2tf": "1.26.3",
+ "files": {
+  "backbone": {
+   "source_onnx": "edge/artifacts/run010_final_backbone_fp32.onnx",
+   "path": "edge/artifacts/run010_final_backbone_fp32.tflite",
+   "md5": "b448d16361063b27e1fda50b4b6387c3",
+   "bytes": 3714780,
+   "input_shape": [
+    1,
+    512,
+    512,
+    3
+   ],
+   "output_shape": [
+    1,
+    16,
+    16,
+    576
+   ]
+  },
+  "full": {
+   "source_onnx": "edge/artifacts/run010_final_full_fp32.onnx",
+   "path": "edge/artifacts/run010_final_full_fp32.tflite",
+   "md5": "aedea11f938de6d1c6075184403c8c1a",
+   "bytes": 6099836,
+   "input_shape": [
+    1,
+    512,
+    512,
+    3
+   ],
+   "output_shape": [
+    1,
+    5
+   ]
+  }
+ }
+}

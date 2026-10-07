@@ -1,0 +1,40 @@
+{
+ "runtime": "tflite",
+ "runtime_version": "tflite-runtime 2.13.0",
+ "mode": "gradcam1",
+ "tag": "final",
+ "threads": 4,
+ "labels": [
+  0
+ ],
+ "warmup": 10,
+ "iters": 100,
+ "latency_ms": {
+  "mean": 597.3720669467002,
+  "p50": 599.6222995454445,
+  "p95": 621.8942024395801,
+  "p99": 628.8558717886917,
+  "std": 15.30651854062504,
+  "n": 100
+ },
+ "numpy_part_ms": {
+  "mean": 61.516159086022526,
+  "p50": 61.3930415129289,
+  "p95": 61.939273576717824,
+  "p99": 63.41037979349497,
+  "std": 0.8333227807611923,
+  "n": 100
+ },
+ "load_s": 0.112670605070889,
+ "peak_rss_mb": 70.28125,
+ "rss_before_load_mb": 31.3046875,
+ "parity_vs_mac_torch": {
+  "prob_max_abs_diff": 0.00011635506156376652,
+  "map_max_abs_diff": 0.0002492666244506836
+ },
+ "numpy": "1.26.4",
+ "python": "3.9.2",
+ "machine": "armv7l",
+ "node": "raspberrypi",
+ "note_maps_fixture": "reference maps stored as float16 (quantisation ~5e-4)"
+}

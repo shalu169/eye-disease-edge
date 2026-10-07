@@ -1,0 +1,118 @@
+{
+ "gpu": "Intel(R) UHD Graphics (iGPU)",
+ "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "nncf": "3.4.0",
+ "variants": {
+  "pertensor_act": {
+   "nncf_kwargs": {
+    "preset": "mixed",
+    "target_device": "ANY",
+    "advanced_parameters": "AdvancedQuantizationParameters(overflow_fix=None, quantize_outputs=False, inplace_statistics=True, disable_channel_alignment=True, disable_bias_correction=False, batchwise_statistics=None, activations_quantization_params=QuantizationParameters(num_bits=None, mode=None, signedness_to_force=None, per_channel=False, narrow_range=None), weights_quantization_params=None, quantizer_propagation_rule=<QuantizerPropagationRule.MERGE_ALL_IN_ONE: '3'>, activations_range_estimator_params=RangeEstimatorParameters(min=StatisticsCollectorParameters(statistics_type=None, aggregator_type=None, clipping_value=None, quantile_outlier_prob=0.0001), max=StatisticsCollectorParameters(statistics_type=None, aggregator_type=None, clipping_value=None, quantile_outlier_prob=0.0001)), weights_range_estimator_params=RangeEstimatorParameters(min=StatisticsCollectorParameters(statistics_type=None, aggregator_type=None, clipping_value=None, quantile_outlier_prob=0.0001), max=StatisticsCollectorParameters(statistics_type=None, aggregator_type=None, clipping_value=None, quantile_outlier_prob=0.0001)), bias_correction_params=AdvancedBiasCorrectionParameters(apply_for_all_nodes=False, threshold=None), smooth_quant_alphas=AdvancedSmoothQuantParameters(convolution=-1, matmul=0.95), smooth_quant_alpha=None, backend_params={})"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.5903,
+     "G": 0.5437,
+     "C": 0.8006,
+     "A": 0.5251,
+     "H": 0.5247
+    },
+    "mean_auc": 0.5969,
+    "max_abs_prob_diff_vs_torch": 0.9994458556175232,
+    "mean_abs_prob_diff_vs_torch": 0.24812257289886475,
+    "latency_ms_mean": 1.912,
+    "latency_ms_p95": 1.929,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.483,
+     "G": 0.417,
+     "C": 0.678,
+     "A": 0.5116,
+     "H": 0.5295
+    },
+    "mean_auc": 0.5238,
+    "max_abs_prob_diff_vs_torch": 0.9995638132095337,
+    "mean_abs_prob_diff_vs_torch": 0.3164433240890503,
+    "latency_ms_mean": 2.884,
+    "latency_ms_p95": 2.917,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  },
+  "skip_first_dw": {
+   "nncf_kwargs": {
+    "preset": "mixed",
+    "target_device": "ANY",
+    "ignored_scope": "IgnoredScope(names=['/blocks/blocks.0/blocks.0.0/conv_dw/Conv/WithoutBiases'], patterns=[], types=[], subgraphs=[], validate=True)"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.6672,
+     "G": 0.8451,
+     "C": 0.9137,
+     "A": 0.8557,
+     "H": 0.7374
+    },
+    "mean_auc": 0.8038,
+    "max_abs_prob_diff_vs_torch": 0.9260654449462891,
+    "mean_abs_prob_diff_vs_torch": 0.11582545191049576,
+    "latency_ms_mean": 1.92,
+    "latency_ms_p95": 1.935,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.6118,
+     "G": 0.8071,
+     "C": 0.8714,
+     "A": 0.7902,
+     "H": 0.6103
+    },
+    "mean_auc": 0.7382,
+    "max_abs_prob_diff_vs_torch": 0.9972738027572632,
+    "mean_abs_prob_diff_vs_torch": 0.2694951593875885,
+    "latency_ms_mean": 2.987,
+    "latency_ms_p95": 3.021,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  },
+  "skip_all_dw": {
+   "nncf_kwargs": {
+    "preset": "mixed",
+    "target_device": "ANY",
+    "ignored_scope": "IgnoredScope(names=[], patterns=[], types=['GroupConvolution'], subgraphs=[], validate=True)"
+   },
+   "CPU": {
+    "val_auc": {
+     "D": 0.6625,
+     "G": 0.8503,
+     "C": 0.9173,
+     "A": 0.8561,
+     "H": 0.7354
+    },
+    "mean_auc": 0.8043,
+    "max_abs_prob_diff_vs_torch": 0.9335922598838806,
+    "mean_abs_prob_diff_vs_torch": 0.11399132758378983,
+    "latency_ms_mean": 1.858,
+    "latency_ms_p95": 1.872,
+    "inference_precision": "<Type: 'float32'>"
+   },
+   "GPU": {
+    "val_auc": {
+     "D": 0.6648,
+     "G": 0.8426,
+     "C": 0.9127,
+     "A": 0.8623,
+     "H": 0.7363
+    },
+    "mean_auc": 0.8037,
+    "max_abs_prob_diff_vs_torch": 0.9264639019966125,
+    "mean_abs_prob_diff_vs_torch": 0.11273008584976196,
+    "latency_ms_mean": 2.83,
+    "latency_ms_p95": 2.869,
+    "inference_precision": "<Type: 'float16'>"
+   }
+  }
+ }
+}

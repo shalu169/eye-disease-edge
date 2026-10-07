@@ -1,0 +1,82 @@
+{
+ "run002": {
+  "checkpoint": "results/checkpoints/run002_baseline_tuned_best_epoch15.pt",
+  "label_cols": [
+   "D",
+   "G",
+   "C",
+   "A",
+   "H"
+  ],
+  "label_auc_patient_level": {
+   "D": 0.6947420499522315,
+   "G": 0.8722226323171182,
+   "C": 0.9376398210290827,
+   "A": 0.8574986197418035,
+   "H": 0.745233560090703
+  },
+  "dr": {
+   "n": 1270,
+   "n_pos_patientD": 408,
+   "n_pos_eyeD": 323,
+   "auc_patientD": 0.6947420499522315,
+   "auc_eyeD": 0.7139246962053871,
+   "n_eyeD_strict": 1258,
+   "auc_eyeD_strict": 0.716697087875735,
+   "n_patients": 672,
+   "auc_patient_maxeye": 0.719298245614035,
+   "n_mild": 98,
+   "auc_mild_vs_noDR": 0.6774777492834514,
+   "n_moderate": 180,
+   "auc_moderate_vs_noDR": 0.706458993312214,
+   "n_severe_npdr": 30,
+   "auc_severe_npdr_vs_noDR": 0.8646955297430483,
+   "n_pdr": 5,
+   "auc_pdr_vs_noDR": 0.9697993664202745,
+   "n_moderate_plus": 215,
+   "auc_moderate_plus_vs_noDR": 0.7346627047469365,
+   "n_ungraded_excluded": 10,
+   "auc_referable_modplus_vs_rest": 0.721019250027818,
+   "n_noisy_pos": 85,
+   "mean_p_noisy_pos": 0.4489594101905823,
+   "mean_p_eyeDR_pos": 0.5609850883483887,
+   "mean_p_patientD0": 0.3724127411842346
+  }
+ },
+ "run003": {
+  "checkpoint": "results/checkpoints/run003_dr_only_best_epoch9.pt",
+  "label_cols": [
+   "D"
+  ],
+  "label_auc_patient_level": {
+   "D": 0.7194707929575542
+  },
+  "dr": {
+   "n": 1270,
+   "n_pos_patientD": 408,
+   "n_pos_eyeD": 323,
+   "auc_patientD": 0.7194707929575542,
+   "auc_eyeD": 0.7338670921044459,
+   "n_eyeD_strict": 1258,
+   "auc_eyeD_strict": 0.7375597203243598,
+   "n_patients": 672,
+   "auc_patient_maxeye": 0.7284864359974008,
+   "n_mild": 98,
+   "auc_mild_vs_noDR": 0.6970238993168545,
+   "n_moderate": 180,
+   "auc_moderate_vs_noDR": 0.7194884430364895,
+   "n_severe_npdr": 30,
+   "auc_severe_npdr_vs_noDR": 0.9105948609644492,
+   "n_pdr": 5,
+   "auc_pdr_vs_noDR": 0.9945089757127772,
+   "n_moderate_plus": 215,
+   "auc_moderate_plus_vs_noDR": 0.7525502811816999,
+   "n_ungraded_excluded": 10,
+   "auc_referable_modplus_vs_rest": 0.7381239568265272,
+   "n_noisy_pos": 85,
+   "mean_p_noisy_pos": 0.5133103728294373,
+   "mean_p_eyeDR_pos": 0.6322138905525208,
+   "mean_p_patientD0": 0.3993869423866272
+  }
+ }
+}

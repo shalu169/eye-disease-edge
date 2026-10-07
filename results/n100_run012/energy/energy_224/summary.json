@@ -1,0 +1,754 @@
+{
+  "idle_package_w": {
+    "mean": 2.6601,
+    "std": 0.033,
+    "n": 6,
+    "values": [
+      2.657,
+      2.6364,
+      2.6196,
+      2.7154,
+      2.673,
+      2.6589
+    ]
+  },
+  "idle_by_zone_w": {
+    "package": {
+      "mean": 2.6601,
+      "std": 0.033,
+      "n": 6,
+      "values": [
+        2.657,
+        2.6364,
+        2.6196,
+        2.7154,
+        2.673,
+        2.6589
+      ]
+    },
+    "core": {
+      "mean": 0.0186,
+      "std": 0.002,
+      "n": 6,
+      "values": [
+        0.0199,
+        0.0163,
+        0.0167,
+        0.0216,
+        0.0189,
+        0.018
+      ]
+    },
+    "uncore": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 6,
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "configs": {
+    "ort_fp32_cpu": {
+      "runtime": "onnxruntime 1.30.0",
+      "peak_rss_mb": 196.8,
+      "model": {
+        "package_w": {
+          "mean": 11.3343,
+          "std": 0.1732,
+          "n": 3,
+          "values": [
+            11.5342,
+            11.2331,
+            11.2355
+          ]
+        },
+        "package_w_second_half": {
+          "mean": 10.4333,
+          "std": 0.408,
+          "n": 3,
+          "values": [
+            10.9043,
+            10.1871,
+            10.2086
+          ]
+        },
+        "zone_w": {
+          "package": {
+            "mean": 11.3343,
+            "std": 0.1732,
+            "n": 3,
+            "values": [
+              11.5342,
+              11.2331,
+              11.2355
+            ]
+          },
+          "core": {
+            "mean": 7.4982,
+            "std": 0.2003,
+            "n": 3,
+            "values": [
+              7.7282,
+              7.4035,
+              7.3628
+            ]
+          },
+          "uncore": {
+            "mean": 0.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "inferences_per_s": {
+          "mean": 426.5497,
+          "std": 14.351,
+          "n": 3,
+          "values": [
+            443.057,
+            419.554,
+            417.038
+          ]
+        },
+        "mj_per_inference_total": {
+          "mean": 26.5827,
+          "std": 0.4832,
+          "n": 3,
+          "values": [
+            26.0332,
+            26.7739,
+            26.9411
+          ]
+        },
+        "mj_per_inference_above_idle": {
+          "mean": 20.3418,
+          "std": 0.2783,
+          "n": 3,
+          "values": [
+            20.0293,
+            20.4336,
+            20.5626
+          ]
+        },
+        "process_cpu_cores": {
+          "mean": 3.9967,
+          "std": 0.0006,
+          "n": 3,
+          "values": [
+            3.996,
+            3.9973,
+            3.9969
+          ]
+        },
+        "system_cpu_busy_frac": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 3,
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "pkg_temp_before_c": [
+          48.0,
+          51.0,
+          55.0
+        ],
+        "pkg_temp_after_c": [
+          65.0,
+          68.0,
+          72.0
+        ]
+      },
+      "e2e": {
+        "package_w": {
+          "mean": 9.7665,
+          "std": 0.0364,
+          "n": 3,
+          "values": [
+            9.7283,
+            9.7704,
+            9.8007
+          ]
+        },
+        "package_w_second_half": {
+          "mean": 9.8007,
+          "std": 0.0362,
+          "n": 3,
+          "values": [
+            9.7644,
+            9.8009,
+            9.8367
+          ]
+        },
+        "zone_w": {
+          "package": {
+            "mean": 9.7665,
+            "std": 0.0364,
+            "n": 3,
+            "values": [
+              9.7283,
+              9.7704,
+              9.8007
+            ]
+          },
+          "core": {
+            "mean": 6.0446,
+            "std": 0.02,
+            "n": 3,
+            "values": [
+              6.0253,
+              6.0433,
+              6.0652
+            ]
+          },
+          "uncore": {
+            "mean": 0.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "inferences_per_s": {
+          "mean": 137.794,
+          "std": 0.4011,
+          "n": 3,
+          "values": [
+            138.254,
+            137.517,
+            137.611
+          ]
+        },
+        "mj_per_inference_total": {
+          "mean": 70.8781,
+          "std": 0.4523,
+          "n": 3,
+          "values": [
+            70.3653,
+            71.0487,
+            71.2204
+          ]
+        },
+        "mj_per_inference_above_idle": {
+          "mean": 51.5731,
+          "std": 0.3992,
+          "n": 3,
+          "values": [
+            51.1247,
+            51.7049,
+            51.8897
+          ]
+        },
+        "process_cpu_cores": {
+          "mean": 3.9973,
+          "std": 0.0001,
+          "n": 3,
+          "values": [
+            3.9973,
+            3.9973,
+            3.9972
+          ]
+        },
+        "system_cpu_busy_frac": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 3,
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "pkg_temp_before_c": [
+          58.0,
+          58.0,
+          59.0
+        ],
+        "pkg_temp_after_c": [
+          72.0,
+          73.0,
+          74.0
+        ]
+      }
+    },
+    "ov_fp32_cpu": {
+      "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4",
+      "peak_rss_mb": 254.2,
+      "model": {
+        "package_w": {
+          "mean": 11.3146,
+          "std": 0.027,
+          "n": 3,
+          "values": [
+            11.3455,
+            11.2954,
+            11.303
+          ]
+        },
+        "package_w_second_half": {
+          "mean": 10.016,
+          "std": 0.1066,
+          "n": 3,
+          "values": [
+            10.1288,
+            10.0025,
+            9.9168
+          ]
+        },
+        "zone_w": {
+          "package": {
+            "mean": 11.3146,
+            "std": 0.027,
+            "n": 3,
+            "values": [
+              11.3455,
+              11.2954,
+              11.303
+            ]
+          },
+          "core": {
+            "mean": 7.3258,
+            "std": 0.0481,
+            "n": 3,
+            "values": [
+              7.3813,
+              7.3008,
+              7.2953
+            ]
+          },
+          "uncore": {
+            "mean": 0.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "inferences_per_s": {
+          "mean": 343.5887,
+          "std": 1.1505,
+          "n": 3,
+          "values": [
+            344.917,
+            342.943,
+            342.906
+          ]
+        },
+        "mj_per_inference_total": {
+          "mean": 32.9309,
+          "std": 0.0348,
+          "n": 3,
+          "values": [
+            32.8936,
+            32.9367,
+            32.9624
+          ]
+        },
+        "mj_per_inference_above_idle": {
+          "mean": 25.1887,
+          "std": 0.014,
+          "n": 3,
+          "values": [
+            25.1811,
+            25.18,
+            25.2049
+          ]
+        },
+        "process_cpu_cores": {
+          "mean": 3.9959,
+          "std": 0.0011,
+          "n": 3,
+          "values": [
+            3.9947,
+            3.9969,
+            3.9961
+          ]
+        },
+        "system_cpu_busy_frac": {
+          "mean": 0.9998,
+          "std": 0.0001,
+          "n": 3,
+          "values": [
+            0.9997,
+            0.9999,
+            0.9998
+          ]
+        },
+        "pkg_temp_before_c": [
+          61.0,
+          62.0,
+          63.0
+        ],
+        "pkg_temp_after_c": [
+          78.0,
+          78.0,
+          78.0
+        ]
+      },
+      "e2e": {
+        "package_w": {
+          "mean": 10.7436,
+          "std": 0.0093,
+          "n": 3,
+          "values": [
+            10.7446,
+            10.7339,
+            10.7524
+          ]
+        },
+        "package_w_second_half": {
+          "mean": 10.7701,
+          "std": 0.0103,
+          "n": 3,
+          "values": [
+            10.7742,
+            10.7584,
+            10.7777
+          ]
+        },
+        "zone_w": {
+          "package": {
+            "mean": 10.7436,
+            "std": 0.0093,
+            "n": 3,
+            "values": [
+              10.7446,
+              10.7339,
+              10.7524
+            ]
+          },
+          "core": {
+            "mean": 6.8697,
+            "std": 0.004,
+            "n": 3,
+            "values": [
+              6.8705,
+              6.8654,
+              6.8733
+            ]
+          },
+          "uncore": {
+            "mean": 0.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "inferences_per_s": {
+          "mean": 139.723,
+          "std": 0.2193,
+          "n": 3,
+          "values": [
+            139.588,
+            139.605,
+            139.976
+          ]
+        },
+        "mj_per_inference_total": {
+          "mean": 76.8924,
+          "std": 0.0788,
+          "n": 3,
+          "values": [
+            76.9734,
+            76.8878,
+            76.816
+          ]
+        },
+        "mj_per_inference_above_idle": {
+          "mean": 57.854,
+          "std": 0.0554,
+          "n": 3,
+          "values": [
+            57.9169,
+            57.8332,
+            57.8121
+          ]
+        },
+        "process_cpu_cores": {
+          "mean": 2.4158,
+          "std": 0.0025,
+          "n": 3,
+          "values": [
+            2.414,
+            2.4147,
+            2.4186
+          ]
+        },
+        "system_cpu_busy_frac": {
+          "mean": 0.6053,
+          "std": 0.0003,
+          "n": 3,
+          "values": [
+            0.6051,
+            0.6052,
+            0.6057
+          ]
+        },
+        "pkg_temp_before_c": [
+          65.0,
+          64.0,
+          64.0
+        ],
+        "pkg_temp_after_c": [
+          80.0,
+          79.0,
+          83.0
+        ]
+      }
+    },
+    "ov_fp32_gpu": {
+      "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4 | GPU Intel(R) UHD Graphics (iGPU) | precision <Type: 'float16'> | OpenCL driver /home/test/neo/root/usr/lib/x86_64-linux-gnu/intel-opencl/libigdrcl.so",
+      "peak_rss_mb": 407.1,
+      "model": {
+        "package_w": {
+          "mean": 8.5421,
+          "std": 0.0384,
+          "n": 3,
+          "values": [
+            8.5846,
+            8.5318,
+            8.51
+          ]
+        },
+        "package_w_second_half": {
+          "mean": 8.559,
+          "std": 0.0377,
+          "n": 3,
+          "values": [
+            8.6012,
+            8.5469,
+            8.5288
+          ]
+        },
+        "zone_w": {
+          "package": {
+            "mean": 8.5421,
+            "std": 0.0384,
+            "n": 3,
+            "values": [
+              8.5846,
+              8.5318,
+              8.51
+            ]
+          },
+          "core": {
+            "mean": 3.7023,
+            "std": 0.0188,
+            "n": 3,
+            "values": [
+              3.7234,
+              3.6958,
+              3.6876
+            ]
+          },
+          "uncore": {
+            "mean": 1.0314,
+            "std": 0.0056,
+            "n": 3,
+            "values": [
+              1.0367,
+              1.0318,
+              1.0256
+            ]
+          }
+        },
+        "inferences_per_s": {
+          "mean": 370.2303,
+          "std": 0.3739,
+          "n": 3,
+          "values": [
+            369.821,
+            370.316,
+            370.554
+          ]
+        },
+        "mj_per_inference_total": {
+          "mean": 23.0726,
+          "std": 0.127,
+          "n": 3,
+          "values": [
+            23.213,
+            23.0392,
+            22.9657
+          ]
+        },
+        "mj_per_inference_above_idle": {
+          "mean": 15.8876,
+          "std": 0.1197,
+          "n": 3,
+          "values": [
+            16.0199,
+            15.8559,
+            15.7869
+          ]
+        },
+        "process_cpu_cores": {
+          "mean": 0.9992,
+          "std": 0.0,
+          "n": 3,
+          "values": [
+            0.9992,
+            0.9993,
+            0.9993
+          ]
+        },
+        "system_cpu_busy_frac": {
+          "mean": 0.2518,
+          "std": 0.0001,
+          "n": 3,
+          "values": [
+            0.2518,
+            0.2518,
+            0.2519
+          ]
+        },
+        "pkg_temp_before_c": [
+          63.0,
+          64.0,
+          62.0
+        ],
+        "pkg_temp_after_c": [
+          70.0,
+          69.0,
+          69.0
+        ]
+      },
+      "e2e": {
+        "package_w": {
+          "mean": 8.5018,
+          "std": 0.0117,
+          "n": 3,
+          "values": [
+            8.5051,
+            8.5115,
+            8.4888
+          ]
+        },
+        "package_w_second_half": {
+          "mean": 8.5267,
+          "std": 0.0084,
+          "n": 3,
+          "values": [
+            8.5268,
+            8.5351,
+            8.5183
+          ]
+        },
+        "zone_w": {
+          "package": {
+            "mean": 8.5018,
+            "std": 0.0117,
+            "n": 3,
+            "values": [
+              8.5051,
+              8.5115,
+              8.4888
+            ]
+          },
+          "core": {
+            "mean": 4.4353,
+            "std": 0.0075,
+            "n": 3,
+            "values": [
+              4.4337,
+              4.4434,
+              4.4287
+            ]
+          },
+          "uncore": {
+            "mean": 0.2936,
+            "std": 0.0012,
+            "n": 3,
+            "values": [
+              0.2944,
+              0.2942,
+              0.2923
+            ]
+          }
+        },
+        "inferences_per_s": {
+          "mean": 119.0187,
+          "std": 0.3429,
+          "n": 3,
+          "values": [
+            118.625,
+            119.179,
+            119.252
+          ]
+        },
+        "mj_per_inference_total": {
+          "mean": 71.4328,
+          "std": 0.2573,
+          "n": 3,
+          "values": [
+            71.6974,
+            71.4176,
+            71.1835
+          ]
+        },
+        "mj_per_inference_above_idle": {
+          "mean": 49.0826,
+          "std": 0.1983,
+          "n": 3,
+          "values": [
+            49.2729,
+            49.0976,
+            48.8772
+          ]
+        },
+        "process_cpu_cores": {
+          "mean": 1.0009,
+          "std": 0.0,
+          "n": 3,
+          "values": [
+            1.0009,
+            1.0009,
+            1.0009
+          ]
+        },
+        "system_cpu_busy_frac": {
+          "mean": 0.2512,
+          "std": 0.0001,
+          "n": 3,
+          "values": [
+            0.2512,
+            0.2512,
+            0.2511
+          ]
+        },
+        "pkg_temp_before_c": [
+          62.0,
+          62.0,
+          62.0
+        ],
+        "pkg_temp_after_c": [
+          72.0,
+          72.0,
+          69.0
+        ]
+      }
+    }
+  }
+}

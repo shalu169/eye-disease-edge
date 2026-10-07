@@ -1,0 +1,14 @@
+  File "<string>", line 1
+    import openvino;print(openvino
+                         ^
+SyntaxError: '(' was never closed
+RAPL readable 2026-10-04T16:26:24+05:30
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root       83986  3.8  0.0  19636 11608 ?        Ss   16:26   0:00 sshd-session: test [priv]
+test       83961  0.6  0.0  22184 12236 ?        Ss   16:26   0:00 /usr/lib/systemd/systemd --user
+root       83954  0.0  0.0      0     0 ?        I    16:25   0:00 [kworker/2:1-cgroup_free]
+root       83930  0.0  0.0      0     0 ?        I    15:37   0:00 [kworker/2:0-events]
+ 16:26:24 up 1 day, 18:37,  1 user,  load average: 0.02, 0.02, 0.00
+512 done rc=0 2026-10-04T17:02:37+05:30
+224 done rc=0 2026-10-04T17:38:47+05:30
+ENERGY_ALL_DONE

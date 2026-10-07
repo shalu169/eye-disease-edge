@@ -1,0 +1,796 @@
+{
+ "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt",
+ "checkpoint_info": {
+  "source": "development checkpoint (run 008 final not available yet)",
+  "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt"
+ },
+ "n_images": 100,
+ "images": "seeded random draw from run008 test split (random_state=20), all 5 label maps per image",
+ "similarity": "Spearman on 128x128 subsample of the 512 maps; SSIM sigma=1.5, data_range=1 on 512 maps",
+ "randomisation_init": "fresh timm mobilenetv3_small_100 pretrained=False, torch.manual_seed(seed)",
+ "seed": 0,
+ "reference_different_image_same_label": {
+  "D": {
+   "spearman_median": 0.16547244063834432,
+   "spearman_q25": 0.017917823223056392,
+   "spearman_q75": 0.25562709832750313,
+   "spearman_mean_abs": 0.19166253356139698,
+   "ssim_median": 0.4807700216770172,
+   "ssim_q25": 0.4306844025850296,
+   "ssim_q75": 0.5375894457101822,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "G": {
+   "spearman_median": 0.10325143955538563,
+   "spearman_q25": 0.0013797401523507988,
+   "spearman_q75": 0.17196313182315912,
+   "spearman_mean_abs": 0.13025276053641555,
+   "ssim_median": 0.5617065727710724,
+   "ssim_q25": 0.4888909384608269,
+   "ssim_q75": 0.6192834973335266,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "C": {
+   "spearman_median": 0.08769432163233745,
+   "spearman_q25": -0.02700318950526514,
+   "spearman_q75": 0.17049802512920614,
+   "spearman_mean_abs": 0.14592748964906138,
+   "ssim_median": 0.4055716097354889,
+   "ssim_q25": 0.3560667634010315,
+   "ssim_q75": 0.4802716299891472,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "A": {
+   "spearman_median": 0.09899359128080162,
+   "spearman_q25": -0.01988749719387013,
+   "spearman_q75": 0.20689995593875735,
+   "spearman_mean_abs": 0.17115806056471083,
+   "ssim_median": 0.4449313282966614,
+   "ssim_q25": 0.39229943603277206,
+   "ssim_q75": 0.5058441311120987,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "H": {
+   "spearman_median": 0.1227706315605756,
+   "spearman_q25": 0.03443013451900345,
+   "spearman_q75": 0.23261907853537633,
+   "spearman_mean_abs": 0.17768735976084687,
+   "ssim_median": 0.480357825756073,
+   "ssim_q25": 0.4320332035422325,
+   "ssim_q75": 0.5459371656179428,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "all": {
+   "spearman_median": 0.11203621876904196,
+   "ssim_median": 0.4711219370365143
+  }
+ },
+ "reference_centre_bias": {
+  "D": {
+   "spearman_median": 0.37382715807642264,
+   "spearman_q25": 0.21974239258945644,
+   "spearman_q75": 0.465955813361267,
+   "spearman_mean_abs": 0.35302614310113056,
+   "ssim_median": 0.20045898109674454,
+   "ssim_q25": 0.144760113209486,
+   "ssim_q75": 0.25706445425748825,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "G": {
+   "spearman_median": 0.12510827703350652,
+   "spearman_q25": 0.03295800147685277,
+   "spearman_q75": 0.21686357388066405,
+   "spearman_mean_abs": 0.16801906005201636,
+   "ssim_median": 0.1242712177336216,
+   "ssim_q25": 0.08339962922036648,
+   "ssim_q75": 0.1829751320183277,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "C": {
+   "spearman_median": -0.02148976283900597,
+   "spearman_q25": -0.18573663868332982,
+   "spearman_q75": 0.18069267883948026,
+   "spearman_mean_abs": 0.21309171795969825,
+   "ssim_median": 0.2637605667114258,
+   "ssim_q25": 0.17920564115047455,
+   "ssim_q75": 0.3213233947753906,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "A": {
+   "spearman_median": 0.14302876164953193,
+   "spearman_q25": -0.018167960522104926,
+   "spearman_q75": 0.29950555770993736,
+   "spearman_mean_abs": 0.22807702066261704,
+   "ssim_median": 0.2570284307003021,
+   "ssim_q25": 0.18654200434684753,
+   "ssim_q75": 0.31870485842227936,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "H": {
+   "spearman_median": 0.2211486192680956,
+   "spearman_q25": 0.026843992554233972,
+   "spearman_q75": 0.35679284844948067,
+   "spearman_mean_abs": 0.2545028032273671,
+   "ssim_median": 0.20262333750724792,
+   "ssim_q25": 0.1571539230644703,
+   "ssim_q75": 0.2635447531938553,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "all": {
+   "spearman_median": 0.15815219996779478,
+   "ssim_median": 0.20526141673326492
+  }
+ },
+ "class_specificity_same_image_other_label": {
+  "D_vs_G": {
+   "spearman_median": 0.009336269804807836,
+   "ssim_median": 0.47147326171398163
+  },
+  "D_vs_C": {
+   "spearman_median": 0.0671431112416308,
+   "ssim_median": 0.42887748777866364
+  },
+  "D_vs_A": {
+   "spearman_median": 0.13131862289073853,
+   "ssim_median": 0.47000792622566223
+  },
+  "D_vs_H": {
+   "spearman_median": 0.26730517293300404,
+   "ssim_median": 0.5268155634403229
+  },
+  "all_label_pairs_spearman_median": 0.15523736776751368,
+  "all_label_pairs_spearman_q25": -0.009765599499515054,
+  "all_label_pairs_spearman_q75": 0.3071452098876548
+ },
+ "cascading_randomisation": [
+  {
+   "randomised_down_to": "classifier",
+   "n_tensors_reinitialised": 2,
+   "mean_abs_prob_change": 0.43716779351234436,
+   "D": {
+    "spearman_median": 0.23862392477413477,
+    "spearman_q25": 0.08312232810884818,
+    "spearman_q75": 0.35108848868356335,
+    "spearman_mean_abs": 0.24683413479621513,
+    "ssim_median": 0.47948548197746277,
+    "ssim_q25": 0.4313803166151047,
+    "ssim_q75": 0.5300932079553604,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": -0.07118232609475734,
+    "spearman_q25": -0.1379592790278537,
+    "spearman_q75": 0.03342551938711539,
+    "spearman_mean_abs": 0.12946934330310778,
+    "ssim_median": 0.3450199365615845,
+    "ssim_q25": 0.2704572379589081,
+    "ssim_q75": 0.3951702192425728,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.012466448633634664,
+    "spearman_q25": -0.1286950987074702,
+    "spearman_q75": 0.13879968616399685,
+    "spearman_mean_abs": 0.15599026832947835,
+    "ssim_median": 0.39968329668045044,
+    "ssim_q25": 0.3559097647666931,
+    "ssim_q75": 0.44364233314991,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.1222334002399352,
+    "spearman_q25": -0.03047989416488578,
+    "spearman_q75": 0.27107636981387984,
+    "spearman_mean_abs": 0.19601655937242426,
+    "ssim_median": 0.42611725628376007,
+    "ssim_q25": 0.37058040499687195,
+    "ssim_q75": 0.491500124335289,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.198669496978377,
+    "spearman_q25": 0.040332894070123776,
+    "spearman_q75": 0.31206135526374934,
+    "spearman_mean_abs": 0.21157812221242037,
+    "ssim_median": 0.4619324058294296,
+    "ssim_q25": 0.40403277426958084,
+    "ssim_q75": 0.4993545487523079,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.08019967466096488,
+    "ssim_median": 0.42148274183273315
+   }
+  },
+  {
+   "randomised_down_to": "conv_head",
+   "n_tensors_reinitialised": 2,
+   "mean_abs_prob_change": 0.5018061995506287,
+   "D": {
+    "spearman_median": 0.05558735270575943,
+    "spearman_q25": -0.019916575845097043,
+    "spearman_q75": 0.1659665078095114,
+    "spearman_mean_abs": 0.13475710883842312,
+    "ssim_median": 0.4114099144935608,
+    "ssim_q25": 0.3642420992255211,
+    "ssim_q75": 0.4657660275697708,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": 0.020638640017334623,
+    "spearman_q25": -0.0997752096199932,
+    "spearman_q75": 0.15054509062682103,
+    "spearman_mean_abs": 0.14853893193761375,
+    "ssim_median": 0.3375106602907181,
+    "ssim_q25": 0.29479023814201355,
+    "ssim_q75": 0.40004734694957733,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.12985781735189728,
+    "spearman_q25": -0.024369998597827486,
+    "spearman_q75": 0.2639664687790177,
+    "spearman_mean_abs": 0.20227515065017956,
+    "ssim_median": 0.4211343675851822,
+    "ssim_q25": 0.3686758652329445,
+    "ssim_q75": 0.4932861402630806,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.1966968847566316,
+    "spearman_q25": 0.07613839792290283,
+    "spearman_q75": 0.355308623041135,
+    "spearman_mean_abs": 0.24261384001059064,
+    "ssim_median": 0.4081464409828186,
+    "ssim_q25": 0.33648787438869476,
+    "ssim_q75": 0.4710783362388611,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.27816763888293594,
+    "spearman_q25": 0.16043587287104144,
+    "spearman_q75": 0.3683057094478491,
+    "spearman_mean_abs": 0.2762398669147194,
+    "ssim_median": 0.5350685119628906,
+    "ssim_q25": 0.47818151861429214,
+    "ssim_q75": 0.6022814959287643,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.1367632121999541,
+    "ssim_median": 0.42194347083568573
+   }
+  },
+  {
+   "randomised_down_to": "blocks.5",
+   "n_tensors_reinitialised": 6,
+   "mean_abs_prob_change": 0.6918990015983582,
+   "D": {
+    "spearman_median": -0.05235409038140004,
+    "spearman_q25": -0.16264967472046005,
+    "spearman_q75": 0.04691071671089731,
+    "spearman_mean_abs": 0.12763585492066562,
+    "ssim_median": 0.34009960293769836,
+    "ssim_q25": 0.2983429804444313,
+    "ssim_q75": 0.3913428634405136,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": 0.00043753266552136515,
+    "spearman_q25": -0.10658673199296749,
+    "spearman_q75": 0.10628492386625749,
+    "spearman_mean_abs": 0.12387850033241665,
+    "ssim_median": 0.24890226870775223,
+    "ssim_q25": 0.2117338441312313,
+    "ssim_q75": 0.29732879996299744,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.14628069435442287,
+    "spearman_q25": 0.012221250793918177,
+    "spearman_q75": 0.2941182789794954,
+    "spearman_mean_abs": 0.2023231818248176,
+    "ssim_median": 0.4333428591489792,
+    "ssim_q25": 0.38708412647247314,
+    "ssim_q75": 0.5098482519388199,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.2932496891028844,
+    "spearman_q25": 0.1444167097008477,
+    "spearman_q75": 0.46333011323640905,
+    "spearman_mean_abs": 0.310964262299068,
+    "ssim_median": 0.4003562033176422,
+    "ssim_q25": 0.35160642862319946,
+    "ssim_q75": 0.4770198315382004,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.31020863411719024,
+    "spearman_q25": 0.18206803358792187,
+    "spearman_q75": 0.4296378381517553,
+    "spearman_mean_abs": 0.3069300897404337,
+    "ssim_median": 0.45618295669555664,
+    "ssim_q25": 0.41250772029161453,
+    "ssim_q75": 0.5078731030225754,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.12358698242361255,
+    "ssim_median": 0.3873980641365051
+   }
+  },
+  {
+   "randomised_down_to": "blocks.4",
+   "n_tensors_reinitialised": 66,
+   "mean_abs_prob_change": 0.42460179328918457,
+   "D": {
+    "spearman_median": 0.16078742639754812,
+    "spearman_q25": 0.050834605092420895,
+    "spearman_q75": 0.24439336326589942,
+    "spearman_mean_abs": 0.1668689772452956,
+    "ssim_median": 0.29061830043792725,
+    "ssim_q25": 0.25584401935338974,
+    "ssim_q75": 0.34974536299705505,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": 0.06640868087607169,
+    "spearman_q25": -0.015491717546589238,
+    "spearman_q75": 0.1599875254270893,
+    "spearman_mean_abs": 0.1116726810191679,
+    "ssim_median": 0.2946419268846512,
+    "ssim_q25": 0.2594948410987854,
+    "ssim_q75": 0.34126412868499756,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.06854701765896526,
+    "spearman_q25": -0.01777651749410445,
+    "spearman_q75": 0.1284773209964056,
+    "spearman_mean_abs": 0.11153191414479192,
+    "ssim_median": 0.3315332680940628,
+    "ssim_q25": 0.30171071738004684,
+    "ssim_q75": 0.36587465554475784,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": -0.04478678440531456,
+    "spearman_q25": -0.11506470570042836,
+    "spearman_q75": 0.028965913929034855,
+    "spearman_mean_abs": 0.09992267741465743,
+    "ssim_median": 0.37285158038139343,
+    "ssim_q25": 0.33876506984233856,
+    "ssim_q75": 0.4223185330629349,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.0983510582565508,
+    "spearman_q25": 0.0072869461645464996,
+    "spearman_q75": 0.15312886629626749,
+    "spearman_mean_abs": 0.11539748867496126,
+    "ssim_median": 0.3014802783727646,
+    "ssim_q25": 0.25103287771344185,
+    "ssim_q75": 0.33804190158843994,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.06908067550134434,
+    "ssim_median": 0.3191685527563095
+   }
+  },
+  {
+   "randomised_down_to": "blocks.3",
+   "n_tensors_reinitialised": 44,
+   "mean_abs_prob_change": 0.3960742652416229,
+   "D": {
+    "spearman_median": 0.033285639302263824,
+    "spearman_q25": -0.04429160682453331,
+    "spearman_q75": 0.1142364874971332,
+    "spearman_mean_abs": 0.09355726874157018,
+    "ssim_median": 0.30563604831695557,
+    "ssim_q25": 0.2641819790005684,
+    "ssim_q75": 0.35748305171728134,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": 0.02834963050181754,
+    "spearman_q25": -0.0556316095523031,
+    "spearman_q75": 0.09181945752048762,
+    "spearman_mean_abs": 0.09473198231973806,
+    "ssim_median": 0.3303801566362381,
+    "ssim_q25": 0.28587309271097183,
+    "ssim_q75": 0.3682631850242615,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.01753337681029942,
+    "spearman_q25": -0.08660149757738335,
+    "spearman_q75": 0.12084959357095121,
+    "spearman_mean_abs": 0.12700036503827736,
+    "ssim_median": 0.35500842332839966,
+    "ssim_q25": 0.3255568593740463,
+    "ssim_q75": 0.3946940302848816,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.12042619864713064,
+    "spearman_q25": 0.03906584908649373,
+    "spearman_q75": 0.20144529468297875,
+    "spearman_mean_abs": 0.14686408293950368,
+    "ssim_median": 0.40570905804634094,
+    "ssim_q25": 0.3699388802051544,
+    "ssim_q75": 0.43347612023353577,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": -0.018602136165529772,
+    "spearman_q25": -0.11326934684072368,
+    "spearman_q75": 0.07718963008367077,
+    "spearman_mean_abs": 0.10807561599891648,
+    "ssim_median": 0.4168488532304764,
+    "ssim_q25": 0.36792071908712387,
+    "ssim_q75": 0.44826067984104156,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.03769823499912352,
+    "ssim_median": 0.3653852790594101
+   }
+  },
+  {
+   "randomised_down_to": "blocks.2",
+   "n_tensors_reinitialised": 66,
+   "mean_abs_prob_change": 0.41664764285087585,
+   "D": {
+    "spearman_median": 0.05175848044857244,
+    "spearman_q25": -0.03704682644690843,
+    "spearman_q75": 0.11089067289238247,
+    "spearman_mean_abs": 0.09387232409479122,
+    "ssim_median": 0.40569843351840973,
+    "ssim_q25": 0.3802444562315941,
+    "ssim_q75": 0.43004778772592545,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": 0.014407458627612689,
+    "spearman_q25": -0.06191261554563293,
+    "spearman_q75": 0.09469449049086272,
+    "spearman_mean_abs": 0.08918966791391089,
+    "ssim_median": 0.3708459734916687,
+    "ssim_q25": 0.35128219425678253,
+    "ssim_q75": 0.3950522392988205,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.058114268739011106,
+    "spearman_q25": -0.016583548386532525,
+    "spearman_q75": 0.1280954920054457,
+    "spearman_mean_abs": 0.10760547865829309,
+    "ssim_median": 0.37108904123306274,
+    "ssim_q25": 0.343748539686203,
+    "ssim_q75": 0.39843282848596573,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.056710383045939686,
+    "spearman_q25": -0.03914212214000609,
+    "spearman_q75": 0.1568798298420928,
+    "spearman_mean_abs": 0.12067905311102713,
+    "ssim_median": 0.38829851150512695,
+    "ssim_q25": 0.35818374156951904,
+    "ssim_q75": 0.43209029734134674,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.05329744887856573,
+    "spearman_q25": -0.034122712614073,
+    "spearman_q75": 0.13099436901716188,
+    "spearman_mean_abs": 0.10425729189107923,
+    "ssim_median": 0.41294437646865845,
+    "ssim_q25": 0.38518599420785904,
+    "ssim_q75": 0.45624466240406036,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.04649913232608066,
+    "ssim_median": 0.3894019275903702
+   }
+  },
+  {
+   "randomised_down_to": "blocks.1",
+   "n_tensors_reinitialised": 36,
+   "mean_abs_prob_change": 0.7756732106208801,
+   "D": {
+    "spearman_median": 0.24795948469453094,
+    "spearman_q25": 0.12117381567792852,
+    "spearman_q75": 0.41879928187947957,
+    "spearman_mean_abs": 0.27853426280771143,
+    "ssim_median": 0.21935498714447021,
+    "ssim_q25": 0.15896068885922432,
+    "ssim_q75": 0.31445855647325516,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": 0.042875371801767315,
+    "spearman_q25": -0.029181407321431548,
+    "spearman_q75": 0.15776083300433952,
+    "spearman_mean_abs": 0.1174946916606128,
+    "ssim_median": 0.18745890259742737,
+    "ssim_q25": 0.13091494515538216,
+    "ssim_q75": 0.2905610278248787,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.010150733143364163,
+    "spearman_q25": -0.1738472632836624,
+    "spearman_q75": 0.13646941430440113,
+    "spearman_mean_abs": 0.19886818640277076,
+    "ssim_median": 0.2470342069864273,
+    "ssim_q25": 0.16314544528722763,
+    "ssim_q75": 0.29582391679286957,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.09897433880479234,
+    "spearman_q25": -0.022432232382968008,
+    "spearman_q75": 0.2323265484552492,
+    "spearman_mean_abs": 0.15881049265869948,
+    "ssim_median": 0.31041643023490906,
+    "ssim_q25": 0.2348787896335125,
+    "ssim_q75": 0.37182189524173737,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.12995178350011383,
+    "spearman_q25": -0.007186038175991777,
+    "spearman_q75": 0.22056496152367355,
+    "spearman_mean_abs": 0.17251401185722123,
+    "ssim_median": 0.3013170659542084,
+    "ssim_q25": 0.24420544505119324,
+    "ssim_q75": 0.362628810107708,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.09983769836504733,
+    "ssim_median": 0.2604772448539734
+   }
+  },
+  {
+   "randomised_down_to": "blocks.0",
+   "n_tensors_reinitialised": 16,
+   "mean_abs_prob_change": 0.43982282280921936,
+   "D": {
+    "spearman_median": 0.19875488267405866,
+    "spearman_q25": 0.08938615043130303,
+    "spearman_q75": 0.27532620314007844,
+    "spearman_mean_abs": 0.2013009106235506,
+    "ssim_median": 0.2205331176519394,
+    "ssim_q25": 0.16922519728541374,
+    "ssim_q75": 0.2878245636820793,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": -0.07221966928246712,
+    "spearman_q25": -0.1625454786583787,
+    "spearman_q75": 0.020281829227532393,
+    "spearman_mean_abs": 0.12558200825825228,
+    "ssim_median": 0.4374206066131592,
+    "ssim_q25": 0.36715688556432724,
+    "ssim_q75": 0.4698116257786751,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.03703967625581416,
+    "spearman_q25": -0.12109587535884667,
+    "spearman_q75": 0.11980985635227455,
+    "spearman_mean_abs": 0.14403581438947746,
+    "ssim_median": 0.28116902709007263,
+    "ssim_q25": 0.21608370169997215,
+    "ssim_q75": 0.34075742959976196,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": 0.14030118848645512,
+    "spearman_q25": -0.036210298909494926,
+    "spearman_q75": 0.31133147316478427,
+    "spearman_mean_abs": 0.21483390548995662,
+    "ssim_median": 0.22252604365348816,
+    "ssim_q25": 0.16479415073990822,
+    "ssim_q75": 0.29300741106271744,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": -0.08591769531554182,
+    "spearman_q25": -0.21588396234342863,
+    "spearman_q75": 0.05165356800178141,
+    "spearman_mean_abs": 0.16441196276572476,
+    "ssim_median": 0.4120749831199646,
+    "ssim_q25": 0.35959409177303314,
+    "ssim_q75": 0.4809292256832123,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.03217667776734462,
+    "ssim_median": 0.3200731426477432
+   }
+  },
+  {
+   "randomised_down_to": "stem",
+   "n_tensors_reinitialised": 6,
+   "mean_abs_prob_change": 0.43145057559013367,
+   "D": {
+    "spearman_median": -0.027933209827632303,
+    "spearman_q25": -0.12019287751600595,
+    "spearman_q75": 0.0683190335206777,
+    "spearman_mean_abs": 0.1038976184130328,
+    "ssim_median": 0.3512347638607025,
+    "ssim_q25": 0.27552656829357147,
+    "ssim_q75": 0.3920911177992821,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "G": {
+    "spearman_median": -0.003168705861240612,
+    "spearman_q25": -0.07348263797565938,
+    "spearman_q75": 0.09801918203089505,
+    "spearman_mean_abs": 0.11311161240471021,
+    "ssim_median": 0.2299676388502121,
+    "ssim_q25": 0.16898448765277863,
+    "ssim_q75": 0.2783811017870903,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "C": {
+    "spearman_median": 0.05328796306965217,
+    "spearman_q25": -0.03605345812933303,
+    "spearman_q75": 0.12330501004417449,
+    "spearman_mean_abs": 0.10475716263132227,
+    "ssim_median": 0.3391685485839844,
+    "ssim_q25": 0.30059459805488586,
+    "ssim_q75": 0.3719310462474823,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "A": {
+    "spearman_median": -0.033982811499207594,
+    "spearman_q25": -0.17121668413389485,
+    "spearman_q75": 0.1028451596409307,
+    "spearman_mean_abs": 0.1733047126196876,
+    "ssim_median": 0.3638341426849365,
+    "ssim_q25": 0.3270891606807709,
+    "ssim_q75": 0.4062907174229622,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "H": {
+    "spearman_median": 0.07366915953048123,
+    "spearman_q25": -0.0878265459769641,
+    "spearman_q75": 0.1618386477147624,
+    "spearman_mean_abs": 0.15022624175269722,
+    "ssim_median": 0.4753061830997467,
+    "ssim_q25": 0.39956246316432953,
+    "ssim_q75": 0.564301386475563,
+    "n_all_zero_maps": 0,
+    "n_constant_for_spearman": 0
+   },
+   "all": {
+    "spearman_median": 0.011111721163877774,
+    "ssim_median": 0.3516496270895004
+   }
+  }
+ ],
+ "independent_randomisation_blocks5_only": {
+  "mean_abs_prob_change": 0.17493675649166107,
+  "D": {
+   "spearman_median": 0.14962980380562668,
+   "spearman_q25": 0.06009114197714467,
+   "spearman_q75": 0.2259344976356741,
+   "spearman_mean_abs": 0.17447140108742856,
+   "ssim_median": 0.4424549341201782,
+   "ssim_q25": 0.40528129041194916,
+   "ssim_q75": 0.4822985455393791,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "G": {
+   "spearman_median": 0.06539183977762833,
+   "spearman_q25": -0.061008782004452936,
+   "spearman_q75": 0.20801087872326132,
+   "spearman_mean_abs": 0.15353007883085204,
+   "ssim_median": 0.45664457976818085,
+   "ssim_q25": 0.3666708841919899,
+   "ssim_q75": 0.5388164967298508,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "C": {
+   "spearman_median": -0.10167480332477495,
+   "spearman_q25": -0.2478513261077911,
+   "spearman_q75": 0.03692698712160065,
+   "spearman_mean_abs": 0.1761428009784348,
+   "ssim_median": 0.3718838095664978,
+   "ssim_q25": 0.3164747357368469,
+   "ssim_q75": 0.41916806995868683,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "A": {
+   "spearman_median": 0.3163163890362309,
+   "spearman_q25": 0.11572949239244647,
+   "spearman_q75": 0.429978456252182,
+   "spearman_mean_abs": 0.30679254392873917,
+   "ssim_median": 0.46857601404190063,
+   "ssim_q25": 0.4127342030405998,
+   "ssim_q75": 0.5415812283754349,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "H": {
+   "spearman_median": 0.32900065648787813,
+   "spearman_q25": 0.2267123227958672,
+   "spearman_q75": 0.4439401905733756,
+   "spearman_mean_abs": 0.33546357571508806,
+   "ssim_median": 0.45894068479537964,
+   "ssim_q25": 0.4003617689013481,
+   "ssim_q75": 0.5005316436290741,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "all": {
+   "spearman_median": 0.14312632566316513,
+   "ssim_median": 0.4328079968690872
+  }
+ },
+ "seconds": 243.2
+}

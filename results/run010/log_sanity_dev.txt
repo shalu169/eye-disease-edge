@@ -1,0 +1,130 @@
+classifier {"spearman_median": 0.08019967466096488, "ssim_median": 0.42148274183273315} 61s
+conv_head {"spearman_median": 0.1367632121999541, "ssim_median": 0.42194347083568573} 81s
+blocks.5 {"spearman_median": 0.12358698242361255, "ssim_median": 0.3873980641365051} 103s
+blocks.4 {"spearman_median": 0.06908067550134434, "ssim_median": 0.3191685527563095} 122s
+blocks.3 {"spearman_median": 0.03769823499912352, "ssim_median": 0.3653852790594101} 142s
+blocks.2 {"spearman_median": 0.04649913232608066, "ssim_median": 0.3894019275903702} 162s
+blocks.1 {"spearman_median": 0.09983769836504733, "ssim_median": 0.2604772448539734} 183s
+blocks.0 {"spearman_median": 0.03217667776734462, "ssim_median": 0.3200731426477432} 204s
+stem {"spearman_median": 0.011111721163877774, "ssim_median": 0.3516496270895004} 224s
+{
+ "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt",
+ "checkpoint_info": {
+  "source": "development checkpoint (run 008 final not available yet)",
+  "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt"
+ },
+ "n_images": 100,
+ "images": "seeded random draw from run008 test split (random_state=20), all 5 label maps per image",
+ "similarity": "Spearman on 128x128 subsample of the 512 maps; SSIM sigma=1.5, data_range=1 on 512 maps",
+ "randomisation_init": "fresh timm mobilenetv3_small_100 pretrained=False, torch.manual_seed(seed)",
+ "seed": 0,
+ "reference_different_image_same_label": {
+  "D": {
+   "spearman_median": 0.16547244063834432,
+   "spearman_q25": 0.017917823223056392,
+   "spearman_q75": 0.25562709832750313,
+   "spearman_mean_abs": 0.19166253356139698,
+   "ssim_median": 0.4807700216770172,
+   "ssim_q25": 0.4306844025850296,
+   "ssim_q75": 0.5375894457101822,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "G": {
+   "spearman_median": 0.10325143955538563,
+   "spearman_q25": 0.0013797401523507988,
+   "spearman_q75": 0.17196313182315912,
+   "spearman_mean_abs": 0.13025276053641555,
+   "ssim_median": 0.5617065727710724,
+   "ssim_q25": 0.4888909384608269,
+   "ssim_q75": 0.6192834973335266,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "C": {
+   "spearman_median": 0.08769432163233745,
+   "spearman_q25": -0.02700318950526514,
+   "spearman_q75": 0.17049802512920614,
+   "spearman_mean_abs": 0.14592748964906138,
+   "ssim_median": 0.4055716097354889,
+   "ssim_q25": 0.3560667634010315,
+   "ssim_q75": 0.4802716299891472,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "A": {
+   "spearman_median": 0.09899359128080162,
+   "spearman_q25": -0.01988749719387013,
+   "spearman_q75": 0.20689995593875735,
+   "spearman_mean_abs": 0.17115806056471083,
+   "ssim_median": 0.4449313282966614,
+   "ssim_q25": 0.39229943603277206,
+   "ssim_q75": 0.5058441311120987,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "H": {
+   "spearman_median": 0.1227706315605756,
+   "spearman_q25": 0.03443013451900345,
+   "spearman_q75": 0.23261907853537633,
+   "spearman_mean_abs": 0.17768735976084687,
+   "ssim_median": 0.480357825756073,
+   "ssim_q25": 0.4320332035422325,
+   "ssim_q75": 0.5459371656179428,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "all": {
+   "spearman_median": 0.11203621876904196,
+   "ssim_median": 0.4711219370365143
+  }
+ },
+ "reference_centre_bias": {
+  "D": {
+   "spearman_median": 0.37382715807642264,
+   "spearman_q25": 0.21974239258945644,
+   "spearman_q75": 0.465955813361267,
+   "spearman_mean_abs": 0.35302614310113056,
+   "ssim_median": 0.20045898109674454,
+   "ssim_q25": 0.144760113209486,
+   "ssim_q75": 0.25706445425748825,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "G": {
+   "spearman_median": 0.12510827703350652,
+   "spearman_q25": 0.03295800147685277,
+   "spearman_q75": 0.21686357388066405,
+   "spearman_mean_abs": 0.16801906005201636,
+   "ssim_median": 0.1242712177336216,
+   "ssim_q25": 0.08339962922036648,
+   "ssim_q75": 0.1829751320183277,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "C": {
+   "spearman_median": -0.02148976283900597,
+   "spearman_q25": -0.18573663868332982,
+   "spearman_q75": 0.18069267883948026,
+   "spearman_mean_abs": 0.21309171795969825,
+   "ssim_median": 0.2637605667114258,
+   "ssim_q25": 0.17920564115047455,
+   "ssim_q75": 0.3213233947753906,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "A": {
+   "spearman_median": 0.14302876164953193,
+   "spearman_q25": -0.018167960522104926,
+   "spearman_q75": 0.29950555770993736,
+   "spearman_mean_abs": 0.22807702066261704,
+   "ssim_median": 0.2570284307003021,
+   "ssim_q25": 0.18654200434684753,
+   "ssim_q75": 0.31870485842227936,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "H": {
+   "spearman_median": 0.2211486192680956,
+   "spearman_q25": 0.026843992554233972,
+   

@@ -1,0 +1,28 @@
+{
+  "config": "ort_fp32_cpu",
+  "runtime": "onnxruntime 1.30.0",
+  "val_auc": {
+    "D": 0.6947,
+    "G": 0.8722,
+    "C": 0.9376,
+    "A": 0.8575,
+    "H": 0.7452
+  },
+  "mean_auc": 0.8214,
+  "max_abs_prob_diff_vs_torch": 6.258487701416016e-06,
+  "mean_abs_prob_diff_vs_torch": 4.744504167319974e-07,
+  "latency_ms": {
+    "mean": 2.064,
+    "p50": 2.014,
+    "p95": 2.053,
+    "p99": 2.954,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 5.187,
+  "model_load_s": 0.082,
+  "peak_rss_mb": 196.4,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

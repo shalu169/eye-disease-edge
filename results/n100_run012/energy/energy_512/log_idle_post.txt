@@ -1,0 +1,3 @@
+idle[post] rep 0: {'package': 2.7376, 'core': 0.0183, 'uncore': 0.0} W, temps 61.0 C, sys busy 0.0005
+idle[post] rep 1: {'package': 2.6778, 'core': 0.0165, 'uncore': 0.0} W, temps 55.0 C, sys busy 0.0005
+idle[post] rep 2: {'package': 2.6559, 'core': 0.0138, 'uncore': 0.0} W, temps 53.0 C, sys busy 0.0004

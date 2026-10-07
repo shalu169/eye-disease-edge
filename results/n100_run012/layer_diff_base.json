@@ -1,0 +1,76 @@
+{
+ "model": "base",
+ "n_nodes": 211,
+ "n_images": 3,
+ "first_node_over_5pct": [
+  {
+   "order": 6,
+   "node": "/blocks/blocks.0/blocks.0.0/bn1/act/Relu",
+   "type": "Relu",
+   "rel_err": 0.5460803508758545
+  }
+ ],
+ "max_rel_err": 2.0526232719421387,
+ "top10": [
+  {
+   "order": 164,
+   "node": "/blocks/blocks.4/blocks.4.1/se/ReduceMean",
+   "type": "ReduceMean",
+   "rel_err": 2.0526232719421387
+  },
+  {
+   "order": 30,
+   "node": "/blocks/blocks.1/blocks.1.1/conv_pw/Conv/WithoutBiases",
+   "type": "Convolution",
+   "rel_err": 2.002129554748535
+  },
+  {
+   "order": 28,
+   "node": "/blocks/blocks.1/blocks.1.0/conv_pwl/Conv",
+   "type": "Add",
+   "rel_err": 1.7772083282470703
+  },
+  {
+   "order": 20,
+   "node": "/blocks/blocks.1/blocks.1.0/conv_pw/Conv/WithoutBiases",
+   "type": "Convolution",
+   "rel_err": 1.7652981281280518
+  },
+  {
+   "order": 201,
+   "node": "/global_pool/pool/GlobalAveragePool",
+   "type": "ReduceMean",
+   "rel_err": 1.7176991701126099
+  },
+  {
+   "order": 22,
+   "node": "/blocks/blocks.1/blocks.1.0/bn1/act/Relu",
+   "type": "Relu",
+   "rel_err": 1.7109750509262085
+  },
+  {
+   "order": 21,
+   "node": "/blocks/blocks.1/blocks.1.0/conv_pw/Conv",
+   "type": "Add",
+   "rel_err": 1.5864899158477783
+  },
+  {
+   "order": 184,
+   "node": "/blocks/blocks.4/blocks.4.2/se/ReduceMean",
+   "type": "ReduceMean",
+   "rel_err": 1.5793763399124146
+  },
+  {
+   "order": 125,
+   "node": "/blocks/blocks.3/blocks.3.1/se/ReduceMean",
+   "type": "ReduceMean",
+   "rel_err": 1.5381066799163818
+  },
+  {
+   "order": 186,
+   "node": "/blocks/blocks.4/blocks.4.2/se/conv_reduce/Conv/WithoutBiases",
+   "type": "Convolution",
+   "rel_err": 1.4773110151290894
+  }
+ ]
+}

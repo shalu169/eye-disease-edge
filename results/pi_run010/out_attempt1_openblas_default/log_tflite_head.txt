@@ -1,0 +1,61 @@
+{
+ "runtime": "tflite",
+ "runtime_version": "tflite-runtime 2.13.0",
+ "mode": "head",
+ "tag": "final",
+ "threads": 4,
+ "labels": null,
+ "warmup": 10,
+ "iters": 100,
+ "latency_ms": {
+  "mean": 617.9876576154493,
+  "p50": 618.7631604261696,
+  "p95": 653.0728906509466,
+  "p99": 670.8815117715858,
+  "std": 22.368829419802434,
+  "n": 100
+ },
+ "numpy_part_ms": {
+  "mean": 19.242559836711735,
+  "p50": 21.50962152518332,
+  "p95": 27.978078892920166,
+  "p99": 28.732099200133234,
+  "std": 5.982227044764368,
+  "n": 100
+ },
+ "load_s": 0.11149738798849285,
+ "peak_rss_mb": 63.1484375,
+ "rss_before_load_mb": 31.4765625,
+ "parity_vs_mac_torch": {
+  "prob_max_abs_diff": 0.00011635506156376652,
+  "map_max_abs_diff": null
+ },
+ "numpy": "1.26.4",
+ "python": "3.9.2",
+ "machine": "armv7l",
+ "node": "raspberrypi",
+ "note_maps_fixture": "reference maps stored as float16 (quantisation ~5e-4)"
+}
+	Command being timed: "/home/pi/eye-edge/.venv/bin/python gradcam_bench.py --runtime tflite --mode head --tag final --threads 4 --warmup 10 --iters 100 --out out/results_tflite_head.json"
+	User time (seconds): 196.81
+	System time (seconds): 5.96
+	Percent of CPU this job got: 283%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11.54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 64664
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 403141
+	Voluntary context switches: 14613
+	Involuntary context switches: 11167
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

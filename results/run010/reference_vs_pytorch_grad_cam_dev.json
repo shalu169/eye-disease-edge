@@ -1,0 +1,26 @@
+{
+ "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt",
+ "checkpoint_info": {
+  "source": "development checkpoint (run 008 final not available yet)",
+  "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt"
+ },
+ "n_images": 64,
+ "n_maps": 320,
+ "pytorch_grad_cam_version": "1.5.7 (pip)",
+ "target_layer": "model.blocks[-1] (ConvBnAct 96->576, output of forward_features)",
+ "max_abs_prob_diff_gradcam_forward_vs_plain_forward": 8.940696716308594e-07,
+ "lowres_minmax_max_abs_diff_ours_vs_lib": 1.0132789611816406e-06,
+ "final512_max_abs_diff_ours_libstyle_vs_lib": 1.0132789611816406e-06,
+ "final512_max_abs_diff_ours_display_vs_lib": 1.1920928955078125e-06,
+ "final512_mean_of_maxabs_ours_display_vs_lib": 4.207016957025189e-07,
+ "final512_spearman_ours_display_vs_lib_min": 0.9999999998843474,
+ "final512_spearman_ours_display_vs_lib_median": 0.9999999999729177,
+ "seconds": 72.5,
+ "labels": [
+  "D",
+  "G",
+  "C",
+  "A",
+  "H"
+ ]
+}

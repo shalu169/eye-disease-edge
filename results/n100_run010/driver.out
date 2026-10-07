@@ -1,0 +1,39 @@
+[2026-10-03 17:33:47] OPENBLAS_NUM_THREADS=unset
+[2026-10-03 17:33:47] start tag=final runtimes=ort ort_nospin ov warmup=50 iters=500 threads=0 host=extraeye
+[2026-10-03 17:33:47] before ort_plain load=0.00 0.00 0.00 mhz=3110.575
+[2026-10-03 17:33:51] end ort_plain rc=0
+[2026-10-03 17:33:51] after ort_plain load=0.32 0.07 0.02 mhz=3369.324
+[2026-10-03 17:34:21] before ort_head load=0.19 0.06 0.02 mhz=2850.532
+[2026-10-03 17:34:39] end ort_head rc=0
+[2026-10-03 17:34:39] after ort_head load=2.13 0.51 0.17 mhz=3113.543
+[2026-10-03 17:35:09] before ort_gradcam1 load=1.29 0.46 0.16 mhz=700.000
+[2026-10-03 17:35:36] end ort_gradcam1 rc=0
+[2026-10-03 17:35:36] after ort_gradcam1 load=3.24 0.99 0.35 mhz=2959.162
+[2026-10-03 17:36:06] before ort_gradcam5 load=1.96 0.89 0.33 mhz=700.000
+[2026-10-03 17:36:55] end ort_gradcam5 rc=0
+[2026-10-03 17:36:55] after ort_gradcam5 load=4.81 1.83 0.68 mhz=2903.352
+[2026-10-03 17:37:25] before ort_nospin_plain load=2.92 1.66 0.66 mhz=700.000
+[2026-10-03 17:37:29] end ort_nospin_plain rc=0
+[2026-10-03 17:37:29] after ort_nospin_plain load=3.00 1.70 0.68 mhz=3384.782
+[2026-10-03 17:37:59] before ort_nospin_head load=1.82 1.53 0.66 mhz=699.785
+[2026-10-03 17:38:07] end ort_nospin_head rc=0
+[2026-10-03 17:38:07] after ort_nospin_head load=2.07 1.59 0.68 mhz=3092.383
+[2026-10-03 17:38:37] before ort_nospin_gradcam1 load=1.26 1.44 0.66 mhz=3028.717
+[2026-10-03 17:38:46] end ort_nospin_gradcam1 rc=0
+[2026-10-03 17:38:46] after ort_nospin_gradcam1 load=1.83 1.55 0.70 mhz=3379.393
+[2026-10-03 17:39:16] before ort_nospin_gradcam5 load=1.11 1.40 0.68 mhz=3118.257
+[2026-10-03 17:39:26] end ort_nospin_gradcam5 rc=0
+[2026-10-03 17:39:26] after ort_nospin_gradcam5 load=1.79 1.54 0.73 mhz=3291.106
+[2026-10-03 17:39:56] before ov_plain load=1.09 1.39 0.71 mhz=700.000
+[2026-10-03 17:40:01] end ov_plain rc=0
+[2026-10-03 17:40:01] after ov_plain load=1.32 1.44 0.73 mhz=3381.393
+[2026-10-03 17:40:31] before ov_head load=0.80 1.30 0.70 mhz=700.000
+[2026-10-03 17:40:44] end ov_head rc=0
+[2026-10-03 17:40:44] after ov_head load=2.02 1.54 0.79 mhz=3390.644
+[2026-10-03 17:41:14] before ov_gradcam1 load=1.22 1.40 0.77 mhz=3031.649
+[2026-10-03 17:41:28] end ov_gradcam1 rc=0
+[2026-10-03 17:41:28] after ov_gradcam1 load=2.04 1.56 0.83 mhz=3315.792
+[2026-10-03 17:41:58] before ov_gradcam5 load=1.23 1.41 0.80 mhz=700.000
+[2026-10-03 17:42:13] end ov_gradcam5 rc=0
+[2026-10-03 17:42:13] after ov_gradcam5 load=2.51 1.69 0.90 mhz=3241.410
+[2026-10-03 17:42:43] ALL DONE

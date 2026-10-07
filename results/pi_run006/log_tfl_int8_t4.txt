@@ -1,0 +1,68 @@
+{
+  "config": "tfl_int8_t4",
+  "runtime": "tflite_runtime 2.13.0",
+  "model_file": "run002_mnv3s_int8.tflite",
+  "num_threads": 4,
+  "val_auc": {
+    "D": 0.4944,
+    "G": 0.6157,
+    "C": 0.7247,
+    "A": 0.534,
+    "H": 0.5941
+  },
+  "mean_auc": 0.5926,
+  "max_abs_prob_diff_vs_torch": 0.9829697012901306,
+  "mean_abs_prob_diff_vs_torch": 0.1888219714164734,
+  "latency_ms": {
+    "mean": 78.302,
+    "p50": 78.147,
+    "p95": 78.535,
+    "p99": 79.442,
+    "warmup": 20,
+    "timed": 200,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 93.307,
+  "accuracy_pass_s": 220.6,
+  "model_load_s": 0.06,
+  "peak_rss_mb": 37.8,
+  "mem_available_mb_before": 700.0,
+  "vcgencmd_before": {
+    "temp": "temp=50.5'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "vcgencmd_after": {
+    "temp": "temp=59.1'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "host": "raspberrypi",
+  "machine": "armv7l",
+  "python": "3.9.2",
+  "numpy": "1.26.4",
+  "pillow": "11.2.1"
+}
+	Command being timed: ".venv/bin/python bench_pi.py tfl_int8_t4"
+	User time (seconds): 496.57
+	System time (seconds): 19.87
+	Percent of CPU this job got: 215%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:59.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 38660
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2035178
+	Voluntary context switches: 14617
+	Involuntary context switches: 6057
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

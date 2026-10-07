@@ -1,0 +1,80 @@
+{
+  "config": "tfl_fp32_t4",
+  "runtime": "tflite_runtime 2.13.0",
+  "model_file": "artifacts/run002_mnv3s_fp32.tflite",
+  "img": 224,
+  "manifest": "artifacts/val_manifest.csv",
+  "n_images": 300,
+  "label_cols": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "num_threads": 4,
+  "val_auc": {
+    "D": 0.7101,
+    "G": 0.8871,
+    "C": 0.9102,
+    "A": 0.8423,
+    "H": 0.7389
+  },
+  "mean_auc": 0.8177,
+  "max_abs_prob_diff_vs_torch": 1.0371208190917969e-05,
+  "mean_abs_prob_diff_vs_torch": 7.782497846164915e-07,
+  "latency_ms": {
+    "mean": 132.916,
+    "p50": 132.232,
+    "p95": 145.093,
+    "p99": 163.866,
+    "warmup": 20,
+    "timed": 200,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 93.497,
+  "preprocess_ms_p50": 92.774,
+  "accuracy_pass_s": 69.1,
+  "model_load_s": 0.055,
+  "peak_rss_mb": 47.3,
+  "mem_available_mb_before": 696.6,
+  "mem_available_mb_after": 683.6,
+  "vcgencmd_before": {
+    "temp": "temp=45.1'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "vcgencmd_after": {
+    "temp": "temp=49.9'C",
+    "throttled": "throttled=0x50005",
+    "arm_clock": "frequency(48)=600000000"
+  },
+  "host": "raspberrypi",
+  "machine": "armv7l",
+  "python": "3.9.2",
+  "numpy": "1.26.4",
+  "pillow": "11.2.1"
+}
+	Command being timed: ".venv/bin/python bench_pi.py tfl_fp32_t4 --model artifacts/run002_mnv3s_fp32.tflite --img 224 --manifest artifacts/val_manifest.csv --ref artifacts/torch_cpu_val_probs.npy --label-cols D,G,C,A,H --n 300 --out-dir run009/lat_224"
+	User time (seconds): 172.12
+	System time (seconds): 7.41
+	Percent of CPU this job got: 178%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48392
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 562271
+	Voluntary context switches: 39786
+	Involuntary context switches: 15516
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

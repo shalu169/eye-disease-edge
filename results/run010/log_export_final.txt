@@ -1,0 +1,87 @@
+/Users/piuaggawal/Documents/my_workspace/eye-disease-edge-ai/results/run010_export_edge.py:47: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(mod, dummy, p, input_names=["image"], output_names=[out],
+{
+ "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+ "checkpoint_info": {
+  "source": "results/run008_FINAL_CHECKPOINT.json",
+  "model": "run008 A (final): MobileNetV3-small (timm mobilenetv3_small_100), joint 5-label",
+  "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+  "seed": 2,
+  "best_epoch": 21,
+  "input_size": 512,
+  "preprocessing": "PIL RGB -> Resize((512,512)) bilinear -> ToTensor -> Normalize(ImageNet mean/std)",
+  "output": "5 logits, sigmoid per label, order [D, G, C, A, H]",
+  "label_config": {
+   "labels": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+   ],
+   "D": "per-eye DR label from that eye's diagnostic keywords (results/run007_dr_per_eye_label_mapping.md)",
+   "G_C_A_H": "ODIR patient-level labels"
+  },
+  "test_manifest": "results/run008_splits/test.csv",
+  "val_manifest": "results/run008_splits/val.csv",
+  "train_manifest": "results/run008_splits/train.csv",
+  "val_sel_mean_auc": 0.8573695340988641,
+  "selection_rule": "seed with the median VALIDATION selection mean AUC (5 labels, D scored on per-eye labels) among seeds [0, 1, 2]; test set not used for this choice",
+  "all_seeds": [
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s0_best_epoch12.pt",
+    "seed": 0,
+    "best_epoch": 12,
+    "val_sel_mean_auc": 0.8596530178251758
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s1_best_epoch8.pt",
+    "seed": 1,
+    "best_epoch": 8,
+    "val_sel_mean_auc": 0.8516721957673109
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+    "seed": 2,
+    "best_epoch": 21,
+    "val_sel_mean_auc": 0.8573695340988641
+   }
+  ],
+  "note": "Edge INT8 calibration must use images from train.csv only; the old edge/artifacts/calib_manifest.csv has 55 images that are now in test.csv.",
+  "updated_after_all_seeds": true
+ },
+ "tag": "final",
+ "img": 512,
+ "torch": "2.14.0",
+ "opset": 17,
+ "files": {
+  "backbone": {
+   "path": "edge/artifacts/run010_final_backbone_fp32.onnx",
+   "md5": "b38260e00f23e2650298c6e1128a335e"
+  },
+  "full": {
+   "path": "edge/artifacts/run010_final_full_fp32.onnx",
+   "md5": "2a4485695018dcd41d06480fa1570abf"
+  },
+  "head": {
+   "path": "edge/artifacts/run010_final_head.npz",
+   "md5": "9829700c114722c134275d3eb3555d06",
+   "shapes": {
+    "W1": [
+     1024,
+     576
+    ],
+    "b1": [
+     1024
+    ],
+    "W2": [
+     5,
+     1024
+    ],
+    "b2": [
+     5
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,27 @@
+#!/bin/bash
+# Run 012: iGPU driver fix. Old Debian OpenCL driver 22.43 vs Intel compute-runtime 26.35 (user-space, ~/neo).
+cd ~/eye-edge
+R512="--onnx artifacts/run008final_fp32.onnx --img 512 --manifest artifacts/test_manifest_run008.csv --ref artifacts/run008final_torch_cpu_test_probs.npy --label-cols D_eye,G,C,A,H"
+run() { # name driver precision config extra...
+  name=$1; drv=$2; prec=$3; cfg=$4; shift 4
+  ( [ "$drv" = new ] && . ~/neo/env.sh; [ "$prec" != default ] && export OV_GPU_PRECISION=$prec
+    .venv/bin/python bench_n100.py run $cfg --out-dir run012/$name "$@" > run012/$name.log 2>&1 )
+  echo "$(date +%T) $name rc=$?"
+}
+for drv in old new; do
+  run ${drv}_224_fp32_gpu        $drv default ov_fp32_gpu
+  run ${drv}_224_int8_gpu        $drv default ov_int8_gpu
+  run ${drv}_224_int8_gpu_f32    $drv f32     ov_int8_gpu
+  run ${drv}_224_fp32_gpu_f32    $drv f32     ov_fp32_gpu
+  run ${drv}_512_fp32_gpu        $drv default ov_fp32_gpu $R512
+  run ${drv}_512_fp32_gpu_f32    $drv f32     ov_fp32_gpu $R512
+done
+run new_224_int8_cpu_check new default ov_int8_cpu
+echo ALL_DONE
+export OCL_ICD_VENDORS=$HOME/neo/vendors
+export LD_LIBRARY_PATH=$HOME/neo/root/usr/local/lib:$HOME/neo/root/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}
+/home/test/neo/root/usr/lib/x86_64-linux-gnu/intel-opencl/libigdrcl.so
+0a6e64a663ae65a0fa02d6912ae3b6b37cf85b90c21cc423fd9fef70aaf4f628  intel-igc-core-2_2.41.5+22716_amd64.deb
+779e1b9e88098eb25711e9a8f67c2752665bad22f134aa40ed5649f6e1b87058  intel-igc-opencl-2_2.41.5+22716_amd64.deb
+61712caaddeba3d38e4f79e2a0fb23fea25596ca2d72c3144c6eea2331ec4301  intel-opencl-icd_26.35.39758.10-0_amd64.deb
+6031a63d6e8a12ce61c14efc15f2c8e727061286e3820b8594e6d00615e04d54  libigdgmm12_22.10.0_amd64.deb

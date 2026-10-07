@@ -1,0 +1,139 @@
+0/448 images, 1 pairs, 15s
+25/448 images, 29 pairs, 456s
+50/448 images, 63 pairs, 1214s
+75/448 images, 92 pairs, 1580s
+100/448 images, 120 pairs, 1946s
+125/448 images, 148 pairs, 2138s
+150/448 images, 174 pairs, 2365s
+175/448 images, 199 pairs, 2654s
+200/448 images, 224 pairs, 2993s
+225/448 images, 251 pairs, 3321s
+250/448 images, 277 pairs, 3495s
+275/448 images, 302 pairs, 3669s
+300/448 images, 327 pairs, 4482s
+325/448 images, 353 pairs, 4621s
+350/448 images, 379 pairs, 4807s
+375/448 images, 404 pairs, 6803s
+400/448 images, 430 pairs, 6927s
+425/448 images, 462 pairs, 7018s
+{
+ "n": 485,
+ "mean_p_orig": 0.6750164267841514,
+ "n_gradcam_all_zero": 0,
+ "gradcam_blur_del_auc_mean": 0.3257697228071453,
+ "gradcam_blur_del_auc_ci95": [
+  0.30101490662715735,
+  0.3493434866554582
+ ],
+ "random_blur_del_auc_mean": 0.4669349343017292,
+ "random_blur_del_auc_ci95": [
+  0.4437694312216072,
+  0.49004548841360135
+ ],
+ "centre_blur_del_auc_mean": 0.3410744018308793,
+ "centre_blur_del_auc_ci95": [
+  0.31724632024385935,
+  0.36388436137120156
+ ],
+ "gradcam_minus_random_blur_del_mean": -0.14116521149458394,
+ "gradcam_minus_random_blur_del_ci95": [
+  -0.1553240959818492,
+  -0.12825691309366646
+ ],
+ "gradcam_better_than_random_blur_del_frac": 0.8474226804123711,
+ "wilcoxon_p_vs_random_blur_del": 4.9814761855796445e-57,
+ "gradcam_minus_centre_blur_del_mean": -0.015304679023733976,
+ "gradcam_minus_centre_blur_del_ci95": [
+  -0.029798821632014628,
+  -0.000576358198471109
+ ],
+ "gradcam_better_than_centre_blur_del_frac": 0.5649484536082474,
+ "wilcoxon_p_vs_centre_blur_del": 0.20149007390361573,
+ "gradcam_blur_ins_auc_mean": 0.7399583576841497,
+ "gradcam_blur_ins_auc_ci95": [
+  0.7169964467080777,
+  0.7620826903423598
+ ],
+ "random_blur_ins_auc_mean": 0.47060149388485867,
+ "random_blur_ins_auc_ci95": [
+  0.4458926498920578,
+  0.49458328810488633
+ ],
+ "centre_blur_ins_auc_mean": 0.5925357280035876,
+ "centre_blur_ins_auc_ci95": [
+  0.5675211235635443,
+  0.6176741339798024
+ ],
+ "gradcam_minus_random_blur_ins_mean": 0.26935686379929125,
+ "gradcam_minus_random_blur_ins_ci95": [
+  0.25606160688956203,
+  0.28363634739511523
+ ],
+ "gradcam_better_than_random_blur_ins_frac": 0.9917525773195877,
+ "wilcoxon_p_vs_random_blur_ins": 1.174835495857385e-80,
+ "gradcam_minus_centre_blur_ins_mean": 0.1474226296805623,
+ "gradcam_minus_centre_blur_ins_ci95": [
+  0.13441120801011697,
+  0.1601263560863864
+ ],
+ "gradcam_better_than_centre_blur_ins_frac": 0.8804123711340206,
+ "wilcoxon_p_vs_centre_blur_ins": 1.085264493932316e-63,
+ "gradcam_mean_del_auc_mean": 0.15725198272972157,
+ "gradcam_mean_del_auc_ci95": [
+  0.14567371132270654,
+  0.16910777739909097
+ ],
+ "random_mean_del_auc_mean": 0.263526150276651,
+ "random_mean_del_auc_ci95": [
+  0.24730715838788067,
+  0.28030194965801275
+ ],
+ "centre_mean_del_auc_mean": 0.247916923716284,
+ "centre_mean_del_auc_ci95": [
+  0.22725240353912152,
+  0.2695991620329189
+ ],
+ "gradcam_minus_random_mean_del_mean": -0.10627416754692948,
+ "gradcam_minus_random_mean_del_ci95": [
+  -0.1196847375750664,
+  -0.09194208419998107
+ ],
+ "gradcam_better_than_random_mean_del_frac": 0.8103092783505155,
+ "wilcoxon_p_vs_random_mean_del": 2.6163934236177438e-45,
+ "gradcam_minus_centre_mean_del_mean": -0.09066494098656244,
+ "gradcam_minus_centre_mean_del_ci95": [
+  -0.10939097922199359,
+  -0.07237912797325813
+ ],
+ "gradcam_better_than_centre_mean_del_frac": 0.6206185567010309,
+ "wilcoxon_p_vs_centre_mean_del": 2.5740432141858186e-13,
+ "gradcam_mean_ins_auc_mean": 0.512727051270501,
+ "gradcam_mean_ins_auc_ci95": [
+  0.4911625058079801,
+  0.5339601790847021
+ ],
+ "random_mean_ins_auc_mean": 0.26411902173455076,
+ "random_mean_ins_auc_ci95": [
+  0.24789361781543856,
+  0.2814336227594667
+ ],
+ "centre_mean_ins_auc_mean": 0.46551505058232645,
+ "centre_mean_ins_auc_ci95": [
+  0.4401566239507792,
+  0.4896430361417678
+ ],
+ "gradcam_minus_random_mean_ins_mean": 0.24860802953595026,
+ "gradcam_minus_random_mean_ins_ci95": [
+  0.23253397307833004,
+  0.2643674658181794
+ ],
+ "gradcam_better_than_random_mean_ins_frac": 0.9237113402061856,
+ "wilcoxon_p_vs_random_mean_ins": 5.390750732661494e-75,
+ "gradcam_minus_centre_mean_ins_mean": 0.047212000688174625,
+ "gradcam_minus_centre_mean_ins_ci95": [
+  0.026836566807490747,
+  0.06850332855654803
+ ],
+ "gradcam_better_than_centre_mean_ins_frac": 0.6639175257731958,
+ "wilcoxon_p_vs_centre_mean_ins": 5.831526733015973e-09
+}

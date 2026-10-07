@@ -1,0 +1,41 @@
+{
+  "config": "ov_fp32_cpu",
+  "runtime": "openvino 2026.4.1-22982-e213a147257-releases/2026/4",
+  "onnx": "artifacts/run007b_eyeD384_fp32.onnx",
+  "img": 384,
+  "manifest": "artifacts/val_manifest_run009.csv",
+  "n_images": 1270,
+  "label_cols": [
+    "D_eye",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "val_auc": {
+    "D_eye": 0.7626,
+    "G": 0.8964,
+    "C": 0.9389,
+    "A": 0.8491,
+    "H": 0.7973
+  },
+  "mean_auc": 0.8489,
+  "D_patient_auc": 0.7339,
+  "max_abs_prob_diff_vs_torch": 7.927417755126953e-06,
+  "mean_abs_prob_diff_vs_torch": 4.219502045543777e-07,
+  "latency_ms": {
+    "mean": 5.068,
+    "p50": 5.068,
+    "p95": 5.087,
+    "p99": 5.096,
+    "warmup": 50,
+    "timed": 500,
+    "batch": 1
+  },
+  "preprocess_ms_mean": 7.219,
+  "preprocess_ms_p50": 7.187,
+  "model_load_s": 0.242,
+  "peak_rss_mb": 247.5,
+  "host": "extraeye",
+  "python": "3.13.5"
+}

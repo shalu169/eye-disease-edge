@@ -1,0 +1,1202 @@
+{
+ "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt",
+ "checkpoint_info": {
+  "source": "development checkpoint (run 008 final not available yet)",
+  "checkpoint": "results/checkpoints/run007c_joint5_eyeD_512_s1_best_epoch22.pt"
+ },
+ "n_images": 81,
+ "data": "IDRiD A. Segmentation, 54 train + 27 test images, preprocessed by results/run010_idrid_prep.py",
+ "tolerance_px": 15,
+ "random_draws_per_image": 50,
+ "model_on_idrid": {
+  "p_D_mean": 0.9387168483233747,
+  "p_D_median": 0.9958006739616394,
+  "frac_p_D_ge_0.5": 0.9629629629629629,
+  "n_gradcam_D_all_zero": 0
+ },
+ "gradcam_D_energy_on_OD_mean": 0.007953410340268382,
+ "centre_energy_on_OD_mean": 0.02891708710403354,
+ "OD_area_frac_mean": 0.02624028142918847,
+ "spearman_pD_vs_epg_any": {
+  "rho": 0.38536585365853654,
+  "p": 0.0003813776952728034
+ },
+ "summary": {
+  "any": {
+   "n_images": 81,
+   "area_frac_mean": 0.04178612270660259,
+   "area_frac_tol_mean": 0.35204418990919933,
+   "gradcam_D_pg_mean": 0.16049382716049382,
+   "gradcam_D_pg_ci95": [
+    0.08641975308641975,
+    0.24691358024691357
+   ],
+   "gradcam_D_pg_tol_mean": 0.8271604938271605,
+   "gradcam_D_pg_tol_ci95": [
+    0.7407407407407407,
+    0.9012345679012346
+   ],
+   "gradcam_D_epg_mean": 0.07769943472791326,
+   "gradcam_D_epg_ci95": [
+    0.06827869859026792,
+    0.08720270690679216
+   ],
+   "gradcam_D_auroc_mean": 0.6916572416009009,
+   "gradcam_D_auroc_ci95": [
+    0.6658732638598758,
+    0.7147664291540922
+   ],
+   "gradcam_D_ap_mean": 0.09070382515027467,
+   "gradcam_D_ap_ci95": [
+    0.07972883365610135,
+    0.10259468927243676
+   ],
+   "random_pg_mean": 0.035061728395061734,
+   "random_pg_ci95": [
+    0.0254320987654321,
+    0.04617901234567898
+   ],
+   "random_pg_tol_mean": 0.32024691358024693,
+   "random_pg_tol_ci95": [
+    0.2826975308641975,
+    0.3587716049382716
+   ],
+   "random_epg_mean": 0.041709041815354585,
+   "random_epg_ci95": [
+    0.033110741563045054,
+    0.052011450041954996
+   ],
+   "random_auroc_mean": 0.4985607842015771,
+   "random_auroc_ci95": [
+    0.4962595829727541,
+    0.5007912395139184
+   ],
+   "random_ap_mean": 0.04318217564391668,
+   "random_ap_ci95": [
+    0.03485845988088213,
+    0.05269095278272628
+   ],
+   "centre_pg_mean": 0.08641975308641975,
+   "centre_pg_ci95": [
+    0.024691358024691357,
+    0.14814814814814814
+   ],
+   "centre_pg_tol_mean": 0.5802469135802469,
+   "centre_pg_tol_ci95": [
+    0.48148148148148145,
+    0.691358024691358
+   ],
+   "centre_epg_mean": 0.04818392089384114,
+   "centre_epg_ci95": [
+    0.0374360630939065,
+    0.060017991851566845
+   ],
+   "centre_auroc_mean": 0.5747858840884819,
+   "centre_auroc_ci95": [
+    0.5477888594993842,
+    0.6009693686107143
+   ],
+   "centre_ap_mean": 0.06566747631512897,
+   "centre_ap_ci95": [
+    0.04969395591775306,
+    0.083929030266925
+   ],
+   "gradcam_G_pg_mean": 0.1111111111111111,
+   "gradcam_G_pg_ci95": [
+    0.04938271604938271,
+    0.18518518518518517
+   ],
+   "gradcam_G_pg_tol_mean": 0.2716049382716049,
+   "gradcam_G_pg_tol_ci95": [
+    0.1728395061728395,
+    0.37037037037037035
+   ],
+   "gradcam_G_epg_mean": 0.05720552528150564,
+   "gradcam_G_epg_ci95": [
+    0.03939710613358105,
+    0.07889917294159215
+   ],
+   "gradcam_G_auroc_mean": 0.5611892779081468,
+   "gradcam_G_auroc_ci95": [
+    0.532218440386781,
+    0.5905371177616786
+   ],
+   "gradcam_G_ap_mean": 0.07042495327425359,
+   "gradcam_G_ap_ci95": [
+    0.05466426104404738,
+    0.08890083569289658
+   ],
+   "gradcam_C_pg_mean": 0.1111111111111111,
+   "gradcam_C_pg_ci95": [
+    0.04938271604938271,
+    0.18518518518518517
+   ],
+   "gradcam_C_pg_tol_mean": 0.30864197530864196,
+   "gradcam_C_pg_tol_ci95": [
+    0.20987654320987653,
+    0.4074074074074074
+   ],
+   "gradcam_C_epg_mean": 0.07252881987261828,
+   "gradcam_C_epg_ci95": [
+    0.05987587657711831,
+    0.08681128645491107
+   ],
+   "gradcam_C_auroc_mean": 0.6630970282397326,
+   "gradcam_C_auroc_ci95": [
+    0.6319371645544973,
+    0.6937625089371272
+   ],
+   "gradcam_C_ap_mean": 0.09393241317276192,
+   "gradcam_C_ap_ci95": [
+    0.07736919548349837,
+    0.11095615160292394
+   ],
+   "gradcam_A_pg_mean": 0.12345679012345678,
+   "gradcam_A_pg_ci95": [
+    0.06172839506172839,
+    0.19753086419753085
+   ],
+   "gradcam_A_pg_tol_mean": 0.16049382716049382,
+   "gradcam_A_pg_tol_ci95": [
+    0.08641975308641975,
+    0.24691358024691357
+   ],
+   "gradcam_A_epg_mean": 0.036782096288839564,
+   "gradcam_A_epg_ci95": [
+    0.02395482721444245,
+    0.051667365996723266
+   ],
+   "gradcam_A_auroc_mean": 0.39622356537500747,
+   "gradcam_A_auroc_ci95": [
+    0.36674008053171003,
+    0.4262778643632707
+   ],
+   "gradcam_A_ap_mean": 0.05311840408513113,
+   "gradcam_A_ap_ci95": [
+    0.038457466484519906,
+    0.06900005679438603
+   ],
+   "gradcam_H_pg_mean": 0.25925925925925924,
+   "gradcam_H_pg_ci95": [
+    0.16049382716049382,
+    0.35802469135802467
+   ],
+   "gradcam_H_pg_tol_mean": 0.4444444444444444,
+   "gradcam_H_pg_tol_ci95": [
+    0.3333333333333333,
+    0.5555555555555556
+   ],
+   "gradcam_H_epg_mean": 0.08842946378619088,
+   "gradcam_H_epg_ci95": [
+    0.07095160915048859,
+    0.10865938322646271
+   ],
+   "gradcam_H_auroc_mean": 0.6302003868878926,
+   "gradcam_H_auroc_ci95": [
+    0.6010782851910703,
+    0.6587012149428115
+   ],
+   "gradcam_H_ap_mean": 0.10999714662920831,
+   "gradcam_H_ap_ci95": [
+    0.08848034054366789,
+    0.13356968718515969
+   ],
+   "gradcam_D_minus_random_epg_mean": 0.035990392912558664,
+   "gradcam_D_minus_random_epg_ci95": [
+    0.03019091753216955,
+    0.04201574872889452
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_epg": 4.366373412469025e-13,
+   "gradcam_D_minus_random_auroc_mean": 0.19309645739932385,
+   "gradcam_D_minus_random_auroc_ci95": [
+    0.16917803374695514,
+    0.21719798894108194
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_auroc": 2.7211715266186934e-14,
+   "gradcam_D_minus_random_ap_mean": 0.04752164950635798,
+   "gradcam_D_minus_random_ap_ci95": [
+    0.03888944005865508,
+    0.05624833012595445
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_ap": 6.254232914493299e-14,
+   "gradcam_D_minus_centre_epg_mean": 0.029515513834072117,
+   "gradcam_D_minus_centre_epg_ci95": [
+    0.02330059817910229,
+    0.03651104017985799
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_epg": 4.4208549112701753e-11,
+   "gradcam_D_minus_centre_auroc_mean": 0.1168713575124191,
+   "gradcam_D_minus_centre_auroc_ci95": [
+    0.08218033540956331,
+    0.15151670027597616
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_auroc": 2.137339654093275e-08,
+   "gradcam_D_minus_centre_ap_mean": 0.025036348835145706,
+   "gradcam_D_minus_centre_ap_ci95": [
+    0.00982340751993459,
+    0.03970899177755457
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_ap": 5.657729479637038e-07,
+   "gradcam_D_minus_gradcam_G_epg_mean": 0.020493909446407617,
+   "gradcam_D_minus_gradcam_G_epg_ci95": [
+    0.001098882882025116,
+    0.03498329248622111
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_epg": 6.709438301862764e-07,
+   "gradcam_D_minus_gradcam_G_auroc_mean": 0.13046796369275426,
+   "gradcam_D_minus_gradcam_G_auroc_ci95": [
+    0.09565155082034582,
+    0.16259913978681267
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_auroc": 9.63452185223189e-09,
+   "gradcam_D_minus_gradcam_G_ap_mean": 0.020278871876021072,
+   "gradcam_D_minus_gradcam_G_ap_ci95": [
+    0.004563942277705115,
+    0.03462101208558867
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_ap": 2.6995797029674503e-05,
+   "epg_gradcam_D_over_area_frac_median": 2.193548830803565
+  },
+  "MA": {
+   "n_images": 81,
+   "area_frac_mean": 0.002700429723359343,
+   "area_frac_tol_mean": 0.13746865223869545,
+   "gradcam_D_pg_mean": 0.0,
+   "gradcam_D_pg_ci95": [
+    0.0,
+    0.0
+   ],
+   "gradcam_D_pg_tol_mean": 0.43209876543209874,
+   "gradcam_D_pg_tol_ci95": [
+    0.32098765432098764,
+    0.5432098765432098
+   ],
+   "gradcam_D_epg_mean": 0.005496404060842771,
+   "gradcam_D_epg_ci95": [
+    0.004659933225143448,
+    0.006370721355603934
+   ],
+   "gradcam_D_auroc_mean": 0.6495195030087868,
+   "gradcam_D_auroc_ci95": [
+    0.6291206252353274,
+    0.667892706085589
+   ],
+   "gradcam_D_ap_mean": 0.007853068505567991,
+   "gradcam_D_ap_ci95": [
+    0.006355946049239954,
+    0.009651396660690635
+   ],
+   "random_pg_mean": 0.0019753086419753087,
+   "random_pg_ci95": [
+    0.0007407407407407407,
+    0.0034567901234567903
+   ],
+   "random_pg_tol_mean": 0.1251851851851852,
+   "random_pg_tol_ci95": [
+    0.10419753086419753,
+    0.14790123456790125
+   ],
+   "random_epg_mean": 0.002698584797890587,
+   "random_epg_ci95": [
+    0.002293186767347283,
+    0.0031372553663585015
+   ],
+   "random_auroc_mean": 0.4992794547484067,
+   "random_auroc_ci95": [
+    0.4963894458592716,
+    0.5020222282677745
+   ],
+   "random_ap_mean": 0.0030407891149948868,
+   "random_ap_ci95": [
+    0.0026017808846348195,
+    0.0034938632149907577
+   ],
+   "centre_pg_mean": 0.0,
+   "centre_pg_ci95": [
+    0.0,
+    0.0
+   ],
+   "centre_pg_tol_mean": 0.19753086419753085,
+   "centre_pg_tol_ci95": [
+    0.1111111111111111,
+    0.28425925925925755
+   ],
+   "centre_epg_mean": 0.003032280386922835,
+   "centre_epg_ci95": [
+    0.0025535796535863216,
+    0.0035271609220980738
+   ],
+   "centre_auroc_mean": 0.5798787146717549,
+   "centre_auroc_ci95": [
+    0.5583919702964459,
+    0.6004218423430919
+   ],
+   "centre_ap_mean": 0.0037591654578087007,
+   "centre_ap_ci95": [
+    0.003166720679220797,
+    0.004343975494846772
+   ],
+   "gradcam_G_pg_mean": 0.0,
+   "gradcam_G_pg_ci95": [
+    0.0,
+    0.0
+   ],
+   "gradcam_G_pg_tol_mean": 0.037037037037037035,
+   "gradcam_G_pg_tol_ci95": [
+    0.0,
+    0.08641975308641975
+   ],
+   "gradcam_G_epg_mean": 0.0023828296288016127,
+   "gradcam_G_epg_ci95": [
+    0.0019356680535318805,
+    0.002869625128361781
+   ],
+   "gradcam_G_auroc_mean": 0.5325689696866344,
+   "gradcam_G_auroc_ci95": [
+    0.5075844004568204,
+    0.5550477370421706
+   ],
+   "gradcam_G_ap_mean": 0.0032782047456973336,
+   "gradcam_G_ap_ci95": [
+    0.0027655118103695553,
+    0.003781242214444164
+   ],
+   "gradcam_C_pg_mean": 0.0,
+   "gradcam_C_pg_ci95": [
+    0.0,
+    0.0
+   ],
+   "gradcam_C_pg_tol_mean": 0.037037037037037035,
+   "gradcam_C_pg_tol_ci95": [
+    0.0,
+    0.08641975308641975
+   ],
+   "gradcam_C_epg_mean": 0.0035561390212720135,
+   "gradcam_C_epg_ci95": [
+    0.0029980884092248835,
+    0.004158050237374818
+   ],
+   "gradcam_C_auroc_mean": 0.596813392151356,
+   "gradcam_C_auroc_ci95": [
+    0.5752075455481568,
+    0.6188672732306878
+   ],
+   "gradcam_C_ap_mean": 0.004118836062092449,
+   "gradcam_C_ap_ci95": [
+    0.0035569380625282607,
+    0.004709540411626946
+   ],
+   "gradcam_A_pg_mean": 0.0,
+   "gradcam_A_pg_ci95": [
+    0.0,
+    0.0
+   ],
+   "gradcam_A_pg_tol_mean": 0.037037037037037035,
+   "gradcam_A_pg_tol_ci95": [
+    0.0,
+    0.08641975308641975
+   ],
+   "gradcam_A_epg_mean": 0.0012730395051389846,
+   "gradcam_A_epg_ci95": [
+    0.0010590459627969216,
+    0.0015098986779742483
+   ],
+   "gradcam_A_auroc_mean": 0.37845050178382555,
+   "gradcam_A_auroc_ci95": [
+    0.35940766328742424,
+    0.40013407984410954
+   ],
+   "gradcam_A_ap_mean": 0.0027040104393337436,
+   "gradcam_A_ap_ci95": [
+    0.002011396478942919,
+    0.003748205141697667
+   ],
+   "gradcam_H_pg_mean": 0.0,
+   "gradcam_H_pg_ci95": [
+    0.0,
+    0.0
+   ],
+   "gradcam_H_pg_tol_mean": 0.04938271604938271,
+   "gradcam_H_pg_tol_ci95": [
+    0.012345679012345678,
+    0.09876543209876543
+   ],
+   "gradcam_H_epg_mean": 0.00250910715586531,
+   "gradcam_H_epg_ci95": [
+    0.002099664782692209,
+    0.0029407073108909513
+   ],
+   "gradcam_H_auroc_mean": 0.5179550792213491,
+   "gradcam_H_auroc_ci95": [
+    0.49947500956545243,
+    0.5379157684338065
+   ],
+   "gradcam_H_ap_mean": 0.003043772939609089,
+   "gradcam_H_ap_ci95": [
+    0.0026335071973017142,
+    0.0034560344214744935
+   ],
+   "gradcam_D_minus_random_epg_mean": 0.0027978192629521843,
+   "gradcam_D_minus_random_epg_ci95": [
+    0.0022513984035845446,
+    0.003347719826445012
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_epg": 5.614573481839816e-14,
+   "gradcam_D_minus_random_auroc_mean": 0.15024004826038018,
+   "gradcam_D_minus_random_auroc_ci95": [
+    0.12984737919727501,
+    0.1698729184633037
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_auroc": 3.6394440266342273e-14,
+   "gradcam_D_minus_random_ap_mean": 0.004812279390573103,
+   "gradcam_D_minus_random_ap_ci95": [
+    0.0034835796425474654,
+    0.006436774855977232
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_ap": 7.75591185311272e-14,
+   "gradcam_D_minus_centre_epg_mean": 0.0024641236739199363,
+   "gradcam_D_minus_centre_epg_ci95": [
+    0.001959509516340696,
+    0.003018301400099495
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_epg": 3.3047955515612555e-13,
+   "gradcam_D_minus_centre_auroc_mean": 0.06964078833703194,
+   "gradcam_D_minus_centre_auroc_ci95": [
+    0.04243399135108903,
+    0.09624332170805758
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_auroc": 1.1942334042747425e-06,
+   "gradcam_D_minus_centre_ap_mean": 0.00409390304775929,
+   "gradcam_D_minus_centre_ap_ci95": [
+    0.0026678342462624414,
+    0.005730175886566447
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_ap": 2.6992879339571814e-09,
+   "gradcam_D_minus_gradcam_G_epg_mean": 0.003113574432041158,
+   "gradcam_D_minus_gradcam_G_epg_ci95": [
+    0.002468038225172531,
+    0.003809233570389012
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_epg": 2.9759275146000697e-13,
+   "gradcam_D_minus_gradcam_G_auroc_mean": 0.11695053332215248,
+   "gradcam_D_minus_gradcam_G_auroc_ci95": [
+    0.08900343646809152,
+    0.1453698374615153
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_auroc": 2.9376424468414586e-10,
+   "gradcam_D_minus_gradcam_G_ap_mean": 0.004574863759870657,
+   "gradcam_D_minus_gradcam_G_ap_ci95": [
+    0.00324016612520546,
+    0.0062422162316678655
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_ap": 6.5553219975281666e-12,
+   "epg_gradcam_D_over_area_frac_median": 1.9991574406120187
+  },
+  "HE": {
+   "n_images": 80,
+   "area_frac_mean": 0.017439924807890975,
+   "area_frac_tol_mean": 0.13196116320146464,
+   "gradcam_D_pg_mean": 0.1125,
+   "gradcam_D_pg_ci95": [
+    0.05,
+    0.1875
+   ],
+   "gradcam_D_pg_tol_mean": 0.55,
+   "gradcam_D_pg_tol_ci95": [
+    0.4375,
+    0.6625
+   ],
+   "gradcam_D_epg_mean": 0.035250171265306565,
+   "gradcam_D_epg_ci95": [
+    0.028534961920574916,
+    0.04248992953604101
+   ],
+   "gradcam_D_auroc_mean": 0.6955255134676064,
+   "gradcam_D_auroc_ci95": [
+    0.6625041413995,
+    0.7262397494133117
+   ],
+   "gradcam_D_ap_mean": 0.05835754905650663,
+   "gradcam_D_ap_ci95": [
+    0.044036830749413725,
+    0.07813255737643977
+   ],
+   "random_pg_mean": 0.017,
+   "random_pg_ci95": [
+    0.00925,
+    0.027006249999999968
+   ],
+   "random_pg_tol_mean": 0.12375000000000003,
+   "random_pg_tol_ci95": [
+    0.09824374999999999,
+    0.15275
+   ],
+   "random_epg_mean": 0.017380493138298335,
+   "random_epg_ci95": [
+    0.011538626381394535,
+    0.02465066797948846
+   ],
+   "random_auroc_mean": 0.5022286030428941,
+   "random_auroc_ci95": [
+    0.49863989868619635,
+    0.5061784010315385
+   ],
+   "random_ap_mean": 0.019144989477957793,
+   "random_ap_ci95": [
+    0.013505412856092849,
+    0.02649497415153284
+   ],
+   "centre_pg_mean": 0.0125,
+   "centre_pg_ci95": [
+    0.0,
+    0.0375
+   ],
+   "centre_pg_tol_mean": 0.1375,
+   "centre_pg_tol_ci95": [
+    0.0625,
+    0.2125
+   ],
+   "centre_epg_mean": 0.016165029521653197,
+   "centre_epg_ci95": [
+    0.011124033611140475,
+    0.02287798160089551
+   ],
+   "centre_auroc_mean": 0.47712541385095814,
+   "centre_auroc_ci95": [
+    0.446264695946903,
+    0.5099425832969853
+   ],
+   "centre_ap_mean": 0.019457982098967107,
+   "centre_ap_ci95": [
+    0.013177036170466281,
+    0.02714905577257565
+   ],
+   "gradcam_G_pg_mean": 0.025,
+   "gradcam_G_pg_ci95": [
+    0.0,
+    0.0625
+   ],
+   "gradcam_G_pg_tol_mean": 0.1375,
+   "gradcam_G_pg_tol_ci95": [
+    0.0625,
+    0.225
+   ],
+   "gradcam_G_epg_mean": 0.022552667022341665,
+   "gradcam_G_epg_ci95": [
+    0.01371770898507748,
+    0.03344144247241102
+   ],
+   "gradcam_G_auroc_mean": 0.5704979446536204,
+   "gradcam_G_auroc_ci95": [
+    0.5414299697673861,
+    0.6006659840982091
+   ],
+   "gradcam_G_ap_mean": 0.029746045174924074,
+   "gradcam_G_ap_ci95": [
+    0.02031604240590951,
+    0.03972446431857223
+   ],
+   "gradcam_C_pg_mean": 0.0375,
+   "gradcam_C_pg_ci95": [
+    0.0,
+    0.0875
+   ],
+   "gradcam_C_pg_tol_mean": 0.1375,
+   "gradcam_C_pg_tol_ci95": [
+    0.0625,
+    0.2125
+   ],
+   "gradcam_C_epg_mean": 0.019548372894314527,
+   "gradcam_C_epg_ci95": [
+    0.015214868681587177,
+    0.024297011965977618
+   ],
+   "gradcam_C_auroc_mean": 0.5994235562738413,
+   "gradcam_C_auroc_ci95": [
+    0.5624200961482123,
+    0.6362397965868576
+   ],
+   "gradcam_C_ap_mean": 0.025957120070335314,
+   "gradcam_C_ap_ci95": [
+    0.019652753119185323,
+    0.03315371668606694
+   ],
+   "gradcam_A_pg_mean": 0.0125,
+   "gradcam_A_pg_ci95": [
+    0.0,
+    0.0375
+   ],
+   "gradcam_A_pg_tol_mean": 0.05,
+   "gradcam_A_pg_tol_ci95": [
+    0.0125,
+    0.1
+   ],
+   "gradcam_A_epg_mean": 0.012352736223041916,
+   "gradcam_A_epg_ci95": [
+    0.005663655282594249,
+    0.021250366956885272
+   ],
+   "gradcam_A_auroc_mean": 0.37636398832505635,
+   "gradcam_A_auroc_ci95": [
+    0.34404699837395464,
+    0.411476412944788
+   ],
+   "gradcam_A_ap_mean": 0.017748758699780133,
+   "gradcam_A_ap_ci95": [
+    0.01105410481693551,
+    0.02634599359424406
+   ],
+   "gradcam_H_pg_mean": 0.0125,
+   "gradcam_H_pg_ci95": [
+    0.0,
+    0.0375
+   ],
+   "gradcam_H_pg_tol_mean": 0.125,
+   "gradcam_H_pg_tol_ci95": [
+    0.0625,
+    0.2003124999999983
+   ],
+   "gradcam_H_epg_mean": 0.017218439847783883,
+   "gradcam_H_epg_ci95": [
+    0.011727730726340724,
+    0.022965686047286906
+   ],
+   "gradcam_H_auroc_mean": 0.5090988465586272,
+   "gradcam_H_auroc_ci95": [
+    0.4770557550077772,
+    0.5425099755401596
+   ],
+   "gradcam_H_ap_mean": 0.021682187511679513,
+   "gradcam_H_ap_ci95": [
+    0.014999278518587334,
+    0.029085611560588337
+   ],
+   "gradcam_D_minus_random_epg_mean": 0.01786967812700823,
+   "gradcam_D_minus_random_epg_ci95": [
+    0.013615121646339596,
+    0.021925067275552098
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_epg": 2.42829775522532e-12,
+   "gradcam_D_minus_random_auroc_mean": 0.19329691042471217,
+   "gradcam_D_minus_random_auroc_ci95": [
+    0.1615839542050318,
+    0.2247335012107332
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_auroc": 1.84470642339151e-12,
+   "gradcam_D_minus_random_ap_mean": 0.03921255957854884,
+   "gradcam_D_minus_random_ap_ci95": [
+    0.025768697052415898,
+    0.058368979637778394
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_ap": 1.2611358551067789e-12,
+   "gradcam_D_minus_centre_epg_mean": 0.019085141743653368,
+   "gradcam_D_minus_centre_epg_ci95": [
+    0.015239742106423364,
+    0.023152778495405073
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_epg": 2.495758127000461e-13,
+   "gradcam_D_minus_centre_auroc_mean": 0.21840009961664814,
+   "gradcam_D_minus_centre_auroc_ci95": [
+    0.17870353684737683,
+    0.2557902902261061
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_auroc": 4.189557604159531e-12,
+   "gradcam_D_minus_centre_ap_mean": 0.038899566957539516,
+   "gradcam_D_minus_centre_ap_ci95": [
+    0.02389371147220333,
+    0.05784556329500384
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_ap": 2.1908366845974633e-12,
+   "gradcam_D_minus_gradcam_G_epg_mean": 0.012697504242964897,
+   "gradcam_D_minus_gradcam_G_epg_ci95": [
+    0.006464296487140473,
+    0.01836251091128929
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_epg": 2.1181499798679714e-08,
+   "gradcam_D_minus_gradcam_G_auroc_mean": 0.1250275688139859,
+   "gradcam_D_minus_gradcam_G_auroc_ci95": [
+    0.08489799622465864,
+    0.16407139736388185
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_auroc": 5.25074007345861e-07,
+   "gradcam_D_minus_gradcam_G_ap_mean": 0.028611503881582557,
+   "gradcam_D_minus_gradcam_G_ap_ci95": [
+    0.014915205392307387,
+    0.04765446632314089
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_ap": 9.893180623623838e-08,
+   "epg_gradcam_D_over_area_frac_median": 2.5457909156270424
+  },
+  "EX": {
+   "n_images": 81,
+   "area_frac_mean": 0.018877985209565216,
+   "area_frac_tol_mean": 0.1839314177241117,
+   "gradcam_D_pg_mean": 0.024691358024691357,
+   "gradcam_D_pg_ci95": [
+    0.0,
+    0.06172839506172839
+   ],
+   "gradcam_D_pg_tol_mean": 0.25925925925925924,
+   "gradcam_D_pg_tol_ci95": [
+    0.1728395061728395,
+    0.35802469135802467
+   ],
+   "gradcam_D_epg_mean": 0.03208702040748544,
+   "gradcam_D_epg_ci95": [
+    0.025535647125492868,
+    0.03942860734631397
+   ],
+   "gradcam_D_auroc_mean": 0.7080744348406639,
+   "gradcam_D_auroc_ci95": [
+    0.677896141968475,
+    0.7362620575000763
+   ],
+   "gradcam_D_ap_mean": 0.043885353750031914,
+   "gradcam_D_ap_ci95": [
+    0.034415637202505456,
+    0.05490273945676878
+   ],
+   "random_pg_mean": 0.01432098765432099,
+   "random_pg_ci95": [
+    0.009135802469135802,
+    0.019753086419753086
+   ],
+   "random_pg_tol_mean": 0.16123456790123458,
+   "random_pg_tol_ci95": [
+    0.1355555555555556,
+    0.18938888888888886
+   ],
+   "random_epg_mean": 0.018850967466955526,
+   "random_epg_ci95": [
+    0.01372161017928666,
+    0.02434521451540902
+   ],
+   "random_auroc_mean": 0.4989888208364472,
+   "random_auroc_ci95": [
+    0.49578964744089654,
+    0.5019344490613231
+   ],
+   "random_ap_mean": 0.02008977690545138,
+   "random_ap_ci95": [
+    0.014828414971690991,
+    0.026123355034793547
+   ],
+   "centre_pg_mean": 0.06172839506172839,
+   "centre_pg_ci95": [
+    0.012345679012345678,
+    0.1111111111111111
+   ],
+   "centre_pg_tol_mean": 0.41975308641975306,
+   "centre_pg_tol_ci95": [
+    0.30864197530864196,
+    0.5308641975308642
+   ],
+   "centre_epg_mean": 0.026775726698551695,
+   "centre_epg_ci95": [
+    0.01909078469059436,
+    0.036353435746611824
+   ],
+   "centre_auroc_mean": 0.7105091476732783,
+   "centre_auroc_ci95": [
+    0.6826029116285018,
+    0.7399881603788078
+   ],
+   "centre_ap_mean": 0.051707914051396464,
+   "centre_ap_ci95": [
+    0.036166545231785974,
+    0.07076232920132926
+   ],
+   "gradcam_G_pg_mean": 0.04938271604938271,
+   "gradcam_G_pg_ci95": [
+    0.012345679012345678,
+    0.09876543209876543
+   ],
+   "gradcam_G_pg_tol_mean": 0.12345679012345678,
+   "gradcam_G_pg_tol_ci95": [
+    0.04938271604938271,
+    0.19753086419753085
+   ],
+   "gradcam_G_epg_mean": 0.026282779947321637,
+   "gradcam_G_epg_ci95": [
+    0.013907397906231618,
+    0.04554750098358044
+   ],
+   "gradcam_G_auroc_mean": 0.5562852761178324,
+   "gradcam_G_auroc_ci95": [
+    0.5194007581472331,
+    0.5942140706958768
+   ],
+   "gradcam_G_ap_mean": 0.03549733967199691,
+   "gradcam_G_ap_ci95": [
+    0.02395475333097713,
+    0.05082555720533981
+   ],
+   "gradcam_C_pg_mean": 0.04938271604938271,
+   "gradcam_C_pg_ci95": [
+    0.012345679012345678,
+    0.09876543209876543
+   ],
+   "gradcam_C_pg_tol_mean": 0.20987654320987653,
+   "gradcam_C_pg_tol_ci95": [
+    0.12345679012345678,
+    0.2962962962962963
+   ],
+   "gradcam_C_epg_mean": 0.04325385652191471,
+   "gradcam_C_epg_ci95": [
+    0.03324911456509226,
+    0.054335664197891285
+   ],
+   "gradcam_C_auroc_mean": 0.7574442971073436,
+   "gradcam_C_auroc_ci95": [
+    0.730157823521828,
+    0.7857029670690417
+   ],
+   "gradcam_C_ap_mean": 0.06947285148653295,
+   "gradcam_C_ap_ci95": [
+    0.05460724801988971,
+    0.08546399992806483
+   ],
+   "gradcam_A_pg_mean": 0.08641975308641975,
+   "gradcam_A_pg_ci95": [
+    0.024691358024691357,
+    0.14814814814814814
+   ],
+   "gradcam_A_pg_tol_mean": 0.12345679012345678,
+   "gradcam_A_pg_tol_ci95": [
+    0.06172839506172839,
+    0.19753086419753085
+   ],
+   "gradcam_A_epg_mean": 0.018442969369421063,
+   "gradcam_A_epg_ci95": [
+    0.008615190138635502,
+    0.03103418696042174
+   ],
+   "gradcam_A_auroc_mean": 0.3687881454367347,
+   "gradcam_A_auroc_ci95": [
+    0.33004632247694016,
+    0.4091475498243811
+   ],
+   "gradcam_A_ap_mean": 0.03426393146466407,
+   "gradcam_A_ap_ci95": [
+    0.01986610177876507,
+    0.052039811652315755
+   ],
+   "gradcam_H_pg_mean": 0.1111111111111111,
+   "gradcam_H_pg_ci95": [
+    0.04938271604938271,
+    0.18518518518518517
+   ],
+   "gradcam_H_pg_tol_mean": 0.2839506172839506,
+   "gradcam_H_pg_tol_ci95": [
+    0.18518518518518517,
+    0.38271604938271603
+   ],
+   "gradcam_H_epg_mean": 0.054861768380592195,
+   "gradcam_H_epg_ci95": [
+    0.04019371205362359,
+    0.07203438430532301
+   ],
+   "gradcam_H_auroc_mean": 0.7350839609371015,
+   "gradcam_H_auroc_ci95": [
+    0.7048351249071341,
+    0.762302254064346
+   ],
+   "gradcam_H_ap_mean": 0.08265597512558122,
+   "gradcam_H_ap_ci95": [
+    0.0621188899238069,
+    0.10484593946883608
+   ],
+   "gradcam_D_minus_random_epg_mean": 0.013236052940529916,
+   "gradcam_D_minus_random_epg_ci95": [
+    0.009471613403448435,
+    0.017070911416329677
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_epg": 4.763567146688845e-10,
+   "gradcam_D_minus_random_auroc_mean": 0.20908561400421685,
+   "gradcam_D_minus_random_auroc_ci95": [
+    0.1784320409695029,
+    0.23959317207712058
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_auroc": 3.3047955515612555e-13,
+   "gradcam_D_minus_random_ap_mean": 0.02379557684458053,
+   "gradcam_D_minus_random_ap_ci95": [
+    0.016163360349742688,
+    0.03316890058319694
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_ap": 4.520644199194078e-13,
+   "gradcam_D_minus_centre_epg_mean": 0.0053112937089337476,
+   "gradcam_D_minus_centre_epg_ci95": [
+    0.000529682232840576,
+    0.009463655486247316
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_epg": 5.856535779528038e-05,
+   "gradcam_D_minus_centre_auroc_mean": -0.002434712832614451,
+   "gradcam_D_minus_centre_auroc_ci95": [
+    -0.04138825934037272,
+    0.03509324379469815
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_auroc": 0.9305894816638911,
+   "gradcam_D_minus_centre_ap_mean": -0.007822560301364558,
+   "gradcam_D_minus_centre_ap_ci95": [
+    -0.024158545717003804,
+    0.007743391949611951
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_ap": 0.6529694321406141,
+   "gradcam_D_minus_gradcam_G_epg_mean": 0.005804240460163805,
+   "gradcam_D_minus_gradcam_G_epg_ci95": [
+    -0.013069015716702083,
+    0.017763077294550362
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_epg": 1.5490561047984505e-06,
+   "gradcam_D_minus_gradcam_G_auroc_mean": 0.15178915872283155,
+   "gradcam_D_minus_gradcam_G_auroc_ci95": [
+    0.10575299308776928,
+    0.19417311578714302
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_auroc": 1.2024797637614793e-08,
+   "gradcam_D_minus_gradcam_G_ap_mean": 0.008388014078035001,
+   "gradcam_D_minus_gradcam_G_ap_ci95": [
+    -0.006762263123840687,
+    0.02147859224211478
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_ap": 3.2520494676815746e-05,
+   "epg_gradcam_D_over_area_frac_median": 2.093015161339796
+  },
+  "SE": {
+   "n_images": 40,
+   "area_frac_mean": 0.006162019815577907,
+   "area_frac_tol_mean": 0.03471884294317958,
+   "gradcam_D_pg_mean": 0.05,
+   "gradcam_D_pg_ci95": [
+    0.0,
+    0.125
+   ],
+   "gradcam_D_pg_tol_mean": 0.075,
+   "gradcam_D_pg_tol_ci95": [
+    0.0,
+    0.175
+   ],
+   "gradcam_D_epg_mean": 0.01106041459388507,
+   "gradcam_D_epg_ci95": [
+    0.00712497562367389,
+    0.015836606906523224
+   ],
+   "gradcam_D_auroc_mean": 0.6468171609881657,
+   "gradcam_D_auroc_ci95": [
+    0.5821384538289723,
+    0.7094058893710303
+   ],
+   "gradcam_D_ap_mean": 0.016590750554814866,
+   "gradcam_D_ap_ci95": [
+    0.010707106798987669,
+    0.02377617700720013
+   ],
+   "random_pg_mean": 0.004,
+   "random_pg_ci95": [
+    0.0015,
+    0.007000000000000001
+   ],
+   "random_pg_tol_mean": 0.032,
+   "random_pg_tol_ci95": [
+    0.0235,
+    0.0415
+   ],
+   "random_epg_mean": 0.006183622685701266,
+   "random_epg_ci95": [
+    0.004643768341812211,
+    0.007695873229105018
+   ],
+   "random_auroc_mean": 0.5022600116012775,
+   "random_auroc_ci95": [
+    0.49490936444114814,
+    0.5096393210355628
+   ],
+   "random_ap_mean": 0.008309779502235982,
+   "random_ap_ci95": [
+    0.006540872652415454,
+    0.010261144283291097
+   ],
+   "centre_pg_mean": 0.025,
+   "centre_pg_ci95": [
+    0.0,
+    0.075
+   ],
+   "centre_pg_tol_mean": 0.05,
+   "centre_pg_tol_ci95": [
+    0.0,
+    0.125
+   ],
+   "centre_epg_mean": 0.005015256827755365,
+   "centre_epg_ci95": [
+    0.003725487799219991,
+    0.006374324788521334
+   ],
+   "centre_auroc_mean": 0.3966664961112768,
+   "centre_auroc_ci95": [
+    0.3301112061462152,
+    0.46368771948943877
+   ],
+   "centre_ap_mean": 0.008067021854190632,
+   "centre_ap_ci95": [
+    0.004817436659298728,
+    0.013196211346985736
+   ],
+   "gradcam_G_pg_mean": 0.075,
+   "gradcam_G_pg_ci95": [
+    0.0,
+    0.175
+   ],
+   "gradcam_G_pg_tol_mean": 0.125,
+   "gradcam_G_pg_tol_ci95": [
+    0.05,
+    0.225
+   ],
+   "gradcam_G_epg_mean": 0.012960313244809585,
+   "gradcam_G_epg_ci95": [
+    0.006645163252480957,
+    0.020408403937045915
+   ],
+   "gradcam_G_auroc_mean": 0.513662286284738,
+   "gradcam_G_auroc_ci95": [
+    0.44737893235086384,
+    0.5842742868996932
+   ],
+   "gradcam_G_ap_mean": 0.035180547206518364,
+   "gradcam_G_ap_ci95": [
+    0.014273426840289314,
+    0.06382022812473943
+   ],
+   "gradcam_C_pg_mean": 0.05,
+   "gradcam_C_pg_ci95": [
+    0.0,
+    0.125
+   ],
+   "gradcam_C_pg_tol_mean": 0.1,
+   "gradcam_C_pg_tol_ci95": [
+    0.025,
+    0.2
+   ],
+   "gradcam_C_epg_mean": 0.013297923118977905,
+   "gradcam_C_epg_ci95": [
+    0.008359607133756696,
+    0.018848187104285322
+   ],
+   "gradcam_C_auroc_mean": 0.591285957977365,
+   "gradcam_C_auroc_ci95": [
+    0.5114336812175544,
+    0.6704467474346372
+   ],
+   "gradcam_C_ap_mean": 0.03528357318237235,
+   "gradcam_C_ap_ci95": [
+    0.01550975721342024,
+    0.0627180993506349
+   ],
+   "gradcam_A_pg_mean": 0.05,
+   "gradcam_A_pg_ci95": [
+    0.0,
+    0.125
+   ],
+   "gradcam_A_pg_tol_mean": 0.05,
+   "gradcam_A_pg_tol_ci95": [
+    0.0,
+    0.125
+   ],
+   "gradcam_A_epg_mean": 0.009945985592858263,
+   "gradcam_A_epg_ci95": [
+    0.006075360387181945,
+    0.014618076070208156
+   ],
+   "gradcam_A_auroc_mean": 0.5033726165157539,
+   "gradcam_A_auroc_ci95": [
+    0.43370639502180075,
+    0.5757327405273127
+   ],
+   "gradcam_A_ap_mean": 0.02684393976063445,
+   "gradcam_A_ap_ci95": [
+    0.010068948405107876,
+    0.05598277585817831
+   ],
+   "gradcam_H_pg_mean": 0.275,
+   "gradcam_H_pg_ci95": [
+    0.15,
+    0.425
+   ],
+   "gradcam_H_pg_tol_mean": 0.325,
+   "gradcam_H_pg_tol_ci95": [
+    0.175,
+    0.475
+   ],
+   "gradcam_H_epg_mean": 0.028816568499904348,
+   "gradcam_H_epg_ci95": [
+    0.017574750245433677,
+    0.04157668294861987
+   ],
+   "gradcam_H_auroc_mean": 0.625499230211267,
+   "gradcam_H_auroc_ci95": [
+    0.5451054732678471,
+    0.7034804857393557
+   ],
+   "gradcam_H_ap_mean": 0.12719409613832333,
+   "gradcam_H_ap_ci95": [
+    0.06820836805443654,
+    0.19210129796131079
+   ],
+   "gradcam_D_minus_random_epg_mean": 0.004876791908183804,
+   "gradcam_D_minus_random_epg_ci95": [
+    0.0019552636442727814,
+    0.008595562086580863
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_epg": 0.02407598106947262,
+   "gradcam_D_minus_random_auroc_mean": 0.14455714938688807,
+   "gradcam_D_minus_random_auroc_ci95": [
+    0.08186677291089883,
+    0.2040297874951146
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_auroc": 0.00017029843002092093,
+   "gradcam_D_minus_random_ap_mean": 0.008280971052578887,
+   "gradcam_D_minus_random_ap_ci95": [
+    0.003243806957262082,
+    0.01413714298433526
+   ],
+   "wilcoxon_p_gradcam_D_vs_random_ap": 0.0368489142110775,
+   "gradcam_D_minus_centre_epg_mean": 0.0060451577661297055,
+   "gradcam_D_minus_centre_epg_ci95": [
+    0.002808368021305796,
+    0.010231500595627946
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_epg": 0.003867510851705447,
+   "gradcam_D_minus_centre_auroc_mean": 0.25015066487688886,
+   "gradcam_D_minus_centre_auroc_ci95": [
+    0.16941051522963593,
+    0.33109681827238036
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_auroc": 1.4051875041332096e-06,
+   "gradcam_D_minus_centre_ap_mean": 0.008523728700624233,
+   "gradcam_D_minus_centre_ap_ci95": [
+    0.0032544222661108884,
+    0.015134086073210963
+   ],
+   "wilcoxon_p_gradcam_D_vs_centre_ap": 8.831049490254372e-05,
+   "gradcam_D_minus_gradcam_G_epg_mean": -0.001899898650924514,
+   "gradcam_D_minus_gradcam_G_epg_ci95": [
+    -0.007992060197450284,
+    0.003138584673143711
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_epg": 0.08171383123044507,
+   "gradcam_D_minus_gradcam_G_auroc_mean": 0.1331548747034276,
+   "gradcam_D_minus_gradcam_G_auroc_ci95": [
+    0.050795665298658484,
+    0.2229214920072916
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_auroc": 0.004052109774420387,
+   "gradcam_D_minus_gradcam_G_ap_mean": -0.018589796651703495,
+   "gradcam_D_minus_gradcam_G_ap_ci95": [
+    -0.0475597757902649,
+    0.00086431104056322
+   ],
+   "wilcoxon_p_gradcam_D_vs_gradcam_G_ap": 0.2162961354260915,
+   "epg_gradcam_D_over_area_frac_median": 1.272391923594295
+  }
+ },
+ "seconds": 421.6
+}

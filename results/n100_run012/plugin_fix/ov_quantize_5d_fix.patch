@@ -1,0 +1,180 @@
+diff --git a/src/plugins/intel_gpu/src/graph/graph_optimizer/prepare_quantization.cpp b/src/plugins/intel_gpu/src/graph/graph_optimizer/prepare_quantization.cpp
+index 3ee667d..e74aefa 100644
+--- a/src/plugins/intel_gpu/src/graph/graph_optimizer/prepare_quantization.cpp
++++ b/src/plugins/intel_gpu/src/graph/graph_optimizer/prepare_quantization.cpp
+@@ -90,14 +90,17 @@ void prepare_quantization::prepare_scale_shift_opt(program &p, quantize_node& qu
+     auto mem_output_scale = p.get_engine().allocate_memory(scales_layout, false);
+     auto mem_output_shift = p.get_engine().allocate_memory(scales_layout, false);
+ 
++    // Offset of element idx in a (possibly broadcast) range tensor. Each coordinate is wrapped to the
++    // tensor's own size (numpy-style broadcasting), and the layout computes the offset, so that 5D/6D
++    // range tensors are addressed correctly. A hand-written bfyx pitch formula used to misplace the
++    // x coordinate of 5D ranges (e.g. [C,1,1,1,KW] weight FakeQuantize ranges of a depthwise
++    // GroupConvolution) and read past the end of the buffer.
+     auto get_offset_safe = [](const layout& l, const tensor& idx) -> tensor::value_type {
+-        auto sizes = l.get_tensor();
+-        auto pitches = l.get_pitches();
+-
+-        return (idx.batch[0] % sizes.batch[0])*pitches[0]
+-                    + (idx.feature[0] % sizes.feature[0])*pitches[1]
+-                    + (idx.spatial[1] % sizes.spatial[1])*pitches[2 + 0]   // y
+-                    + (idx.spatial[0] % sizes.spatial[0])*pitches[2 + 1];  // x
++        const auto sizes = l.get_tensor();
++        tensor wrapped(0);
++        for (size_t i = 0; i < wrapped.raw.size(); ++i)
++            wrapped.raw[i] = idx.raw[i] % std::max<tensor::value_type>(sizes.raw[i], 1);
++        return static_cast<tensor::value_type>(l.get_linear_offset(wrapped));
+     };
+ 
+     auto lock_memory = [&stream] (memory::ptr memory, std::function<void(std::size_t, float)>& set_data,
+@@ -187,29 +190,33 @@ void prepare_quantization::prepare_scale_shift_opt(program &p, quantize_node& qu
+ 
+     for (int b = 0; b < scales_layout.batch(); b++) {
+         for (int f = 0; f < scales_layout.feature(); f++) {
+-            for (int y = 0; y < scales_layout.spatial(1); y++) {
+-                for (int x = 0; x < scales_layout.spatial(0); x++) {
+-                    auto idx = cldnn::tensor(format::bfyx, {b, f, y, x}, 0);
+-                    auto s_offset = scales_layout.get_linear_offset(idx);
+-                    float in_lo = get_data_input_low(get_offset_safe(mem_input_low->get_layout(), idx));
+-                    float in_hi = get_data_input_high(get_offset_safe(mem_input_high->get_layout(), idx));
+-
+-                    float out_lo = get_data_output_low(get_offset_safe(mem_output_low->get_layout(), idx));
+-                    float out_hi = get_data_output_high(get_offset_safe(mem_output_high->get_layout(), idx));
+-                    float in_shift_basic = (static_cast<float>(levels) - 1.f) / (in_hi - in_lo);
+-                    set_data_input_scale(s_offset, in_shift_basic);
+-                    set_data_input_shift(s_offset, -in_lo * in_shift_basic);
+-                    set_data_output_scale(s_offset, (out_hi - out_lo) / (static_cast<float>(levels) - 1.f));
+-                    set_data_output_shift(s_offset, out_lo);
+-
+-                    if (get_data_output_scale(s_offset) != 1.0f) {
+-                        need_post_scale = true;
+-                    }
+-                    if (get_data_output_shift(s_offset) != 0.0f) {
+-                        need_post_shift = true;
+-                    }
+-                    if (get_data_input_scale(s_offset) < 0.0f) {
+-                        has_negative_scales = true;
++            for (int w = 0; w < scales_layout.spatial(3); w++) {
++                for (int z = 0; z < scales_layout.spatial(2); z++) {
++                    for (int y = 0; y < scales_layout.spatial(1); y++) {
++                        for (int x = 0; x < scales_layout.spatial(0); x++) {
++                            auto idx = cldnn::tensor(format::bfwzyx, {b, f, w, z, y, x}, 0);
++                            auto s_offset = scales_layout.get_linear_offset(idx);
++                            float in_lo = get_data_input_low(get_offset_safe(mem_input_low->get_layout(), idx));
++                            float in_hi = get_data_input_high(get_offset_safe(mem_input_high->get_layout(), idx));
++
++                            float out_lo = get_data_output_low(get_offset_safe(mem_output_low->get_layout(), idx));
++                            float out_hi = get_data_output_high(get_offset_safe(mem_output_high->get_layout(), idx));
++                            float in_shift_basic = (static_cast<float>(levels) - 1.f) / (in_hi - in_lo);
++                            set_data_input_scale(s_offset, in_shift_basic);
++                            set_data_input_shift(s_offset, -in_lo * in_shift_basic);
++                            set_data_output_scale(s_offset, (out_hi - out_lo) / (static_cast<float>(levels) - 1.f));
++                            set_data_output_shift(s_offset, out_lo);
++
++                            if (get_data_output_scale(s_offset) != 1.0f) {
++                                need_post_scale = true;
++                            }
++                            if (get_data_output_shift(s_offset) != 0.0f) {
++                                need_post_shift = true;
++                            }
++                            if (get_data_input_scale(s_offset) < 0.0f) {
++                                has_negative_scales = true;
++                            }
++                        }
+                     }
+                 }
+             }
+diff --git a/src/plugins/intel_gpu/tests/unit/test_cases/quantize_gpu_test.cpp b/src/plugins/intel_gpu/tests/unit/test_cases/quantize_gpu_test.cpp
+index 094489f..4653e82 100644
+--- a/src/plugins/intel_gpu/tests/unit/test_cases/quantize_gpu_test.cpp
++++ b/src/plugins/intel_gpu/tests/unit/test_cases/quantize_gpu_test.cpp
+@@ -10,6 +10,7 @@
+ #include <intel_gpu/primitives/data.hpp>
+ #include "quantize_inst.h"
+ 
++#include <cmath>
+ #include <cstddef>
+ 
+ using namespace cldnn;
+@@ -609,6 +610,81 @@ TEST(quantize_gpu, quantize_levels_256_3d_unsigned) {
+     }
+ }
+ 
++// Weight-style FakeQuantize on a 5D tensor whose ranges vary along the batch and the innermost (x) axis,
++// e.g. [C,1,1,1,KW] ranges of a depthwise GroupConvolution weight. The range offsets used to be computed
++// with a 4D (bfyx) pitch formula, which misplaced x for 5D ranges, gave wrong values in every channel and
++// read past the end of the range buffers for the last channels (NaN outputs).
++TEST(quantize_gpu, quantize_levels_255_5d_ranges_vary_along_x) {
++    cldnn::engine& engine = get_test_engine();
++    const int B = 16, Y = 3, X = 3;
++    const int levels = 255;
++    // cldnn tensor order is {b, f, x, y, z}
++    auto input = engine.allocate_memory({data_types::f32, format::bfzyx, {B, 1, X, Y, 1}});
++    auto input_low = engine.allocate_memory({data_types::f32, format::bfzyx, {B, 1, X, 1, 1}});
++    auto input_high = engine.allocate_memory({data_types::f32, format::bfzyx, {B, 1, X, 1, 1}});
++    auto output_low = engine.allocate_memory({data_types::f32, format::bfzyx, {B, 1, X, 1, 1}});
++    auto output_high = engine.allocate_memory({data_types::f32, format::bfzyx, {B, 1, X, 1, 1}});
++
++    std::vector<float> in(B * Y * X), lo(B * X), hi(B * X);
++    for (int b = 0; b < B; ++b) {
++        for (int x = 0; x < X; ++x) {
++            hi[b * X + x] = 0.5f + 0.25f * static_cast<float>(b) + 0.1f * static_cast<float>(x);
++            lo[b * X + x] = -hi[b * X + x];
++            for (int y = 0; y < Y; ++y)
++                in[(b * Y + y) * X + x] = static_cast<float>((b * 7 + y * 3 + x * 5) % 11 - 5) * 0.3f;
++        }
++    }
++    set_values(input, in);
++    set_values(input_low, lo);
++    set_values(input_high, hi);
++    set_values(output_low, lo);
++    set_values(output_high, hi);
++
++    std::vector<float> ref(in.size());
++    for (int b = 0; b < B; ++b) {
++        for (int y = 0; y < Y; ++y) {
++            for (int x = 0; x < X; ++x) {
++                const float l = lo[b * X + x], h = hi[b * X + x], v = in[(b * Y + y) * X + x];
++                float r;
++                if (v <= l)
++                    r = l;
++                else if (v > h)
++                    r = h;
++                else
++                    r = std::round((v - l) / (h - l) * (levels - 1)) / (levels - 1) * (h - l) + l;
++                ref[(b * Y + y) * X + x] = r;
++            }
++        }
++    }
++
++    topology topology;
++    topology.add(data("input", input),
++                 data("input_low", input_low),
++                 data("input_high", input_high),
++                 data("output_low", output_low),
++                 data("output_high", output_high),
++                 quantize("quantize",
++                          input_info("input"),
++                          input_info("input_low"),
++                          input_info("input_high"),
++                          input_info("output_low"),
++                          input_info("output_high"),
++                          levels,
++                          data_types::f32));
++    ExecutionConfig config = get_test_default_config(engine);
++    config.set_property(ov::intel_gpu::optimize_data(true));
++    network network(engine, topology, config);
++    auto outputs = network.execute();
++
++    auto output = outputs.at("quantize").get_memory();
++    cldnn::mem_lock<float, mem_lock_type::read> output_ptr(output, get_test_stream());
++    ASSERT_EQ(output->count(), ref.size());
++    for (size_t i = 0; i < ref.size(); ++i) {
++        ASSERT_TRUE(std::isfinite(output_ptr[i])) << " i=" << i;
++        ASSERT_NEAR(output_ptr[i], ref[i], 1e-5f) << " i=" << i;
++    }
++}
++
+ TEST(quantize_gpu, eltwise_quantize_fs_b_yx_fsv32) {
+     tests::random_generator rg(GET_SUITE_NAME);
+     auto& engine = get_test_engine();

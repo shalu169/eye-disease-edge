@@ -1,0 +1,10 @@
+{
+ "seed": 2027,
+ "rule": "uniform random draw of 4 of the 81 IDRiD images",
+ "ids": [
+  "IDRiD_01",
+  "IDRiD_12",
+  "IDRiD_32",
+  "IDRiD_50"
+ ]
+}

@@ -1,0 +1,42 @@
+=== idle pre (05:23:09)
+idle[pre] rep 0: {'package': 2.5372, 'core': 0.0176, 'uncore': 0.0} W, temps 44.0 C, sys busy 0.0003
+idle[pre] rep 1: {'package': 2.5163, 'core': 0.0132, 'uncore': 0.0} W, temps 42.0 C, sys busy 0.0002
+idle[pre] rep 2: {'package': 2.5032, 'core': 0.0153, 'uncore': 0.0} W, temps 42.0 C, sys busy 0.0003
+
+=== run ort_fp32_cpu (05:27:40)
+ort_fp32_cpu model rep 0: 11.780 W pkg, 99.9 inf/s, 117.90 mJ/inf, pkg temp 42.0->61.0 C, sys busy 1.0
+ort_fp32_cpu model rep 1: 11.409 W pkg, 93.6 inf/s, 121.95 mJ/inf, pkg temp 46.0->66.0 C, sys busy 1.0
+ort_fp32_cpu model rep 2: 11.413 W pkg, 93.3 inf/s, 122.36 mJ/inf, pkg temp 48.0->69.0 C, sys busy 1.0
+ort_fp32_cpu e2e rep 0: 10.987 W pkg, 59.6 inf/s, 184.30 mJ/inf, pkg temp 53.0->74.0 C, sys busy 0.9999
+ort_fp32_cpu e2e rep 1: 10.992 W pkg, 59.0 inf/s, 186.41 mJ/inf, pkg temp 54.0->74.0 C, sys busy 0.9999
+ort_fp32_cpu e2e rep 2: 11.000 W pkg, 58.6 inf/s, 187.60 mJ/inf, pkg temp 55.0->75.0 C, sys busy 0.9999
+
+=== run ov_fp32_cpu (05:36:43)
+ov_fp32_cpu model rep 0: 11.496 W pkg, 89.8 inf/s, 128.08 mJ/inf, pkg temp 58.0->76.0 C, sys busy 0.9609
+ov_fp32_cpu model rep 1: 11.503 W pkg, 90.3 inf/s, 127.44 mJ/inf, pkg temp 58.0->76.0 C, sys busy 0.9618
+ov_fp32_cpu model rep 2: 11.508 W pkg, 90.2 inf/s, 127.53 mJ/inf, pkg temp 59.0->79.0 C, sys busy 0.9619
+ov_fp32_cpu e2e rep 0: 11.085 W pkg, 55.0 inf/s, 201.42 mJ/inf, pkg temp 61.0->79.0 C, sys busy 0.6201
+ov_fp32_cpu e2e rep 1: 11.082 W pkg, 54.5 inf/s, 203.43 mJ/inf, pkg temp 61.0->79.0 C, sys busy 0.6177
+ov_fp32_cpu e2e rep 2: 11.071 W pkg, 54.3 inf/s, 203.92 mJ/inf, pkg temp 61.0->80.0 C, sys busy 0.6163
+
+=== run ov_fp32_gpu (05:45:46)
+ov_fp32_gpu model rep 0: 10.077 W pkg, 144.4 inf/s, 69.81 mJ/inf, pkg temp 62.0->75.0 C, sys busy 0.2515
+ov_fp32_gpu model rep 1: 10.068 W pkg, 144.6 inf/s, 69.63 mJ/inf, pkg temp 62.0->75.0 C, sys busy 0.2513
+ov_fp32_gpu model rep 2: 10.055 W pkg, 144.8 inf/s, 69.45 mJ/inf, pkg temp 61.0->76.0 C, sys busy 0.2514
+ov_fp32_gpu e2e rep 0: 9.814 W pkg, 73.9 inf/s, 132.74 mJ/inf, pkg temp 61.0->75.0 C, sys busy 0.251
+ov_fp32_gpu e2e rep 1: 9.818 W pkg, 74.0 inf/s, 132.67 mJ/inf, pkg temp 62.0->74.0 C, sys busy 0.251
+ov_fp32_gpu e2e rep 2: 9.800 W pkg, 74.1 inf/s, 132.27 mJ/inf, pkg temp 62.0->75.0 C, sys busy 0.251
+
+=== idle post (05:54:53)
+idle[post] rep 0: {'package': 2.6724, 'core': 0.0169, 'uncore': 0.0} W, temps 57.0 C, sys busy 0.0003
+idle[post] rep 1: {'package': 2.6587, 'core': 0.0162, 'uncore': 0.0} W, temps 53.0 C, sys busy 0.0002
+idle[post] rep 2: {'package': 2.6334, 'core': 0.0152, 'uncore': 0.0} W, temps 51.0 C, sys busy 0.0003
+
+idle package: 2.587 ± 0.076 W (n=6)
+config         mode           pkg W          inf/s     mJ/inf total     mJ/inf >idle temp after
+ort_fp32_cpu   model   11.534±0.213   95.579±3.756    120.740±2.466     93.647±1.427       69.0
+ort_fp32_cpu   e2e     10.993±0.006   59.073±0.500    186.104±1.673    142.310±1.304       75.0
+ov_fp32_cpu    model   11.502±0.006   90.087±0.287    127.684±0.346     98.968±0.255       79.0
+ov_fp32_cpu    e2e     11.079±0.007   54.600±0.385    202.922±1.323    155.540±0.990       80.0
+ov_fp32_gpu    model   10.067±0.011  144.574±0.210     69.630±0.177     51.736±0.152       76.0
+ov_fp32_gpu    e2e      9.811±0.010   74.010±0.076    132.559±0.255     97.606±0.221       75.0

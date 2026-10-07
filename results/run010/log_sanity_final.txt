@@ -1,0 +1,119 @@
+classifier {"spearman_median": 0.07510766189576457, "ssim_median": 0.4829743802547455} 106s
+conv_head {"spearman_median": 0.022164357806682293, "ssim_median": 0.4060310423374176} 142s
+blocks.5 {"spearman_median": -0.038485434387032044, "ssim_median": 0.33464276790618896} 184s
+blocks.4 {"spearman_median": -0.0017582276278934345, "ssim_median": 0.30764633417129517} 220s
+blocks.3 {"spearman_median": -0.012788843918168657, "ssim_median": 0.3742760121822357} 265s
+blocks.2 {"spearman_median": 0.0015736607560409618, "ssim_median": 0.3896702080965042} 305s
+blocks.1 {"spearman_median": 0.00929503645463294, "ssim_median": 0.2154184952378273} 347s
+blocks.0 {"spearman_median": 0.006736503557287969, "ssim_median": 0.2661466896533966} 388s
+stem {"spearman_median": -0.04547921910826794, "ssim_median": 0.32166311144828796} 432s
+{
+ "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+ "checkpoint_info": {
+  "source": "results/run008_FINAL_CHECKPOINT.json",
+  "model": "run008 A (final): MobileNetV3-small (timm mobilenetv3_small_100), joint 5-label",
+  "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+  "seed": 2,
+  "best_epoch": 21,
+  "input_size": 512,
+  "preprocessing": "PIL RGB -> Resize((512,512)) bilinear -> ToTensor -> Normalize(ImageNet mean/std)",
+  "output": "5 logits, sigmoid per label, order [D, G, C, A, H]",
+  "label_config": {
+   "labels": [
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+   ],
+   "D": "per-eye DR label from that eye's diagnostic keywords (results/run007_dr_per_eye_label_mapping.md)",
+   "G_C_A_H": "ODIR patient-level labels"
+  },
+  "test_manifest": "results/run008_splits/test.csv",
+  "val_manifest": "results/run008_splits/val.csv",
+  "train_manifest": "results/run008_splits/train.csv",
+  "val_sel_mean_auc": 0.8573695340988641,
+  "selection_rule": "seed with the median VALIDATION selection mean AUC (5 labels, D scored on per-eye labels) among seeds [0, 1, 2]; test set not used for this choice",
+  "all_seeds": [
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s0_best_epoch12.pt",
+    "seed": 0,
+    "best_epoch": 12,
+    "val_sel_mean_auc": 0.8596530178251758
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s1_best_epoch8.pt",
+    "seed": 1,
+    "best_epoch": 8,
+    "val_sel_mean_auc": 0.8516721957673109
+   },
+   {
+    "checkpoint": "results/checkpoints/run008A_joint5_eyeD_512_s2_best_epoch21.pt",
+    "seed": 2,
+    "best_epoch": 21,
+    "val_sel_mean_auc": 0.8573695340988641
+   }
+  ],
+  "note": "Edge INT8 calibration must use images from train.csv only; the old edge/artifacts/calib_manifest.csv has 55 images that are now in test.csv.",
+  "updated_after_all_seeds": true
+ },
+ "n_images": 100,
+ "images": "seeded random draw from run008 test split (random_state=20), all 5 label maps per image",
+ "similarity": "Spearman on 128x128 subsample of the 512 maps; SSIM sigma=1.5, data_range=1 on 512 maps",
+ "randomisation_init": "fresh timm mobilenetv3_small_100 pretrained=False, torch.manual_seed(seed)",
+ "seed": 0,
+ "reference_different_image_same_label": {
+  "D": {
+   "spearman_median": 0.21294683035393402,
+   "spearman_q25": 0.08010216722515115,
+   "spearman_q75": 0.31702102934278525,
+   "spearman_mean_abs": 0.23071128277730243,
+   "ssim_median": 0.5235176384449005,
+   "ssim_q25": 0.4768238514661789,
+   "ssim_q75": 0.5672441571950912,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "G": {
+   "spearman_median": 0.158081239034476,
+   "spearman_q25": 0.07350372082973418,
+   "spearman_q75": 0.2858302692907675,
+   "spearman_mean_abs": 0.19524917382142307,
+   "ssim_median": 0.5540442168712616,
+   "ssim_q25": 0.48313524574041367,
+   "ssim_q75": 0.6241272985935211,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "C": {
+   "spearman_median": 0.2062807350633618,
+   "spearman_q25": 0.11262053686331566,
+   "spearman_q75": 0.3004825688659814,
+   "spearman_mean_abs": 0.2171133796743413,
+   "ssim_median": 0.5858678221702576,
+   "ssim_q25": 0.47911593317985535,
+   "ssim_q75": 0.6582699418067932,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "A": {
+   "spearman_median": 0.06617935657245909,
+   "spearman_q25": -0.027188020540415893,
+   "spearman_q75": 0.15317564642674175,
+   "spearman_mean_abs": 0.1308355497997308,
+   "ssim_median": 0.551760345697403,
+   "ssim_q25": 0.4943517595529556,
+   "ssim_q75": 0.614346981048584,
+   "n_all_zero_maps": 0,
+   "n_constant_for_spearman": 0
+  },
+  "H": {
+   "spearman_median": 0.09303221615791907,
+   "spearman_q25": -0.04240532173219748,
+   "spearman_q75": 0.19255006879523429,
+   "spearman_mean_abs": 0.14604196285539198,
+   "ssim_median": 0.4865272492170334,
+   "ssim_q25": 0.4503021910786629,
+   "ssim_q75": 0.5268696695566177,
+   "n_all_zero_maps": 0,
+   "n_constant_for_
