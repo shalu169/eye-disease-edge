@@ -5,6 +5,12 @@ data/
 .DS_Store
 results/logs/
 results/env_*.txt
+# ...but the pinned environment snapshots are needed to reproduce the runs.
+!results/env_*_freeze.txt
+
+# The manuscript stays out of the public repository until camera-ready.
+# Kept locally; see the paper-local-backup branch for its tracked history.
+paper/
 
 mobile_app/build/
 mobile_app/.dart_tool/

@@ -1,0 +1,4 @@
+numpy==1.26.4
+pillow==11.2.1
+pkg_resources==0.0.0
+tflite-runtime @ file:///tmp/whl/tflite_runtime-2.13.0-cp39-cp39-manylinux2014_armv7l.whl#sha256=dcba7f3b8ea5945bfdcce9221df8dc6b567ce178e56f0c1d43b79c86494616f6
