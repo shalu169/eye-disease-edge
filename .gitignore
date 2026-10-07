@@ -1,7 +1,8 @@
-.venv/
+.venv*/
 __pycache__/
 *.pyc
 data/
+.DS_Store
 results/logs/
 results/env_*.txt
 
